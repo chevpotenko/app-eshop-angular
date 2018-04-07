@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IndexPageComponent } from './index-page.component';
+import { PageCatalogComponent } from './page-catalog.component';
 
-describe('IndexPageComponent', () => {
-  let component: IndexPageComponent;
-  let fixture: ComponentFixture<IndexPageComponent>;
+describe('PageCatalogComponent', () => {
+  let component: PageCatalogComponent;
+  let fixture: ComponentFixture<PageCatalogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IndexPageComponent ]
+      declarations: [ PageCatalogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IndexPageComponent);
+    fixture = TestBed.createComponent(PageCatalogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

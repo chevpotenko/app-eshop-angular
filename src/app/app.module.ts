@@ -12,7 +12,8 @@ import { MainBannerComponent } from './components/main-banner/main-banner.compon
 import { BrandsComponent } from './components/brands/brands.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { AppRoutingModule } from './app-routing.module';
-import { IndexPageComponent } from './components/index-page/index-page.component';
+import { PageCatalogComponent } from './components/page-catalog/page-catalog.component';
+import { PageIndexComponent } from './components/page-index/page-index.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { IndexPageComponent } from './components/index-page/index-page.component
     MainBannerComponent,
     BrandsComponent,
     ArticlesComponent,
-    IndexPageComponent
+    PageCatalogComponent,
+    PageIndexComponent
   ],
   imports: [
     BrowserModule,
