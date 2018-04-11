@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GoodsService } from '../../services/goods/goods.service';
+import { Goods } from '../../class/goods';
 
 @Component({
   selector: 'app-shop-list',
@@ -9,11 +10,13 @@ import { GoodsService } from '../../services/goods/goods.service';
 })
 export class ShopListComponent implements OnInit {
 
+  private goods: Goods[];
+
   constructor(private goodsService: GoodsService) { }
 
   ngOnInit() {
     this.goodsService.getGoods().subscribe((result) => {
-      console.log(result)
+      this.goods = result;
     });
   }
 

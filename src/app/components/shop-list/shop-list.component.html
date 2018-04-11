@@ -1,8 +1,8 @@
 <div class="shop-list">
-  <div class="shop-item">
+  <div *ngFor="let item of goods" class="shop-item">
     <div class="shop-item-photo">
-      <img src="assets/img/shop/shop_item.jpg" alt="">
-      <div class="shop-item-price">$100</div>
+      <img [attr.src]="item.img" alt="">
+      <div class="shop-item-price">{{item.price}}</div>
       <div class="shop-item-like">
         <span>
           <i class="far fa-heart"></i>
@@ -13,9 +13,9 @@
       </div>
       <a href="#" class="shop-item-btnbuy">Shop Now</a>
     </div>
-    <h3 class="shop-item-name">Product Name  Here</h3>
+    <h3 class="shop-item-name">{{item.name}}</h3>
     <div class="shop-item-footer">						
-      <div class="shop-item-category">Outerwear</div>
+      <div class="shop-item-category">{{item.category}}</div>
       <div class="shop-item-rating"></div>
     </div>
   </div>

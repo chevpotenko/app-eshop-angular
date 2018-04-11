@@ -4,4 +4,5 @@ export class Goods {
     price: Number;
     rating: Number;
     discount: Number;
+    img: String;
 }

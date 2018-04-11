@@ -5,19 +5,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const banners = [
       { 
         url: "#",
-        img: "img/banners/banner_big.jpg"
-      },
-      { 
-        url: "#",
-        img: "img/banners/banner_middle.jpg"
-      },
-      { 
-        url: "#",
-        img: "img/banners/banner_small_1.jpg"
-      },
-      { 
-        url: "#",
-        img: "img/banners/banner_small_2.jpg"
+        img: "assets/img/banners/banner_big.jpg"
       }
     ];
 
@@ -27,7 +15,32 @@ export class InMemoryDataService implements InMemoryDbService {
         category: "Top",
         price: "100",
         rating: "5",
-        discount: "10"
+        discount: "10",
+        img: "assets/img/shop/shop_item.jpg"
+      },
+      { 
+        name: "Product name here",
+        category: "Top",
+        price: "100",
+        rating: "5",
+        discount: "10",
+        img: "assets/img/shop/shop_item.jpg"
+      },
+      { 
+        name: "Product name here",
+        category: "Top",
+        price: "100",
+        rating: "5",
+        discount: "10",
+        img: "assets/img/shop/shop_item.jpg"
+      },
+      { 
+        name: "Product name here",
+        category: "Top",
+        price: "100",
+        rating: "5",
+        discount: "10",
+        img: "assets/img/shop/shop_item.jpg"
       }
     ];
     return {banners, goods};

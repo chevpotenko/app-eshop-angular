@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainBannerService } from '../../services/main-banner/main-banner.service';
+import { Banner } from '../../class/banner';
 
 @Component({
   selector: 'app-main-banner',
@@ -9,11 +10,13 @@ import { MainBannerService } from '../../services/main-banner/main-banner.servic
 })
 export class MainBannerComponent implements OnInit {
 
+  private banners: Banner[];
+
   constructor(private mainBannerService: MainBannerService) { }
 
   ngOnInit() {
     this.mainBannerService.getMainBanner().subscribe((result) => {
-      console.log(result)
+      this.banners = result;
     });
   }
 
