@@ -39,10 +39,10 @@ import { PageIndexComponent } from './components/page-index/page-index.component
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService
-    )
+    HttpClientModule
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService
+    // )
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

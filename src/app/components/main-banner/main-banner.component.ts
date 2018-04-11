@@ -10,7 +10,7 @@ import { Banner } from '../../class/banner';
 })
 export class MainBannerComponent implements OnInit {
 
-  private banners: Banner[];
+  public banners: Banner[];
 
   constructor(private mainBannerService: MainBannerService) { }
 
