@@ -6,6 +6,18 @@ export class InMemoryDataService implements InMemoryDbService {
       { 
         url: "#",
         img: "assets/img/banners/banner_big.jpg"
+      },
+      { 
+        url: "#",
+        img: "assets/img/banners/banner_middle.jpg"
+      },
+      { 
+        url: "#",
+        img: "assets/img/banners/banner_small_1.jpg"
+      },
+      { 
+        url: "#",
+        img: "assets/img/banners/banner_small_2.jpg"
       }
     ];
 
