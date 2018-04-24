@@ -1,0 +1,17 @@
+<div class="signup center">
+  <h2 class="section-title">Sign Up</h2>
+  <form action="user/signup" method="post" calss="signup-form">
+    <div class="signup-row">
+      <label for="email">E-mail</label>
+      <input type="text" id="email" name="email" autocomplete="off">  
+    </div>
+    <div class="signup-row">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password">
+      <input *ngIf="data" type="hidden" name="_csrf"  [attr.value]="data.csrfToken">  
+    </div>
+    <div class="signup-row">
+      <button type="submit" class="btn-submit">Sign up</button>
+    </div>
+  </form>
+</div>

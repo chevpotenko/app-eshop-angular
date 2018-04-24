@@ -19,6 +19,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageCatalogComponent } from './components/page-catalog/page-catalog.component';
 import { PageIndexComponent } from './components/page-index/page-index.component';
+import { SignupComponent } from './components/user/signup/signup.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PageIndexComponent } from './components/page-index/page-index.component
     BrandsComponent,
     ArticlesComponent,
     PageCatalogComponent,
-    PageIndexComponent
+    PageIndexComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

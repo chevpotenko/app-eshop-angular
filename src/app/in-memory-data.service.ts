@@ -2,6 +2,13 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
+    const user = [
+      {
+        id: 'signup',
+        csrfToken: '12345678'
+      }      
+    ];
+
     const banners = [
       { 
         url: "#",
@@ -55,6 +62,6 @@ export class InMemoryDataService implements InMemoryDbService {
         img: "assets/img/shop/shop_item.jpg"
       }
     ];
-    return {banners, goods};
+    return {banners, goods, user};
   }
 }
