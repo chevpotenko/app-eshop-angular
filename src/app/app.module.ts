@@ -41,10 +41,10 @@ import { SignupComponent } from './components/user/signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService
-    )
+    HttpClientModule
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService
+    // )
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

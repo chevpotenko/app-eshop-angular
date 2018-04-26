@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class UserService {
   
-  private url = 'api/user/signup';  
+  private url = 'user/signup';  
 
   constructor(private http: HttpClient) { }
 

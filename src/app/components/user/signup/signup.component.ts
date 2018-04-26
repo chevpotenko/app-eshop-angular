@@ -15,9 +15,21 @@ export class SignupComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getCsrfToken().subscribe((result) => {
-      this.data = result;
-    });
+
+    // this.userService.getCsrfToken().subscribe((result) => {
+    //   this.data = result;
+    // });
+    
+    var getCookie = function(name) {
+      var match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+      if (match) return match[1];
+    }
+
+    this.data = {
+      csrfToken: getCookie('XSRF-TOKEN')      
+    }
+
+    console.log(this.data);
   }
 
 }
