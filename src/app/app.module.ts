@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageCatalogComponent } from './components/page-catalog/page-catalog.component';
 import { PageIndexComponent } from './components/page-index/page-index.component';
 import { SignupComponent } from './components/user/signup/signup.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SignupComponent } from './components/user/signup/signup.component';
     ArticlesComponent,
     PageCatalogComponent,
     PageIndexComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
