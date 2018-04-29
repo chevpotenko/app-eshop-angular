@@ -4,22 +4,20 @@ import { UserService } from '../../../services/user/user.service';
 import { User } from '../../../class/user';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css'],
   providers: [UserService]
 })
-
-
-export class SignupComponent implements OnInit {
+export class SigninComponent implements OnInit {  
   public csrfToken:string;
   public err:string = '';
 
   constructor(private userService: UserService, private router: Router) { }
 
-  addUser($event, email, password) {
+  signinUser($event, email, password) {
     $event.preventDefault(); 
-    this.userService.addUser({email, password} as User).subscribe(
+    this.userService.signinUser({email, password} as User).subscribe(
       (user) => { 
         console.log('post new user', user);       
         this.err = '';
@@ -31,7 +29,7 @@ export class SignupComponent implements OnInit {
           this.err = err.error.message.join(', ');
         }else{          
           this.err = err.error.message;
-        }                
+        }               
       } 
     );
   }
@@ -46,5 +44,4 @@ export class SignupComponent implements OnInit {
 
     this.userService.getUser().subscribe((user) => {console.log(user)});
   }
-
 }

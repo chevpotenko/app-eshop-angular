@@ -1,5 +1,5 @@
 <div class="useraccount center">
-  <h2 class="section-title">Sign Up</h2>
+  <h2 class="section-title">Sign In</h2>
   <div [class.errors]="err" class="useraccount-messages">{{err}}</div>
   <form calss="useraccount-form">
     <div class="useraccount-row">
@@ -12,7 +12,7 @@
       <input *ngIf="csrfToken" type="hidden" name="_csrf"  [attr.value]="csrfToken">  
     </div>
     <div class="useraccount-row">
-      <button class="btn-submit" (click)="addUser($event, email.value, password.value);">Sign up</button>
+      <button class="btn-submit" (click)="signinUser($event, email.value, password.value)">Sign in</button>
     </div>
   </form>
 </div>

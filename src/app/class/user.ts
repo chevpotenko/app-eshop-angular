@@ -1,3 +1,5 @@
 export class User {
-    csrfToken: String;
+    id: number;
+    email: string;
+    password: string;
 }

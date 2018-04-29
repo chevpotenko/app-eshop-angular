@@ -491,3 +491,47 @@ input.subscription-email {
 .footer-copyright {
   margin: 0;
   color: #bdbdbd; }
+
+/*---------------------------------------*/
+.useraccount input[type="text"],
+.useraccount input[type="password"]{
+    width: 200px;
+    height: 15px;
+    padding: 5px;
+}
+.useraccount input[type="password"]{
+    border: 1px solid #000;
+}
+.useraccount label{
+    display: inline-block;
+    width: 90px;
+}
+.useraccount .section-title{
+    margin-bottom: 40px;
+}
+.useraccount-row{
+    margin-bottom: 20px;
+}
+.useraccount .btn-submit{
+    cursor: pointer;
+}
+.useraccount-messages{
+    height: 50px;
+    width: 420px;
+    margin-bottom: 20px;
+}
+.useraccount .errors{
+    color: red;    
+}
+.useraccount .btn-submit {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  background: #ffac03;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  transition: .2s ease background; }
+  .useraccount .btn-submit:hover {
+    background: #f44336; }
+/*---------------------------------------*/

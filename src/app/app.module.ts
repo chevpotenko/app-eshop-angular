@@ -21,6 +21,7 @@ import { PageCatalogComponent } from './components/page-catalog/page-catalog.com
 import { PageIndexComponent } from './components/page-index/page-index.component';
 import { SignupComponent } from './components/user/signup/signup.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
+import { SigninComponent } from './components/user/signin/signin.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     PageCatalogComponent,
     PageIndexComponent,
     SignupComponent,
-    ProfileComponent
+    ProfileComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -51,4 +53,6 @@ import { ProfileComponent } from './components/user/profile/profile.component';
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
