@@ -14,19 +14,20 @@ import { User } from '../../../class/user';
 export class SignupComponent implements OnInit {
   public csrfToken:string;
   public err:string = '';
+  public isLogin: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
   addUser($event, email, password) {
     $event.preventDefault(); 
     this.userService.addUser({email, password} as User).subscribe(
-      (user) => { 
-        console.log('post new user', user);       
+      (user) => {       
         this.err = '';
+        this.isLogin = true;
         this.router.navigate(['/user/profile']);
       },
       (err) => {
-        console.log('error', err);
+        this.isLogin = false;
         if(Array.isArray(err.error.message)){
           this.err = err.error.message.join(', ');
         }else{          

@@ -1,8 +1,9 @@
 export class Goods {
-    name: String;
-    category: String;
-    price: Number;
-    rating: Number;
-    discount: Number;
-    img: String;
+    _id: string;
+    name: string;
+    category: string;
+    price: number;
+    rating: number;
+    discount: number;
+    img: string;
 }

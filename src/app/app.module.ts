@@ -6,6 +6,9 @@ import { HttpClientModule }    from '@angular/common/http';
 //web api
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { GoodsService } from './services/goods/goods.service';
+
+import { SharedService } from './services/shared/shared.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,6 +25,7 @@ import { PageIndexComponent } from './components/page-index/page-index.component
 import { SignupComponent } from './components/user/signup/signup.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { SigninComponent } from './components/user/signin/signin.component';
+import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -39,7 +43,8 @@ import { SigninComponent } from './components/user/signin/signin.component';
     PageIndexComponent,
     SignupComponent,
     ProfileComponent,
-    SigninComponent
+    SigninComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,7 @@ import { SigninComponent } from './components/user/signin/signin.component';
     //   InMemoryDataService
     // )
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, SharedService, GoodsService],
   bootstrap: [AppComponent]
 })
 

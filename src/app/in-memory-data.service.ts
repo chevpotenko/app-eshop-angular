@@ -1,81 +1,122 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
-
   
-  createDb() {
-    const signup = [
-           
-    ];
+createDb() {
+  const cart = [{
+    id: 'add',      
+    totalQty: 2    
+  }];
 
-    const user = [{
-      id: 'signup',      
-      users: [
-        {
-          email: 'test@test.com',
-          password: 'test'
+  const shoppingcart = {
+    items: [
+      {
+        item: {
+          _id: 1,
+          name: "Product name here",
+          category: "Top",
+          price: "100",
+          rating: "5",
+          discount: "10",
+          img: "assets/img/shop/shop_item.jpg"
         },
-        {
-          email: 'test2@test.com',
-          password: 'test'
-        }
-      ]
-      
-    }];
-
-    const banners = [
-      { 
-        url: "#",
-        img: "assets/img/banners/banner_big.jpg"
+        qty: 1,
+        total: 100
       },
-      { 
-        url: "#",
-        img: "assets/img/banners/banner_middle.jpg"
-      },
-      { 
-        url: "#",
-        img: "assets/img/banners/banner_small_1.jpg"
-      },
-      { 
-        url: "#",
-        img: "assets/img/banners/banner_small_2.jpg"
+      {
+        item: {
+          _id: 1,
+          name: "Product name here",
+          category: "Top",
+          price: "100",
+          rating: "5",
+          discount: "10",
+          img: "assets/img/shop/shop_item.jpg"
+        },
+        qty: 2,
+        total: 200
       }
-    ];
+    ],
+    totalPrice: 300,
+    totalQty: 3
+  };
 
-    const goods = [
-      { 
-        name: "Product name here",
-        category: "Top",
-        price: "100",
-        rating: "5",
-        discount: "10",
-        img: "assets/img/shop/shop_item.jpg"
+  const signup = [
+          
+  ];
+
+  const user = [{
+    id: 'signup',      
+    users: [
+      {
+        email: 'test@test.com',
+        password: 'test'
       },
-      { 
-        name: "Product name here",
-        category: "Top",
-        price: "100",
-        rating: "5",
-        discount: "10",
-        img: "assets/img/shop/shop_item.jpg"
-      },
-      { 
-        name: "Product name here",
-        category: "Top",
-        price: "100",
-        rating: "5",
-        discount: "10",
-        img: "assets/img/shop/shop_item.jpg"
-      },
-      { 
-        name: "Product name here",
-        category: "Top",
-        price: "100",
-        rating: "5",
-        discount: "10",
-        img: "assets/img/shop/shop_item.jpg"
+      {
+        email: 'test2@test.com',
+        password: 'test'
       }
-    ];
-    return {banners, goods, user, signup};
+    ]
+    
+  }];
+
+  const banners = [
+    { 
+      url: "#",
+      img: "assets/img/banners/banner_big.jpg"
+    },
+    { 
+      url: "#",
+      img: "assets/img/banners/banner_middle.jpg"
+    },
+    { 
+      url: "#",
+      img: "assets/img/banners/banner_small_1.jpg"
+    },
+    { 
+      url: "#",
+      img: "assets/img/banners/banner_small_2.jpg"
+    }
+  ];
+
+  const goods = [
+    { 
+      _id: 1,
+      name: "Product name here",
+      category: "Top",
+      price: "100",
+      rating: "5",
+      discount: "10",
+      img: "assets/img/shop/shop_item.jpg"
+    },
+    { 
+      _id: 2,
+      name: "Product name here",
+      category: "Top",
+      price: "100",
+      rating: "5",
+      discount: "10",
+      img: "assets/img/shop/shop_item.jpg"
+    },
+    { 
+      _id: 3,
+      name: "Product name here",
+      category: "Top",
+      price: "100",
+      rating: "5",
+      discount: "10",
+      img: "assets/img/shop/shop_item.jpg"
+    },
+    { 
+      _id: 4,
+      name: "Product name here",
+      category: "Top",
+      price: "100",
+      rating: "5",
+      discount: "10",
+      img: "assets/img/shop/shop_item.jpg"
+    }
+  ];
+  return {banners, goods, cart, user, signup, shoppingcart};
   }
 }

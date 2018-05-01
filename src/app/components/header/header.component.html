@@ -21,9 +21,9 @@
           </a>
         </li>
         <li class="usercart">
-          <a href="#">
-            <span class="usercart-amount amount">11</span>
-            <span class="usercart-totalprice">$1200</span>
+          <a routerLink="/shoppingcart" href="#" (click)="$event.preventDefault()">
+            <span class="usercart-amount amount">{{data.cart.totalQty}}</span>
+            <span class="usercart-totalprice">${{data.cart.totalPrice}}</span>
           </a>							
         </li>
       </ul>

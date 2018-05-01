@@ -531,7 +531,10 @@ input.subscription-email {
   color: #fff;
   text-align: center;
   line-height: 30px;
-  transition: .2s ease background; }
+  transition: .2s ease background;
+  border: none }
   .useraccount .btn-submit:hover {
     background: #f44336; }
+  .useraccount button:focus{
+    outline: none; }
 /*---------------------------------------*/

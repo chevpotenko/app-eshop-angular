@@ -14,4 +14,11 @@ export class GoodsService {
     return this.http.get<Goods[]>(this.url);
   }
 
+  addToCart(id) {
+    return this.http.get('api/cart/add/' + id);
+  }
+
+  getShoppingCart(){
+    return this.http.get('api/shoppingcart');
+  }
 }
