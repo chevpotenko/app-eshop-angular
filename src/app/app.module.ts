@@ -6,8 +6,8 @@ import { HttpClientModule }    from '@angular/common/http';
 //web api
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
-import { GoodsService } from './services/goods/goods.service';
 
+import { GoodsService } from './services/goods/goods.service';
 import { SharedService } from './services/shared/shared.service';
 
 import { AppComponent } from './app.component';

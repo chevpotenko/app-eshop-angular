@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../../services/user/user.service';
+import { SharedService } from '../../../services/shared/shared.service';
 import { User } from '../../../class/user';
 
 @Component({
@@ -14,20 +15,20 @@ import { User } from '../../../class/user';
 export class SignupComponent implements OnInit {
   public csrfToken:string;
   public err:string = '';
-  public isLogin: boolean = false;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService,
+              private router: Router,
+              private sharedService: SharedService) { }
 
   addUser($event, email, password) {
     $event.preventDefault(); 
     this.userService.addUser({email, password} as User).subscribe(
       (user) => {       
         this.err = '';
-        this.isLogin = true;
         this.router.navigate(['/user/profile']);
+        this.sharedService.setUserSignIn(true);
       },
       (err) => {
-        this.isLogin = false;
         if(Array.isArray(err.error.message)){
           this.err = err.error.message.join(', ');
         }else{          
@@ -44,7 +45,6 @@ export class SignupComponent implements OnInit {
     }
     this.csrfToken =  getCookie('XSRF-TOKEN');
     console.log(this.csrfToken);
-
     this.userService.getUser().subscribe((user) => {console.log(user)});
   }
 

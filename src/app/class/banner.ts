@@ -1,4 +1,4 @@
 export class Banner {
-    url: String;
-    img: String;
+    url: string;
+    img: string;
 }

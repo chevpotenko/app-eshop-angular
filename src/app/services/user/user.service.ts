@@ -25,5 +25,9 @@ export class UserService {
   getUser(): Observable<User> {
     return this.http.get<User>('api/user/signup');   
   }
-  
+
+  isUserSignin() {
+    return this.http.get('api/user/signin'); 
+  }
+    
 }

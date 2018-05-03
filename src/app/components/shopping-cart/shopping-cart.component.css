@@ -3,6 +3,9 @@
     width: 200px;
     text-align: center;
 }
+.shoppingcart-content{
+    margin-bottom: 40px;
+}
 .shoppingcart-list{
     padding: 0;
     margin: 40px 0 40px;
@@ -34,4 +37,19 @@ li:first-child{
 }
 .shoppingcart-results{
     font-weight: bold;
+}
+.btn-catalog {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background: #ffac03;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    transition: .2s ease background;
+    border: none;
+    text-decoration: none;
+}
+.btn-catalog:hover {
+    background: #f44336; 
 }

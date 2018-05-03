@@ -4,9 +4,10 @@
       <div class="auth">
         <ul class="auth-menu">
           <li><i class="fas fa-user-circle fa-2x"></i></li>
-          <li><a  routerLink="/user/signin">Login</a></li>
-          <li> | </li>
-          <li><a routerLink="/user/signup">SignUp</a></li>						
+          <li *ngIf="!data.user.signin"><a  routerLink="/user/signin">Login</a></li>
+          <li *ngIf="!data.user.signin"> | </li>
+          <li *ngIf="!data.user.signin"><a routerLink="/user/signup">SignUp</a></li>						
+          <li *ngIf="data.user.signin"><a href="/user/logout">Logout</a></li>						
         </ul>
       </div>
       <div class="logo">
@@ -21,7 +22,7 @@
           </a>
         </li>
         <li class="usercart">
-          <a routerLink="/shoppingcart" href="#" (click)="$event.preventDefault()">
+          <a routerLink="/shoppingcart">
             <span class="usercart-amount amount">{{data.cart.totalQty}}</span>
             <span class="usercart-totalprice">${{data.cart.totalPrice}}</span>
           </a>							
@@ -40,10 +41,10 @@
       </form>
       <nav class="nav">
         <ul class="mainmenu">
-          <li><a routerLink="/catalog">Men</a></li>
-          <li class="active"><a routerLink="/catalog">Women</a></li>
-          <li><a routerLink="/catalog">Bridal</a></li>
-          <li><a routerLink="/catalog">Baby&Kids</a></li>
+          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Men</a></li>
+          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Women</a></li>
+          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Bridal</a></li>
+          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Baby&Kids</a></li>
         </ul>
       </nav>
       <ul class="socialmenu">

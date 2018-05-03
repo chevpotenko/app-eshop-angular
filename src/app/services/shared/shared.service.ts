@@ -7,6 +7,9 @@ export class SharedService {
     cart: {
       totalQty: 0,
       totalPrice: 0
+    },
+    user: {
+      signin: false
     }    
   };
 
@@ -16,16 +19,24 @@ export class SharedService {
     this.data.cart.totalQty = amount;
   }
 
-  setCartTotalPrice(price){
-    this.data.cart.totalPrice = price;
+  getCartTotalQty(){
+    return this.data.cart.totalQty;
   }
 
-  getCartTotalQty(){
-     return this.data.cart.totalQty;
-  }
+  setCartTotalPrice(price){
+    this.data.cart.totalPrice = price;
+  }  
 
   getCartTotalPrice(){
      return this.data.cart.totalPrice;
+  }
+
+  setUserSignIn(signin){
+    this.data.user.signin = signin;
+  }  
+
+  getUserSignIn(){
+     return this.data.user.signin;
   }
 
 }

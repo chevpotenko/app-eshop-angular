@@ -45,20 +45,25 @@ createDb() {
           
   ];
 
-  const user = [{
-    id: 'signup',      
-    users: [
-      {
-        email: 'test@test.com',
-        password: 'test'
-      },
-      {
-        email: 'test2@test.com',
-        password: 'test'
-      }
-    ]
-    
-  }];
+  const user = [
+    {
+      id: 'signup',      
+      users: [
+        {
+          email: 'test@test.com',
+          password: 'test'
+        },
+        {
+          email: 'test2@test.com',
+          password: 'test'
+        }
+      ]
+    },
+    {
+      id: 'signin',      
+      signin: true
+    }
+  ];
 
   const banners = [
     { 
