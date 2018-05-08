@@ -539,3 +539,11 @@ input.subscription-email {
   .useraccount button:focus{
     outline: none; }
 /*---------------------------------------*/
+.clearfix:after{
+  content: ' ';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;  
+}
+/*---------------------------------------*/

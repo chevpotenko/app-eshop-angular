@@ -1,0 +1,54 @@
+.contact,
+.multiple{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.contact-main{
+    width: 64%;
+}
+.contact-aside{
+    width: 30%;
+}
+.contact-row{
+    margin-bottom: 20px;
+}
+.double .contact-item{
+    width: 45%;
+}
+.contact-item label span{
+    color: red;
+}
+.contact-item input,
+.contact-item textarea{
+    width: 100%;
+    box-sizing: border-box;
+}
+.contact-item textarea{
+    padding: 15px 20px;
+    resize: none;
+    border: 1px solid black;
+}
+.contact .btn--send {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background: #ffac03;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    transition: .2s ease background;
+    border: none;
+    cursor: pointer;
+}
+.contact .btn--send:hover {
+    background: #f44336; 
+}
+.contact-item textarea:focus,
+.contact button:focus{
+    outline: none; 
+}   
+.contact-aside .caption{
+    text-transform: uppercase;
+    color: #f44336;
+}

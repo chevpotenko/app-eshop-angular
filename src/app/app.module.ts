@@ -9,6 +9,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { GoodsService } from './services/goods/goods.service';
 import { SharedService } from './services/shared/shared.service';
+import { DataService } from './services/data/data.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -26,6 +27,8 @@ import { SignupComponent } from './components/user/signup/signup.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { SigninComponent } from './components/user/signin/signin.component';
 import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart.component';
+import { PageAboutComponent } from './components/page-about/page-about.component';
+import { PageContactComponent } from './components/page-contact/page-contact.component';
 
 
 @NgModule({
@@ -44,18 +47,20 @@ import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart
     SignupComponent,
     ProfileComponent,
     SigninComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    PageAboutComponent,
+    PageContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    HttpClientModule
-    // HttpClientInMemoryWebApiModule.forRoot(
-    //   InMemoryDataService
-    // )
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService
+    )
   ],
-  providers: [HttpClientModule, SharedService, GoodsService],
+  providers: [HttpClientModule, SharedService, DataService, GoodsService],
   bootstrap: [AppComponent]
 })
 

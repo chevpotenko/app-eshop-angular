@@ -3,6 +3,22 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   
 createDb() {
+
+  const pages = [
+    {
+      id: "about",
+      caption: "About",
+      description: "",
+      text: "Lorem ipsum dolor sit amet, enim ludus voluptatum eu pri. Per quot oratio ex, ex decore ornatus sit, vide wisi invidunt id vix. Ex ius quodsi definitiones, no nostro molestiae appellantur sed. Eu possit iudicabit referrentur vim, in graeco diceret assentior eum. Ius audire molestie fabellas ut. Iudico lobortis sed ut, inani regione eleifend mel et. Vix an habemus oportere pericula, usu reque perpetua forensibus an, veri natum usu cu. Suas consul omnium at cum, an eos habeo liber. Dolores mediocrem molestiae ex sit, viderer malorum forensibus et his. Has in cibo propriae, vidisse integre nam ut, cu vel minim invenire intellegebat. Ex duo melius dolores mnesarchum, mea possim numquam facilisis ei, at pri erant ridens delenit. Quo an omnes dolorem imperdiet, duo magna noluisse adversarium eu. Tation prompta evertitur duo ei, id dolor elaboraret his, sed ea iuvaret partiendo suscipiantur. Ut per tale assum dignissim, ut quo nibh numquam consetetur. Justo ridens eam an. Nam ad porro cetero sadipscing. Vix consul tractatos theophrastus et, eum ea fabellas consulatu. Eius idque senserit sit te. Adhuc appareat at ius, sed possim nusquam fabellas ea. Aliquam urbanitas per an, cu nibh posse putent nam, lorem inermis dolorem id pri. Dicat primis dictas.",
+      images: [
+        {
+          "caption": "Image",
+          "src": "assets/img/pages/about/image_1.jpg"
+        }
+      ]
+    }
+  ];  
+
   const cart = [{
     id: 'add',      
     totalQty: 2    
@@ -122,6 +138,6 @@ createDb() {
       img: "assets/img/shop/shop_item.jpg"
     }
   ];
-  return {banners, goods, cart, user, signup, shoppingcart};
+  return {banners, goods, cart, user, signup, shoppingcart, pages};
   }
 }
