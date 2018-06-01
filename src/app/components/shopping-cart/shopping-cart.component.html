@@ -1,26 +1,28 @@
 <div class="shoppingcart center">
-  <h2 class="section-title">Shopping cart</h2>
-  <div *ngIf="shoppingCart" class="shoppingcart-content">
-    <ul class="shoppingcart-list">
-      <li class="shoppingcart-item">
-        <span class="column name">Name</span>
-        <span class="column price">Price</span>           
-        <span class="column quantity">Quantity</span>
-        <span class="column total">Total</span>
-        <span class="column"></span>
-      </li>
-      <li *ngFor="let cartItem of shoppingCart.items" class="shoppingcart-item">
-        <span class="column name">{{cartItem.item.name}}</span>
-        <span class="column price">${{cartItem.item.price}}</span>           
-        <span class="column quantity">{{cartItem.qty}}</span>
-        <span class="column total">${{cartItem.total}}</span>
-        <span class="column">
-          <span class="btn-counter btn-increment">+</span>
-          <span class="btn-counter btn-decrement">-</span>
-        </span>
-      </li>
-    </ul>
-    <div class="shoppingcart-results">Total: ${{shoppingCart.totalPrice}}</div>
-  </div>
-  <div><a class="btn-catalog" routerLink="/catalog">Catalog</a></div>
+    <h2 class="section-title">Shopping cart</h2>
+    <div *ngIf="shoppingCart" class="shoppingcart-content">
+        <ul class="shoppingcart-list">
+            <li class="shoppingcart-item">
+                <span class="column name">Name</span>
+                <span class="column price">Price</span>           
+                <span class="column quantity">Quantity</span>
+                <span class="column total">Total</span>
+                <span class="column"></span>
+            </li>
+            <li *ngFor="let cartItem of shoppingCart.items" class="shoppingcart-item">
+                <span class="column name">{{cartItem.item.name}}</span>
+                <span class="column price">${{cartItem.item.price}}</span>           
+                <span class="column quantity">{{cartItem.qty}}</span>
+                <span class="column total">${{cartItem.total}}</span>
+                <span class="column">
+                <span class="btn-counter btn-increment">+</span>
+                <span class="btn-counter btn-decrement">-</span>
+                </span>
+            </li>
+        </ul>
+        <div class="shoppingcart-results">Total: ${{shoppingCart.totalPrice}}</div>
+    </div>
+    <div>
+        <a class="btn-catalog" routerLink="/catalog">Catalog</a>
+    </div>
 </div>

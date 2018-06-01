@@ -6,19 +6,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class GoodsService {
 
-  private url = 'api/goods';  
+	private url = 'api/goods';  
 
-  constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) {
+		
+	}
 
-  getGoods(): Observable<Goods[]> {
-    return this.http.get<Goods[]>(this.url);
-  }
+	getGoods(): Observable<Goods[]> {
+		return this.http.get<Goods[]>(this.url);
+	}
 
-  addToCart(id) {
-    return this.http.get('api/cart/add/' + id);
-  }
+	addToCart(id) {
+		return this.http.get('api/cart/add/' + id);
+	}
 
-  getShoppingCart(){
-    return this.http.get('api/shoppingcart');
-  }
+	getShoppingCart(){
+		return this.http.get('api/shoppingcart');
+	}
 }

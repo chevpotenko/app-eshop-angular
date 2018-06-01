@@ -1,58 +1,58 @@
 <div class="header">
-  <div class="header-row header-row--first">
-    <div class="header-content center">
-      <div class="auth">
-        <ul class="auth-menu">
-          <li><i class="fas fa-user-circle fa-2x"></i></li>
-          <li *ngIf="!data.user.signin"><a  routerLink="/user/signin">Login</a></li>
-          <li *ngIf="!data.user.signin"> | </li>
-          <li *ngIf="!data.user.signin"><a routerLink="/user/signup">SignUp</a></li>						
-          <li *ngIf="data.user.signin"><a href="/user/logout">Logout</a></li>						
-        </ul>
-      </div>
-      <div class="logo">
-        <a routerLink="/">
-          <img src="assets/img/logo.png" alt="">
-        </a>
-      </div>
-      <ul class="useractions">
-        <li class="userwishlist">
-          <a href="#">
-            <span class="userlikes-amount amount">11</span>
-          </a>
-        </li>
-        <li class="usercart">
-          <a routerLink="/shoppingcart">
-            <span class="usercart-amount amount">{{data.cart.totalQty}}</span>
-            <span class="usercart-totalprice">${{data.cart.totalPrice}}</span>
-          </a>							
-        </li>
-      </ul>
+    <div class="header-row header-row--first">
+        <div class="header-content center">
+            <div class="auth">
+                <ul class="auth-menu">
+                    <li><i class="fas fa-user-circle fa-2x"></i></li>
+                    <li *ngIf="!data.user.signin"><a  routerLink="/user/signin">Login</a></li>
+                    <li *ngIf="!data.user.signin"> | </li>
+                    <li *ngIf="!data.user.signin"><a routerLink="/user/signup">SignUp</a></li>						
+                    <li *ngIf="data.user.signin"><a href="/user/logout">Logout</a></li>						
+                </ul>
+            </div>
+            <div class="logo">
+                <a routerLink="/">
+                    <img src="assets/img/logo.png" alt="">
+                </a>
+            </div>
+            <ul class="useractions">
+                <li class="userwishlist">
+                    <a href="#">
+                        <span class="userlikes-amount amount">11</span>
+                    </a>
+                </li>
+                <li class="usercart">
+                    <a routerLink="/shoppingcart">
+                        <span class="usercart-amount amount">{{data.cart.totalQty}}</span>
+                        <span class="usercart-totalprice">${{data.cart.totalPrice}}</span>
+                    </a>							
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
-  <div class="header-row header-row--second">
-    <div class="header-content center">
-      <form action="#" class="search">
-        <i class="fas fa-search"></i>
-        <input type="text"
-            name="query"
-            value=""
-            autocomplete="off">
-      </form>
-      <nav class="nav">
-        <ul class="mainmenu">
-          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Men</a></li>
-          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Women</a></li>
-          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Bridal</a></li>
-          <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Baby&Kids</a></li>
-        </ul>
-      </nav>
-      <ul class="socialmenu">
-        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      </ul>
-    </div>					
-  </div>		
+    <div class="header-row header-row--second">
+        <div class="header-content center">
+            <form action="#" class="search">
+                <i class="fas fa-search"></i>
+                <input type="text"
+                    name="query"
+                    value=""
+                    autocomplete="off">
+            </form>
+            <nav class="nav">
+                <ul class="mainmenu">
+                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Men</a></li>
+                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Women</a></li>
+                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Bridal</a></li>
+                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Baby&Kids</a></li>
+                </ul>
+            </nav>
+            <ul class="socialmenu">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </div>					
+    </div>		
 </div>

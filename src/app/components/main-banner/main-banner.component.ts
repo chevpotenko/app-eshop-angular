@@ -3,21 +3,23 @@ import { MainBannerService } from '../../services/main-banner/main-banner.servic
 import { Banner } from '../../class/banner';
 
 @Component({
-  selector: 'app-main-banner',
-  templateUrl: './main-banner.component.html',
-  styleUrls: ['./main-banner.component.css'],
-  providers: [MainBannerService],
+    selector: 'app-main-banner',
+    templateUrl: './main-banner.component.html',
+    styleUrls: ['./main-banner.component.css'],
+    providers: [MainBannerService],
 })
 export class MainBannerComponent implements OnInit {
 
-  public banners: Banner[];
+    public banners: Banner[];
 
-  constructor(private mainBannerService: MainBannerService) { }
+    constructor(private mainBannerService: MainBannerService) {
 
-  ngOnInit() {
-    this.mainBannerService.getMainBanner().subscribe((result) => {
-      this.banners = result;
-    });
-  }
+    }
+
+    ngOnInit() {
+        this.mainBannerService.getMainBanner().subscribe((result) => {
+            this.banners = result;
+        });
+    }
 
 }

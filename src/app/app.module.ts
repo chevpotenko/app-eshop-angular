@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule }    from '@angular/common/http';
 
-//web api
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
@@ -32,37 +31,39 @@ import { PageContactComponent } from './components/page-contact/page-contact.com
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ShopListComponent,
-    AdviceComponent,
-    SubscriptionComponent,
-    MainBannerComponent,
-    BrandsComponent,
-    ArticlesComponent,
-    PageCatalogComponent,
-    PageIndexComponent,
-    SignupComponent,
-    ProfileComponent,
-    SigninComponent,
-    ShoppingCartComponent,
-    PageAboutComponent,
-    PageContactComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService
-    )
-  ],
-  providers: [HttpClientModule, SharedService, DataService, GoodsService],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		FooterComponent,
+		ShopListComponent,
+		AdviceComponent,
+		SubscriptionComponent,
+		MainBannerComponent,
+		BrandsComponent,
+		ArticlesComponent,
+		PageCatalogComponent,
+		PageIndexComponent,
+		SignupComponent,
+		ProfileComponent,
+		SigninComponent,
+		ShoppingCartComponent,
+		PageAboutComponent,
+		PageContactComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpModule,
+		HttpClientModule,
+		HttpClientInMemoryWebApiModule.forRoot(
+			InMemoryDataService
+		)
+	],
+	providers: [HttpClientModule, SharedService, DataService, GoodsService],
+	bootstrap: [AppComponent]
 })
 
 
-export class AppModule { }
+export class AppModule {
+
+}

@@ -6,12 +6,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class MainBannerService {
 
-  private url = 'api/banners';  
+	private url = 'api/banners';  
 
-  constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) {
+		
+	}
 
-  getMainBanner(): Observable<Banner[]> {
-    return this.http.get<Banner[]>(this.url);
-  }
+	getMainBanner(): Observable<Banner[]> {
+		return this.http.get<Banner[]>(this.url);
+	}
 
 }
