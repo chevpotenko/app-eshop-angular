@@ -1,0 +1,82 @@
+.shop.catalog{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-between
+}
+.catalog-controls{
+    width: 20%;
+}
+.catalog-results{
+    width: 76%;
+}
+.catalog-info{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;    
+}
+.form-search{
+    position: relative;
+}
+.btn-catalog-search{    
+    position: absolute;    
+    right: 5px;
+    top: 5px;
+    background: none;
+    border: none;
+}
+.form-search-input{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+}
+.catalog-info{
+    display: flex;
+    justify-content: space-between;
+}
+.catalog-title{
+    font: 18px 'Merriweather', serif;
+}
+.pagination{
+    margin-left: 40px;
+}
+.pagination-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.category-list{
+    padding: 0 0 0 15px; 
+}
+.pagination-list li{
+    display: inline-block; 
+}
+.category-caption{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #eee;   
+    cursor: pointer;
+}
+.catalog-info .column-right{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+.category-item{
+    display: block;
+    margin-bottom: 5px;
+}
+.category .checkbox{
+    margin-right: 10px;
+}
+.category-icon{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 8px;
+}
+.catalog-controls .section-name{
+    font: 16px 'Merriweather', serif;
+}

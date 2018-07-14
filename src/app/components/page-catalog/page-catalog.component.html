@@ -1,4 +1,121 @@
-<section class="section shop center"> 
-    <h2 class="section-title">Catalog</h2> 
-    <app-shop-list></app-shop-list>
-</section>
+<div class="section shop catalog center"> 
+    <div class="catalog-controls">
+        <div class="catalog-search">
+            <p class="section-name">Search Option</p>
+            <form class="form-search" name="catalog-search">                
+                <input class="form-search-input" type="text">
+                <button class="btn-catalog-search" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <div class="catalog-filter">
+            <p class="section-name">Filter By:</p>
+            <form class="form-filter">
+                <div class="category">
+                    <div 
+                        class="category-caption"
+                        [ngClass]="{'active': filterCategories.categories}" 
+                        (click)="toggleCategory('categories')">
+                        <span>Categories</span>
+                        <span class="category-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="category-list">
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="top">
+                            Top
+                        </label>
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="bottom" id="bottom">
+                            Bottom
+                        </label>
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="dress" id="accessories">
+                            Accessories
+                        </label>
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="footwear" id="footwear">
+                            Footwear
+                        </label>
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="other" id="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+                <div class="category">
+                    <div 
+                        class="category-caption"
+                        [ngClass]="{'active': filterCategories.price}" 
+                        (click)="toggleCategory('price')">
+                        <span>Price</span>
+                        <span class="category-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>                   
+                    <div class="category-list">
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="top">
+                            Top
+                        </label>
+                    </div>
+                </div>                                
+                <div class="category">
+                    <div class="category-caption">Size</div>
+                    <div class="category-list">
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="top">
+                            Top
+                        </label>
+                    </div>
+                </div>                                
+                <div class="category">
+                    <div class="category-caption">Brand</div>
+                    <div class="category-list">
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="top">
+                            Top
+                        </label>
+                    </div>
+                </div>                                
+                <div class="category">
+                    <div class="category-caption">Color</div>
+                    <div class="category-list">
+                        <label class="category-item">
+                            <input class="checkbox" type="checkbox" name="top">
+                            Top
+                        </label>
+                    </div>
+                </div>                                
+            </form>
+        </div>  
+    </div>
+    <div class="catalog-results">         
+        <div class="catalog-info">
+            <div class="column">
+                <div class="catalog-title">102 Items Found</div>
+            </div>
+            <div class="column column-right">
+                <div>
+                    <span>Sort by:</span>
+                    <select name="shopsort">
+                        <option value="size">Size</option>
+                        <option value="price">Price</option>
+                    </select>
+                </div>
+                <div class="pagination">
+                    <ul class="pagination-list">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+            </div>                        
+        </div>
+        <app-shop-list></app-shop-list>
+    </div>    
+</div>
