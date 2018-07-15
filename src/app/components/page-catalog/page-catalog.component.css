@@ -6,6 +6,9 @@
 .catalog-controls{
     width: 20%;
 }
+.catalog-controls .section-name{
+    font: 16px 'Merriweather', serif;
+}
 .catalog-results{
     width: 76%;
 }
@@ -14,13 +17,28 @@
     margin-bottom: 10px;
     border-bottom: 1px solid #eee;    
 }
+/*-------------------------------------*/
+.category{
+    display: flex;
+    flex-wrap: wrap;
+}
+.category-column{
+    width: 50%
+}
+.category{
+    min-height: 250px;
+    background: black;
+    margin: -30px auto 30px;
+    color: #fff;
+}
+/*-------------------------------------*/
 .form-search{
     position: relative;
 }
 .btn-catalog-search{    
     position: absolute;    
     right: 5px;
-    top: 5px;
+    top: 9px;
     background: none;
     border: none;
 }
@@ -29,6 +47,72 @@
     display: inline-block;
     width: 100%;
     padding: 8px;
+}
+/*-------------------------------------*/
+.param-caption{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #eee;   
+    cursor: pointer;
+}
+.param.active .param-list {
+    max-height: 500px;
+    transition: max-height .3s ease-in;
+}
+.param-item{
+    position: relative;
+    padding-left: 20px;
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.param-list{
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0 0 15px;
+    transition: max-height .3s ease-out; 
+}
+.param-icon{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 8px;
+    transform: rotate(0deg);
+    transition: transform .3s ease;
+}
+.param.active .param-icon {
+    transform: rotate(180deg);
+}
+.param .checkbox{
+    height: 0;
+    width: 0;
+    visibility: hidden;     
+}
+.param .checkbox-sign{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-radius:2px; 
+}
+.param .checkbox:checked + .checkbox-sign{    
+    background: #000;
+}
+/*-------------------------------------*/
+.catalog-info .column-right{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+.select-sort{
+    width: 130px;
+    height: 30px;    
+    margin-left: 20px;
 }
 .catalog-info{
     display: flex;
@@ -45,38 +129,22 @@
     padding: 0;
     list-style: none;
 }
-.category-list{
-    padding: 0 0 0 15px; 
-}
 .pagination-list li{
     display: inline-block; 
 }
-.category-caption{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
-    margin-bottom: 7px;
-    border-bottom: 1px solid #eee;   
-    cursor: pointer;
+.pagination-list a{
+    display:inline-block;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    color: #333;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: none;
+    transition: background-color .3s ease; 
 }
-.catalog-info .column-right{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
+.pagination-list a:hover{
+    background-color: #bdbdbd;
 }
-.category-item{
-    display: block;
-    margin-bottom: 5px;
-}
-.category .checkbox{
-    margin-right: 10px;
-}
-.category-icon{
-    display: inline-block;
-    margin-right: 5px;
-    font-size: 8px;
-}
-.catalog-controls .section-name{
-    font: 16px 'Merriweather', serif;
-}
+/*-------------------------------------*/

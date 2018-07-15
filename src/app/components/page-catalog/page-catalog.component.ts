@@ -13,11 +13,11 @@ export class PageCatalogComponent implements OnInit {
         price: false,        
         size: false,
         brand: false,
-        colour: false
+        color: false
     };
     constructor(protected elementRef: ElementRef) { }
     
-    toggleCategory(name){
+    toggleParam(name){
         for (let category in this.filterCategories){           
             this.filterCategories[category] = (name !== category) ? false : true; 
         }

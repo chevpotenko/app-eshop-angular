@@ -1,3 +1,19 @@
+<div class="category">
+    <div class="center">    
+        <div class="category-column">
+            <div class="category-description">
+                <div>
+                    <a href="#">Home</a>
+                    /
+                    <a href="#">Women</a>
+                </div>
+                <div>Women</div>
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quae enim dolore itaque maiores! Vero illo cupiditate voluptatibus tenetur amet natus nulla iste, quam nihil sint debitis quia minima nemo!</div>
+            </div>
+        </div>
+        <div class="category-column"></div>
+    </div>
+</div>
 <div class="section shop catalog center"> 
     <div class="catalog-controls">
         <div class="catalog-search">
@@ -12,79 +28,102 @@
         <div class="catalog-filter">
             <p class="section-name">Filter By:</p>
             <form class="form-filter">
-                <div class="category">
-                    <div 
-                        class="category-caption"
-                        [ngClass]="{'active': filterCategories.categories}" 
-                        (click)="toggleCategory('categories')">
+                <div class="param" [ngClass]="{'active': filterCategories.categories}">
+                    <div class="param-caption"                         
+                        (click)="toggleParam('categories')">
                         <span>Categories</span>
-                        <span class="category-icon">
+                        <span class="param-icon">
                             <i class="fas fa-chevron-down"></i>
                         </span>
                     </div>
-                    <div class="category-list">
-                        <label class="category-item">
+                    <div class="param-list">
+                        <label class="param-item">
                             <input class="checkbox" type="checkbox" name="top">
+                            <span class="checkbox-sign"></span>
                             Top
                         </label>
-                        <label class="category-item">
-                            <input class="checkbox" type="checkbox" name="bottom" id="bottom">
+                        <label class="param-item">
+                            <input class="checkbox" type="checkbox" name="bottom">
+                            <span class="checkbox-sign"></span>
                             Bottom
                         </label>
-                        <label class="category-item">
-                            <input class="checkbox" type="checkbox" name="dress" id="accessories">
+                        <label class="param-item">
+                            <input class="checkbox" type="checkbox" name="dress">
+                            <span class="checkbox-sign"></span>
                             Accessories
                         </label>
-                        <label class="category-item">
-                            <input class="checkbox" type="checkbox" name="footwear" id="footwear">
+                        <label class="param-item">
+                            <input class="checkbox" type="checkbox" name="footwear">
+                            <span class="checkbox-sign"></span>
                             Footwear
                         </label>
-                        <label class="category-item">
-                            <input class="checkbox" type="checkbox" name="other" id="other">
+                        <label class="param-item">
+                            <input class="checkbox" type="checkbox" name="other">
+                            <span class="checkbox-sign"></span>
                             Other
                         </label>
                     </div>
                 </div>
-                <div class="category">
-                    <div 
-                        class="category-caption"
-                        [ngClass]="{'active': filterCategories.price}" 
-                        (click)="toggleCategory('price')">
+                <div class="param" [ngClass]="{'active': filterCategories.price}">
+                    <div class="param-caption"
+                        (click)="toggleParam('price')">
                         <span>Price</span>
-                        <span class="category-icon">
+                        <span class="param-icon">
                             <i class="fas fa-chevron-down"></i>
                         </span>
                     </div>                   
-                    <div class="category-list">
-                        <label class="category-item">
+                    <div class="param-list">
+                        <label class="param-item">
                             <input class="checkbox" type="checkbox" name="top">
+                            <span class="checkbox-sign"></span>
                             Top
                         </label>
                     </div>
                 </div>                                
-                <div class="category">
-                    <div class="category-caption">Size</div>
-                    <div class="category-list">
-                        <label class="category-item">
+                <div class="param" [ngClass]="{'active': filterCategories.size}">
+                    <div class="param-caption"                         
+                        (click)="toggleParam('size')">
+                        <span>Size</span>
+                        <span class="param-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="param-list">
+                        <label class="param-item">
                             <input class="checkbox" type="checkbox" name="top">
+                            <span class="checkbox-sign"></span>
                             Top
                         </label>
                     </div>
                 </div>                                
-                <div class="category">
-                    <div class="category-caption">Brand</div>
-                    <div class="category-list">
-                        <label class="category-item">
+                <div class="param" [ngClass]="{'active': filterCategories.brand}">
+                    <div class="param-caption"                         
+                        (click)="toggleParam('brand')">
+                        <span>Brand</span>
+                        <span class="param-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="param-list">
+                        <label class="param-item">
                             <input class="checkbox" type="checkbox" name="top">
+                            <span class="checkbox-sign"></span>
                             Top
                         </label>
                     </div>
                 </div>                                
-                <div class="category">
-                    <div class="category-caption">Color</div>
-                    <div class="category-list">
-                        <label class="category-item">
+                <div class="param" [ngClass]="{'active': filterCategories.color}">
+                    <div class="param-caption"                         
+                        (click)="toggleParam('color')">
+                        <span>Color</span>
+                        <span class="param-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="param-list">
+                        <label class="param-item">
                             <input class="checkbox" type="checkbox" name="top">
+                            <span class="checkbox-sign"></span>
                             Top
                         </label>
                     </div>
@@ -100,9 +139,9 @@
             <div class="column column-right">
                 <div>
                     <span>Sort by:</span>
-                    <select name="shopsort">
+                    <select class="select-sort">
                         <option value="size">Size</option>
-                        <option value="price">Price</option>
+                        <option value="name">Name</option>
                     </select>
                 </div>
                 <div class="pagination">
