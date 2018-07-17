@@ -1,17 +1,19 @@
 <div class="category">
     <div class="center">    
-        <div class="category-column">
-            <div class="category-description">
-                <div>
-                    <a href="#">Home</a>
-                    /
-                    <a href="#">Women</a>
+        <div class="category-description">
+            <div class="category-column">
+                <div class="breadcrumbs">
+                    <a routerLink="/">Home</a>
+                    <span>/</span>
+                    <a routerLink="{{'/' + categoryName}}">{{categoryName}}</a>
                 </div>
-                <div>Women</div>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quae enim dolore itaque maiores! Vero illo cupiditate voluptatibus tenetur amet natus nulla iste, quam nihil sint debitis quia minima nemo!</div>
+                <div class="category-name">{{categoryName}}</div>
+                <div class="category-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Culpa quae enim dolore itaque maiores!</div>
+            </div>
+            <div class="category-column category-img">
+                <img src="assets/img/categories/woman.jpg" alt="categories photo">
             </div>
         </div>
-        <div class="category-column"></div>
     </div>
 </div>
 <div class="section shop catalog center"> 

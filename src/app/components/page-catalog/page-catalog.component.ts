@@ -1,4 +1,5 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-page-catalog',
@@ -6,8 +7,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
     styleUrls: ['./page-catalog.component.css']
 })
 export class PageCatalogComponent implements OnInit {
-    @ViewChild("tref", {read: ElementRef}) tref: ElementRef;
-
+   
     filterCategories = {
         categories: false,
         price: false,        
@@ -15,7 +15,10 @@ export class PageCatalogComponent implements OnInit {
         brand: false,
         color: false
     };
-    constructor(protected elementRef: ElementRef) { }
+
+    categoryName:string = ''; 
+
+    constructor(private route: ActivatedRoute) { }
     
     toggleParam(name){
         for (let category in this.filterCategories){           
@@ -23,7 +26,13 @@ export class PageCatalogComponent implements OnInit {
         }
     }
 
-    ngOnInit() {
+    getCategoryName(){
+        return this.route.snapshot.routeConfig.path;
     }
+
+    ngOnInit() {
+        this.categoryName = this.getCategoryName();
+    }
+
 
 }
