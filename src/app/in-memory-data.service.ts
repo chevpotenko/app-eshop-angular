@@ -102,8 +102,8 @@ createDb() {
 
   const goods = [
     { 
-      _id: 1,
-      name: "Product name here",
+      id: 1,
+      name: "Product name 1",
       category: "Top",
       price: "100",
       rating: "5",
@@ -111,8 +111,8 @@ createDb() {
       img: "assets/img/shop/shop_item.jpg"
     },
     { 
-      _id: 2,
-      name: "Product name here",
+      id: 2,
+      name: "Product name 2",
       category: "Top",
       price: "100",
       rating: "5",
@@ -120,8 +120,8 @@ createDb() {
       img: "assets/img/shop/shop_item.jpg"
     },
     { 
-      _id: 3,
-      name: "Product name here",
+      id: 3,
+      name: "Product name 3",
       category: "Top",
       price: "100",
       rating: "5",
@@ -129,8 +129,8 @@ createDb() {
       img: "assets/img/shop/shop_item.jpg"
     },
     { 
-      _id: 4,
-      name: "Product name here",
+      id: 4,
+      name: "Product name 4",
       category: "Top",
       price: "100",
       rating: "5",

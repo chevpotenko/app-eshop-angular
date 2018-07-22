@@ -28,6 +28,7 @@ import { SigninComponent } from './components/user/signin/signin.component';
 import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart.component';
 import { PageAboutComponent } from './components/page-about/page-about.component';
 import { PageContactComponent } from './components/page-contact/page-contact.component';
+import { PageShopIdComponent } from './components/page-shop-id/page-shop-id.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { PageContactComponent } from './components/page-contact/page-contact.com
 		SigninComponent,
 		ShoppingCartComponent,
 		PageAboutComponent,
-		PageContactComponent
+		PageContactComponent,
+		PageShopIdComponent
 	],
 	imports: [
 		BrowserModule,

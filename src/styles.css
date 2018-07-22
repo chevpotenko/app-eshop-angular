@@ -288,7 +288,9 @@ input.subscription-email {
   background: #333;
   color: #fff;
   line-height: 30px;
-  text-align: center; }
+  text-align: center;
+  cursor: default;
+ }
 
 .shop-item-like {
   position: absolute;
@@ -326,8 +328,12 @@ input.subscription-email {
 .shop-item-name {
   margin: 0;
   padding: 9px 0;
+  }
+
+.shop-item-name a{  
   font: 18px Merriweather serif;
-  color: #333333; }
+  color: #333333;
+  text-decoration: none; }
 
 .shop-item-category {
   color: #bdbdbd; }

@@ -8,21 +8,23 @@ import { SigninComponent } from './components/user/signin/signin.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { PageAboutComponent } from './components/page-about/page-about.component';
 import { PageContactComponent } from './components/page-contact/page-contact.component';
+import { PageShopIdComponent } from './components/page-shop-id/page-shop-id.component';
 
 
 const routes: Routes = [  
-  { path: 'catalog', component: PageCatalogComponent},  
-  { path: 'user/signup', component: SignupComponent},
-  { path: 'user/signin', component: SigninComponent},
-  { path: 'user/profile', component: ProfileComponent},
-  { path: 'shoppingcart', component: ShoppingCartComponent},
-  { path: 'about', component: PageAboutComponent},
-  { path: 'contact', component: PageContactComponent},
-  { path: '', component: PageIndexComponent}
+    { path: 'catalog', component: PageCatalogComponent},
+    { path: 'goods/:id', component: PageShopIdComponent },  
+    { path: 'user/signup', component: SignupComponent},
+    { path: 'user/signin', component: SigninComponent},
+    { path: 'user/profile', component: ProfileComponent},
+    { path: 'shoppingcart', component: ShoppingCartComponent},
+    { path: 'about', component: PageAboutComponent},
+    { path: 'contact', component: PageContactComponent},
+    { path: '', component: PageIndexComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [ RouterModule ]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

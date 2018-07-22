@@ -1,0 +1,99 @@
+figure{
+    margin: 0;   
+}
+.product-content,
+.product-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/*------------------------------------*/
+.product-info{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+.product-info .row{
+    display: flex;
+    align-items: center;
+}
+.product .caption{
+    margin: 20px 0;
+    text-align: center;
+}
+.product-name{
+    margin: 0 0 10px;
+}
+.product-categories{
+    margin: 0;
+}
+.column{
+    width: 49%;
+}
+.column--right{
+    text-align: right;
+}
+.product-price{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.discount-percent{
+    display: inline-block;
+    margin-right: 5px;
+    padding: 3px;
+    background-color: red;
+    font-size: 12px;
+    color: white;
+    border-radius: 3px;
+}
+.discount-sum{
+    text-decoration: line-through;
+}
+/*------------------------------------*/
+.params-table td{
+    padding-bottom: 15px;
+}
+.params-table td:nth-child(2){
+    width: 40%;
+    text-align: right;
+}
+.param-size-value span{
+    display: inline-block;
+    border: 1px solid black;
+    height: 22px;
+    width: 22px;
+    line-height: 23px;
+    text-align: center
+}
+.param-color span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+.param-color .beige{
+    background-color: beige;    
+}
+.param-color .red{
+    background-color:red;
+}
+.param-color .orange{
+    background-color: orange;
+}
+.param-delivery span{
+    display: inline-block;
+}
+.param-delivery .free{
+    padding: 0 3px;
+    background-color: green;
+    color: white;
+    line-height: 20px;
+}
+/*------------------------------------*/
+.image{
+    position: relative;
+}
+/*------------------------------------*/

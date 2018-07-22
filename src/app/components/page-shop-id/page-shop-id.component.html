@@ -1,0 +1,98 @@
+<section *ngIf="product" class="section contact center"> 
+    <div class="product center">
+        <div class="caption">
+            <h2 class="product-name">{{product.name}}</h2>
+            <p class="product-categories">Women/Dress</p>
+        </div>
+        <div class="product-content">
+            <div class="column">
+                <figure class="image">
+                    <img [attr.src]="product.img" alt="product">
+                    <div class="shop-item-like">
+                        <span>
+                            <i class="far fa-heart fa-2x"></i>
+                        </span>
+                        <span class="active">
+                            <i class="fas fa-heart fa-2x"></i>
+                        </span>
+                    </div>
+                </figure>
+            </div>
+            <div class="column">
+                <div class="product-info">
+                    <div class="column">
+                        <div class="row">
+                            <span class="product-price">${{product.price}}</span>
+                            <span class="discount-percent">30% <span>OFF</span></span>
+                            <span class="available-quantity">5 pieces left</span>
+                        </div>
+                        <div class="row">                            
+                            <span class="discount-sum">$1000</span>
+                        </div>                        
+                    </div>                    
+                    <div class="column column--right">
+                        <div class="">
+                            <span class="product-review">7 review</span>
+                        </div>  
+                    </div>                    
+                </div>
+                <div class="product-description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusamus soluta dignissimos rerum nulla, ratione optio quo at harum! Quae mollitia illo placeat sunt, sequi laborum ut modi debitis amet.</p>
+                </div>
+                <div class="params">
+                    <table class="params-table">
+                        <tr>
+                            <td>Size</td>
+                            <td class="param-size-value">
+                                <span>S</span>
+                                <span class="active">M</span>
+                                <span>L</span>
+                                <span class="readonly">XL</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td class="param-color">
+                                <span class="beige"></span>
+                                <span class="orange"></span>
+                                <span class="red"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Quantity</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td class="param-delivery">
+                                <span>US & Canada</span>
+                                <span class="free">Free Sheepping</span>
+                                <span>$10 Worldwide</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="product-control">
+                    <button class="btn">BUY NOW</button>
+                    <button class="btn">ADD TO MY CART</button>
+                </div>
+                <div class="product-share">
+                    <h4>Share on:</h4>
+                    <div>
+                        <ul class="socialmenu">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h3>Product Detail</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio accusamus culpa facere ipsam sed illo debitis mollitia sit vel temporibus, qui dolorem quasi, maxime nam possimus dicta odit, quos cupiditate.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio accusamus culpa facere ipsam sed illo debitis mollitia sit vel temporibus, qui dolorem quasi, maxime nam possimus dicta odit, quos cupiditate.</p>
+                </div>
+            </div>
+        </div>         
+    </div>
+</section>
