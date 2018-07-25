@@ -1,11 +1,27 @@
 <section class="subscription center">
     <h2 class="subscription-title">Subscribe our newsletter and  keep update fo new product & Promotion</h2>
-    <form action="#" class="subscription-form">
-        <input type="text" 
+    <form #form="ngForm" class="subscription-form">
+        <input type="email"
+            ngModel           
+            [email]="true"
+            #email="ngModel"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
             name="subscription"
-            value=""
+            value=""            
             placeholder="Your Email Address"
+            [class.error]="!email.valid && !email.pristine"
             class="subscription-email">
-        <input type="submit" class="subscription-submit" value="SUBSCRIBE">
+        <input type="submit"
+                (click)="subscribe($event, form, email)"
+                [disabled]="!email.valid"
+                [class.disabled]="!email.valid"
+                class="subscription-submit"
+                value="SUBSCRIBE">
     </form>
+    <div class="overlay" *ngIf="isOverlay" (click)="toggleOverlay()">
+		<div class="popup">
+            <p>You have successfully subscribed to Uinity Fashion!</p>
+            <div class="btn-close-popup">x</div>
+        </div>
+	</div>
 </section>
