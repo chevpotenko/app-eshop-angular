@@ -29,6 +29,6 @@ export class DataService {
 
     public update<T>(url: string, id: number, itemToUpdate: any): Observable<T> {
         return this.http.put<T>(url + id, itemToUpdate);
-    }
+    } 
 
 }

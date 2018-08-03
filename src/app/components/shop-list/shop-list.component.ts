@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GoodsService } from '../../services/goods/goods.service';
+import { DataService } from '../../services/data/data.service';
 import { SharedService } from '../../services/shared/shared.service';
-import { Goods } from '../../class/goods';
 
 @Component({
 	selector: 'app-shop-list',
@@ -11,26 +10,26 @@ import { Goods } from '../../class/goods';
 
 export class ShopListComponent implements OnInit {
 
-	public goods: Goods[];
+	public goods;
 	
-	constructor(private goodsService: GoodsService,
+	constructor(private dataService: DataService,
 				private sharedService: SharedService) {
 
 	}
 
 	ngOnInit() {
-		this.goodsService.getGoods().subscribe((result) => {
+		this.dataService.getAll('api/goods').subscribe((result) => {
 			this.goods = result;
 		});    
 	}
 
 	addToCart($event, id) {
 		$event.preventDefault();
-		this.goodsService.addToCart(id).subscribe((result) => { 
+		this.dataService.getSingle('api/cart/add/', id).subscribe((result) => { 
 			let cart:any = result;      
 			this.sharedService.setCartTotalQty(cart.totalQty);
 			this.sharedService.setCartTotalPrice(cart.totalPrice);
 		});
-	}
+	} 
 
 }

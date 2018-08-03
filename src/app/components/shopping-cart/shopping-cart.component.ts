@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GoodsService } from '../../services/goods/goods.service';
+import { DataService } from '../../services/data/data.service';
 
 @Component({
     selector: 'app-shopping-cart',
@@ -10,12 +10,12 @@ export class ShoppingCartComponent implements OnInit {
     
     public shoppingCart;
 
-    constructor(private goodsService: GoodsService) {
+    constructor(private dataService: DataService) {
 
     }
 
     ngOnInit() {
-        this.goodsService.getShoppingCart().subscribe(result => {
+        this.dataService.getAll('api/shoppingcart').subscribe(result => {
             console.log(result);
             this.shoppingCart = result;
         })

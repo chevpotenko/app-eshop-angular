@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { MainBannerService } from '../../services/main-banner/main-banner.service';
+import { DataService } from '../../services/data/data.service';
 import { Banner } from '../../class/banner';
 
 @Component({
     selector: 'app-main-banner',
     templateUrl: './main-banner.component.html',
-    styleUrls: ['./main-banner.component.css'],
-    providers: [MainBannerService],
+    styleUrls: ['./main-banner.component.css']
 })
 export class MainBannerComponent implements OnInit {
 
-    public banners: Banner[];
+    public banners;
 
-    constructor(private mainBannerService: MainBannerService) {
+    constructor(private dataService: DataService) {
 
     }
 
     ngOnInit() {
-        this.mainBannerService.getMainBanner().subscribe((result) => {
+        this.dataService.getAll('api/banners').subscribe((result) => {
             this.banners = result;
         });
     }
-
 }

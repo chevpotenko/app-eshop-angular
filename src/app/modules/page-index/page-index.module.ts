@@ -40,4 +40,5 @@ import { ArticlesComponent } from '../../components/articles/articles.component'
         ArticlesComponent        	
     ]
 })
+
 export class PageIndexModule { }
