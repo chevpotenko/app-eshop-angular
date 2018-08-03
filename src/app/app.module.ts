@@ -7,7 +7,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
-import { GoodsService } from './services/goods/goods.service';
+import { UserService } from './services/user/user.service';
 import { SharedService } from './services/shared/shared.service';
 import { DataService } from './services/data/data.service';
 
@@ -49,7 +49,7 @@ import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart
 			InMemoryDataService
 		)		
 	],
-	providers: [HttpClientModule, SharedService, DataService, GoodsService],
+	providers: [HttpClientModule, SharedService, DataService, UserService],
 	bootstrap: [AppComponent]
 })
 
