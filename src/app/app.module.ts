@@ -12,11 +12,10 @@ import { SharedService } from './services/shared/shared.service';
 import { DataService } from './services/data/data.service';
 
 import { PageIndexModule } from './modules/page-index/page-index.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { PageCatalogComponent } from './components/page-catalog/page-catalog.component';
-import { PageIndexComponent } from './components/page-index/page-index.component';
 import { PageAboutComponent } from './components/page-about/page-about.component';
 import { PageContactComponent } from './components/page-contact/page-contact.component';
 import { PageShopIdComponent } from './components/page-shop-id/page-shop-id.component';
@@ -29,7 +28,6 @@ import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart
 	declarations: [
 		AppComponent,		
 		PageCatalogComponent,
-		PageIndexComponent,
 		PageAboutComponent,
 		PageContactComponent,
 		PageShopIdComponent,
@@ -40,16 +38,21 @@ import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart
 	],
 	imports: [
 		BrowserModule,
-		FormsModule,		
+		FormsModule,
+		PageIndexModule,		
 		AppRoutingModule,
-		PageIndexModule,
 		HttpModule,
 		HttpClientModule,
 		HttpClientInMemoryWebApiModule.forRoot(
 			InMemoryDataService
 		)		
 	],
-	providers: [HttpClientModule, SharedService, DataService, UserService],
+	providers: [
+		HttpClientModule,
+		SharedService,
+		DataService,
+		UserService
+	],
 	bootstrap: [AppComponent]
 })
 

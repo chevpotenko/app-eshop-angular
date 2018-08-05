@@ -8,12 +8,16 @@ import { DataService } from '../../services/data/data.service';
 })
 export class PageAboutComponent implements OnInit {
 
-    public data = {};
+    public data = null;
 
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataService) {
+        
+    }
 
     ngOnInit() {
-        this.dataService.getAll('api/pages/about').subscribe(result => this.data = result);
+        this.dataService.getAll('api/pages/about').subscribe(result => {
+            this.data = result;
+        });        
     }
 
 }

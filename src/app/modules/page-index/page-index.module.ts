@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from '../../app-routing.module';
 
+import { PageIndexComponent } from '../../components/page-index/page-index.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { ShopListComponent } from '../../components/shop-list/shop-list.component';
@@ -20,6 +21,7 @@ import { ArticlesComponent } from '../../components/articles/articles.component'
         AppRoutingModule
     ],
     declarations: [
+        PageIndexComponent,
         HeaderComponent,
         FooterComponent,
         ShopListComponent,
@@ -30,6 +32,7 @@ import { ArticlesComponent } from '../../components/articles/articles.component'
         ArticlesComponent
     ],
     exports: [
+        PageIndexComponent,
         HeaderComponent,
         FooterComponent,
         ShopListComponent,
