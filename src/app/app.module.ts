@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './services/in-memory-data/in-memory-data.service';
 
 import { UserService } from './services/user/user.service';
 import { SharedService } from './services/shared/shared.service';
