@@ -26,38 +26,36 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        const shoppingcart = {
-            items: [
-                {
-                    item: {
-                        _id: 1,
-                        name: "Product name here",
-                        category: "Top",
-                        price: "100",
-                        rating: "5",
-                        discount: "10",
-                        img: "assets/img/shop/shop_item.jpg"
-                    },
-                    qty: 1,
-                    total: 100
+        const shoppingcart = [            
+            {
+                product: {
+                    id: 1,
+                    name: "Product name here",
+                    category: "Top",
+                    price: "100",
+                    rating: "5",
+                    discount: "10",
+                    img: "assets/img/shop/shop_item.jpg"
                 },
-                {
-                    item: {
-                        _id: 1,
-                        name: "Product name here",
-                        category: "Top",
-                        price: "100",
-                        rating: "5",
-                        discount: "10",
-                        img: "assets/img/shop/shop_item.jpg"
-                    },
-                    qty: 2,
-                    total: 200
-                }
-            ],
-            totalPrice: 300,
-            totalQty: 3
-        };
+                id: 1,
+                qty: 1,
+                total: 100
+            },
+            {
+                product: {
+                    id: 2,
+                    name: "Product name here",
+                    category: "Top",
+                    price: "100",
+                    rating: "5",
+                    discount: "10",
+                    img: "assets/img/shop/shop_item.jpg"
+                },
+                id: 2,
+                qty: 1,
+                total: 100
+            }             
+        ];
 
         const signup = [
                 

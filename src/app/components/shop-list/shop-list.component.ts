@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { SharedService } from '../../services/shared/shared.service';
+import { forkJoin } from "rxjs/observable/forkJoin";
 
 @Component({
 	selector: 'app-shop-list',
@@ -11,6 +12,7 @@ import { SharedService } from '../../services/shared/shared.service';
 export class ShopListComponent implements OnInit {
 
 	public goods;
+	public cart;
 	
 	constructor(private dataService: DataService,
 				private sharedService: SharedService) {
@@ -18,18 +20,69 @@ export class ShopListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.dataService.getAll('api/goods').subscribe((result) => {
+		this.dataService.getAll('api/goods/').subscribe((result) => {
 			this.goods = result;
-		});    
+		});
+
+		this.dataService.getAll('api/shoppingcart/').subscribe((result) => {
+			this.cart = result;
+		});     
 	}
 
-	addToCart($event, id) {
+	addToCart($event, id) {	
 		$event.preventDefault();
-		this.dataService.getSingle('api/cart/add/', id).subscribe((result) => { 
-			let cart:any = result;      
-			this.sharedService.setCartTotalQty(cart.totalQty);
-			this.sharedService.setCartTotalPrice(cart.totalPrice);
-		});
-	} 
+		
+		let isNewItem = true,
+			newItem = {},
+			indexItem;		
+
+		this.dataService.getSingle('api/goods/', id).subscribe((product:any) => {
+
+			this.cart.forEach((item, index) => {
+				if ( item.product.id == product.id ){
+					newItem = {
+						product : product,
+						id : product.id, 
+						qty : ++item.qty,
+						total : parseInt(item.total) + parseInt(product.price)
+					};
+					isNewItem = false;
+					indexItem = index;					 
+				}			
+			});
+
+			if (isNewItem){
+				newItem = {
+					product : product,
+					id : product.id, 
+					qty : 1,
+					total : product.price
+				}
+			}				
+
+			if (isNewItem){
+				this.dataService.add('api/shoppingcart/', newItem).subscribe((product:any) => {
+					this.cart.push(newItem);
+					this.updateCartTotal();
+				});
+			 } else {
+				this.dataService.update('api/shoppingcart/', id, newItem).subscribe((product:any) => {					
+					this.cart.splice(indexItem, 1, newItem);
+					this.updateCartTotal();
+				});
+			}			
+		});		
+	}
+	
+	updateCartTotal() {		
+		let result = this.cart.reduce((accumulator, item, index) => {
+			return {
+				total : accumulator.total += parseInt(item.total),
+				qty : accumulator.qty += parseInt(item.qty)
+			}			
+		}, { total: 0, qty: 0 });
+		this.sharedService.setCartTotalPrice(result.total);
+		this.sharedService.setCartTotalQty(result.qty);
+	}
 
 }
