@@ -9,9 +9,9 @@
                 <span class="column total">Total</span>
                 <span class="column"></span>
             </li>
-            <li *ngFor="let cartItem of shoppingCart.items" class="shoppingcart-item">
-                <span class="column name">{{cartItem.item.name}}</span>
-                <span class="column price">${{cartItem.item.price}}</span>           
+            <li *ngFor="let cartItem of shoppingCart" class="shoppingcart-item">
+                <span class="column name">{{cartItem.product.name}}</span>
+                <span class="column price">${{cartItem.product.price}}</span>           
                 <span class="column quantity">{{cartItem.qty}}</span>
                 <span class="column total">${{cartItem.total}}</span>
                 <span class="column">
