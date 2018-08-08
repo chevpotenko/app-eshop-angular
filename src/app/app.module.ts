@@ -10,6 +10,7 @@ import { InMemoryDataService }  from './services/in-memory-data/in-memory-data.s
 import { UserService } from './services/user/user.service';
 import { SharedService } from './services/shared/shared.service';
 import { DataService } from './services/data/data.service';
+import { ShopService } from './services/shop/shop.service';
 
 import { PageIndexModule } from './modules/page-index/page-index.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -51,7 +52,8 @@ import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart
 		HttpClientModule,
 		SharedService,
 		DataService,
-		UserService
+		UserService,
+		ShopService
 	],
 	bootstrap: [AppComponent]
 })

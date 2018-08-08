@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { SharedService } from '../../services/shared/shared.service';
+import { ShopService } from '../../services/shop/shop.service';
 import { forkJoin } from "rxjs/observable/forkJoin";
 
 @Component({
@@ -15,7 +16,8 @@ export class ShopListComponent implements OnInit {
 	public cart;
 	
 	constructor(private dataService: DataService,
-				private sharedService: SharedService) {
+				private sharedService: SharedService,
+				private shopService: ShopService) {
 
 	}
 
@@ -31,7 +33,7 @@ export class ShopListComponent implements OnInit {
 
 	addToCart($event, id) {	
 		$event.preventDefault();
-		
+
 		let isNewItem = true,
 			newItem = {},
 			indexItem;		
@@ -63,26 +65,21 @@ export class ShopListComponent implements OnInit {
 			if (isNewItem){
 				this.dataService.add('api/shoppingcart/', newItem).subscribe((product:any) => {
 					this.cart.push(newItem);
-					this.updateCartTotal();
+					this.updateCartTotal(this.cart);					
 				});
 			 } else {
 				this.dataService.update('api/shoppingcart/', id, newItem).subscribe((product:any) => {					
 					this.cart.splice(indexItem, 1, newItem);
-					this.updateCartTotal();
+					this.updateCartTotal(this.cart);
 				});
 			}			
 		});		
 	}
 	
-	updateCartTotal() {		
-		let result = this.cart.reduce((accumulator, item, index) => {
-			return {
-				total : accumulator.total += parseInt(item.total),
-				qty : accumulator.qty += parseInt(item.qty)
-			}			
-		}, { total: 0, qty: 0 });
-		this.sharedService.setCartTotalPrice(result.total);
-		this.sharedService.setCartTotalQty(result.qty);
+	updateCartTotal(cart) {		
+		let cartTotal = this.shopService.updateCartTotal(cart);
+		this.sharedService.setCartTotalPrice(cartTotal.total);
+		this.sharedService.setCartTotalQty(cartTotal.qty);
 	}
 
 }
