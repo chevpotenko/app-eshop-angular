@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared/shared.service';
 import { DataService } from '../../services/data/data.service';
 import { UserService } from '../../services/user/user.service';
+import { ShopService } from '../../services/shop/shop.service';
 
 @Component({
     selector: 'app-header',
@@ -15,15 +16,19 @@ export class HeaderComponent implements OnInit {
     
     constructor(private sharedService: SharedService,
                 private dataService: DataService, 
+                private shopService: ShopService, 
                 private userService: UserService) {
         this.data = this.sharedService.data;
     }
 
     ngOnInit() {
         this.dataService.getAll('api/shoppingcart').subscribe((result) => {      
-            var cart:any = result; 
-            this.sharedService.setCartTotalQty(cart.totalQty);
-            this.sharedService.setCartTotalPrice(cart.totalPrice);
+            let cart:any = result,
+                cartTotal; 
+                
+            cartTotal = this.shopService.updateCartTotal(cart);
+            this.sharedService.setCartTotalQty(cartTotal.qty);
+            this.sharedService.setCartTotalPrice(cartTotal.total);
         });
 
         this.userService.isUserSignin().subscribe((result) => {      

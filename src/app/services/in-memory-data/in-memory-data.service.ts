@@ -54,7 +54,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 id: 2,
                 qty: 1,
                 total: 100
-            }             
+            }            
         ];
 
         const signup = [
