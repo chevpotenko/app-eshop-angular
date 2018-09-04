@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from '../../app-routing.module';
 
-import { PageIndexComponent } from '../../components/page-index/page-index.component';
-import { HeaderComponent } from '../../components/header/header.component';
-import { FooterComponent } from '../../components/footer/footer.component';
-import { ShopListComponent } from '../../components/shop-list/shop-list.component';
-import { AdviceComponent } from '../../components/advice/advice.component';
-import { SubscriptionComponent } from '../../components/subscription/subscription.component';
-import { MainBannerComponent } from '../../components/main-banner/main-banner.component';
-import { BrandsComponent } from '../../components/brands/brands.component';
-import { ArticlesComponent } from '../../components/articles/articles.component';
+import { PageIndexComponent } from './pages/index/page-index.component';
+import { HeaderComponent } from '../../shared/header/header.component';
+import { FooterComponent } from '../../shared/footer/footer.component';
+import { ShopListComponent } from '../../shared/shop-list/shop-list.component';
+import { AdviceComponent } from './components/advice/advice.component';
+import { SubscriptionComponent } from './components/subscription/subscription.component';
+import { MainBannerComponent } from './components/main-banner/main-banner.component';
+import { BrandsComponent } from './components/brands/brands.component';
+import { ArticlesComponent } from './components/articles/articles.component';
 
 @NgModule({
     imports: [

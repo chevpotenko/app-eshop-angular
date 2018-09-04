@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../../services/user/user.service';
-import { SharedService } from '../../../services/shared/shared.service';
-import { User } from '../../../class/user';
+import { UserService } from '../../../../services/user/user.service';
+import { SharedService } from '../../../../services/shared/shared.service';
+import { User } from '../../../../class/user';
 
 @Component({
     selector: 'app-signin',

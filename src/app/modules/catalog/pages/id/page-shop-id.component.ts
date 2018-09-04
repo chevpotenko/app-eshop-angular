@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data/data.service';
-import { Goods } from '../../class/goods';
+import { DataService } from '../../../../services/data/data.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

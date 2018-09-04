@@ -12,18 +12,27 @@ import { SharedService } from './services/shared/shared.service';
 import { DataService } from './services/data/data.service';
 import { ShopService } from './services/shop/shop.service';
 
-import { PageIndexModule } from './modules/page-index/page-index.module';
+import { PageIndexModule } from './modules/index/index.module';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { PageCatalogComponent } from './components/page-catalog/page-catalog.component';
-import { PageAboutComponent } from './components/page-about/page-about.component';
-import { PageContactComponent } from './components/page-contact/page-contact.component';
-import { PageShopIdComponent } from './components/page-shop-id/page-shop-id.component';
-import { SignupComponent } from './components/user/signup/signup.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
-import { SigninComponent } from './components/user/signin/signin.component';
-import { ShoppingCartComponent } from './components//shopping-cart/shopping-cart.component';
+
+import { PageCatalogComponent } from './modules/catalog/pages/catalog/page-catalog.component';
+
+import { PageAboutComponent } from './modules/about/pages/about/page-about.component';
+
+import { PageContactComponent } from './modules/contact/pages/contact/page-contact.component';
+
+import { PageShopIdComponent } from './modules/catalog/pages/id/page-shop-id.component';
+
+import { SignupComponent } from './modules/user/pages/signup/signup.component';
+
+import { ProfileComponent } from './modules/user/pages/profile/profile.component';
+
+import { SigninComponent } from './modules/user/pages/signin/signin.component';
+
+import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart/shopping-cart.component';
 
 @NgModule({
 	declarations: [

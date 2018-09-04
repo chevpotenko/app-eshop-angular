@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageIndexComponent } from './components/page-index/page-index.component';
-import { PageCatalogComponent } from './components/page-catalog/page-catalog.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { SignupComponent } from './components/user/signup/signup.component';
-import { SigninComponent } from './components/user/signin/signin.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
-import { PageAboutComponent } from './components/page-about/page-about.component';
-import { PageContactComponent } from './components/page-contact/page-contact.component';
-import { PageShopIdComponent } from './components/page-shop-id/page-shop-id.component';
+import { PageIndexComponent } from './modules/index/pages/index/page-index.component';
+import { PageCatalogComponent } from './modules/catalog/pages/catalog/page-catalog.component';
+import { PageShopIdComponent } from './modules/catalog/pages/id/page-shop-id.component';
+import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart/shopping-cart.component';
+import { SignupComponent } from './modules/user/pages/signup/signup.component';
+import { SigninComponent } from './modules/user/pages/signin/signin.component';
+import { ProfileComponent } from './modules/user/pages/profile/profile.component';
+import { PageAboutComponent } from './modules/about/pages/about/page-about.component';
+import { PageContactComponent } from './modules/contact/pages/contact/page-contact.component';
 
 
 const routes: Routes = [  
     { path: 'catalog', component: PageCatalogComponent},
-    { path: 'goods/:id', component: PageShopIdComponent },  
+    { path: 'catalog/:id', component: PageShopIdComponent },  
     { path: 'user/signup', component: SignupComponent},
     { path: 'user/signin', component: SigninComponent},
     { path: 'user/profile', component: ProfileComponent},

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data/data.service';
-import { Banner } from '../../class/banner';
+import { DataService } from '../../../../services/data/data.service';
+import { Banner } from '../../../../class/banner';
 
 @Component({
     selector: 'app-main-banner',
