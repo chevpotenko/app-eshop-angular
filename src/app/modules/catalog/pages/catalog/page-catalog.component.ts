@@ -38,12 +38,10 @@ export class PageCatalogComponent implements OnInit {
 
     ngOnInit() {
         this.dataService.getAll('api/shop/').subscribe((result) => {
-            this.dataService.getAll('api/shop/').subscribe((result) => {
-                this.products = result;
-                if(this.products){
-                    this.sharedService.setCurrentCategory(this.products[0].category);
-                }  
-            });
+            this.products = result;
+            if(this.products){
+                this.sharedService.setCurrentCategory(this.products[0].category);
+            }  
         });
     }
 

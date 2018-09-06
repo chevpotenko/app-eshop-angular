@@ -15,8 +15,7 @@ export class ShoppingCartComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.dataService.getAll('api/shoppingcart').subscribe(result => {
-            console.log(result);
+        this.dataService.getAll('api/shoppingcart').subscribe( result => {
             this.shoppingCart = result;
         })
     }  

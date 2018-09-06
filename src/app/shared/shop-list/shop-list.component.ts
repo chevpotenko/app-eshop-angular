@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Goods } from '../../class/goods';
 import { DataService } from '../../services/data/data.service';
 import { SharedService } from '../../services/shared/shared.service';
 import { ShopService } from '../../services/shop/shop.service';
@@ -10,8 +11,8 @@ import { ShopService } from '../../services/shop/shop.service';
 })
 
 export class ShopListComponent implements OnInit {
-	
-	public goods;
+
+	@Input() list: Goods[];	
 	public cart;
 	
 	constructor(private dataService: DataService,
@@ -21,10 +22,6 @@ export class ShopListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.dataService.getAll('api/shop/').subscribe((result) => {
-			this.goods = result;
-		});
-
 		this.dataService.getAll('api/shoppingcart/').subscribe((result) => {
 			this.cart = result;
 		});     

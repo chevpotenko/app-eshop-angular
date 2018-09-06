@@ -1,5 +1,5 @@
 <div class="shop-list">
-    <div *ngFor="let item of goods" class="shop-item">
+    <div *ngFor="let item of list" class="shop-item">
         <div class="shop-item-photo">
             <a routerLink="/shop/{{item.id}}">
                 <img [attr.src]="item.img" alt="">

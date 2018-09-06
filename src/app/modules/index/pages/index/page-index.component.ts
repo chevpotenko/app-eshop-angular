@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../../../services/data/data.service';
 
 @Component({
     selector: 'app-page-index',
@@ -7,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageIndexComponent implements OnInit {
 
-    constructor() { 
+    private products;
+
+    constructor(private dataService: DataService) { 
         
-     }
+    }
 
-    ngOnInit() {
-
+     ngOnInit() {
+        this.dataService.getAll('api/shop/').subscribe((result) => {
+            this.products = result;
+        });
     }
 
 }

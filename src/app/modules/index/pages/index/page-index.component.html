@@ -1,24 +1,18 @@
-<!-- banners -->
 <app-main-banner></app-main-banner>
 
-<!-- subscription -->
 <app-subscription></app-subscription>
 
-<!-- shop block -->
 <section class="section shop center">
-  <h2 class="section-title">Men Best Selling Product</h2>
-  <p class="section-description">Lorem ipsum dolor, sit amet consectetur.</p>
-  <app-shop-list></app-shop-list>
-  <div class="shop-footer">
-    <a routerLink="/catalog" class="btn btn--more">VIEW MORE</a>		
-  </div>			
+	<h2 class="section-title">Men Best Selling Product</h2>
+	<p class="section-description">Lorem ipsum dolor, sit amet consectetur.</p>
+	<app-shop-list [list]="products"></app-shop-list>
+	<div class="shop-footer">
+		<a routerLink="/catalog" class="btn btn--more">VIEW MORE</a>		
+	</div>			
 </section>
 
-<!-- brands -->
 <app-brands></app-brands>
 
-<!-- advice -->
 <app-advice></app-advice>
 
-<!-- articles -->
 <app-articles></app-articles>

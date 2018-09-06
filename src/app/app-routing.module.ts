@@ -12,6 +12,7 @@ import { PageContactComponent } from './modules/contact/pages/contact/page-conta
 
 
 const routes: Routes = [
+    { path: 'catalog', component: PageCatalogComponent }, 
     { path: 'catalog/:id', component: PageCatalogComponent }, 
     { path: 'shop/:id', component: PageShopIdComponent },  
     { path: 'user/signup', component: SignupComponent },
