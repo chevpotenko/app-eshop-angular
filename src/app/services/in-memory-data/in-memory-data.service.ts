@@ -100,7 +100,7 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        const goods = [
+        const shop = [
             { 
                 id: 1,
                 name: "Product name 1",
@@ -139,6 +139,33 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
+        const catalog = [
+            { 
+                id: 1,
+                name: "Men",                
+                parentCategory: "",
+                img: ""
+            },
+            { 
+                id: 2,
+                name: "Women",                
+                parentCategory: "",                
+                img: ""
+            },
+            { 
+                id: 3,
+                name: "Bridal",                
+                parentCategory: "",                
+                img: ""
+            },
+            { 
+                id: 4,
+                name: "Baby&Kids",                
+                parentCategory: "",                
+                img: ""
+            }
+        ];
+
         const subscribers = [
             {
                 id: 1,
@@ -146,6 +173,6 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        return { banners, goods, cart, user, signup, shoppingcart, pages, subscribers };
+        return { banners, catalog, shop, cart, user, signup, shoppingcart, pages, subscribers };
     }
 }

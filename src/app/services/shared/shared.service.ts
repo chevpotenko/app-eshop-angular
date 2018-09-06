@@ -10,7 +10,8 @@ export class SharedService {
 		},
 		user: {
 			signin: false
-		}    
+		},
+		currentCategory: ""    
 	};
 
 	constructor() { }
@@ -27,16 +28,24 @@ export class SharedService {
 		this.data.cart.totalPrice = price;
 	}  
 
+	getcurrentCategory(){
+		return this.data.currentCategory;
+	}
+
 	getCartTotalPrice(){
 		return this.data.cart.totalPrice;
 	}
 
-	setUserSignIn(signin){
-		this.data.user.signin = signin;
-	}  
-
 	getUserSignIn(){
 		return this.data.user.signin;
+	}
+
+	setUserSignIn(signin){
+		this.data.user.signin = signin;
+	}
+
+	setCurrentCategory(category){
+		this.data.currentCategory	 = category;
 	}
 
 }

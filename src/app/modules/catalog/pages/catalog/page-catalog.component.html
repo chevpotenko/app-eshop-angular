@@ -5,9 +5,9 @@
                 <div class="breadcrumbs">
                     <a routerLink="/">Home</a>
                     <span>/</span>
-                    <a routerLink="{{'/' + categoryName}}">{{categoryName}}</a>
+                    <span>{{ data.currentCategory }}</span>
                 </div>
-                <div class="category-name">{{categoryName}}</div>
+                <div class="category-name">{{ data.currentCategory }}</div>
                 <div class="category-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Culpa quae enim dolore itaque maiores!</div>
             </div>
             <div class="category-column category-img">

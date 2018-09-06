@@ -41,10 +41,14 @@
             </form>
             <nav class="nav">
                 <ul class="mainmenu">
-                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Men</a></li>
-                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Women</a></li>
-                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Bridal</a></li>
-                    <li><a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Baby&Kids</a></li>
+                    <li *ngFor="let item of catalog">
+                        <a routerLink="/catalog/{{item.id}}"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}"
+                            (click)="setCurrentCategory(item.name)">                            
+                                {{ item.name }}
+                            </a>
+                    </li>
                 </ul>
             </nav>
             <ul class="socialmenu">

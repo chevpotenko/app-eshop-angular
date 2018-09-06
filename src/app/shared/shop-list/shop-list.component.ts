@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { SharedService } from '../../services/shared/shared.service';
 import { ShopService } from '../../services/shop/shop.service';
-import { forkJoin } from "rxjs/observable/forkJoin";
 
 @Component({
 	selector: 'app-shop-list',
@@ -11,7 +10,7 @@ import { forkJoin } from "rxjs/observable/forkJoin";
 })
 
 export class ShopListComponent implements OnInit {
-
+	
 	public goods;
 	public cart;
 	
@@ -22,7 +21,7 @@ export class ShopListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.dataService.getAll('api/goods/').subscribe((result) => {
+		this.dataService.getAll('api/shop/').subscribe((result) => {
 			this.goods = result;
 		});
 
@@ -38,7 +37,7 @@ export class ShopListComponent implements OnInit {
 			newItem = {},
 			indexItem;		
 
-		this.dataService.getSingle('api/goods/', id).subscribe((product:any) => {
+		this.dataService.getSingle('api/shop/', id).subscribe((product:any) => {
 
 			this.cart.forEach((item, index) => {
 				if ( item.product.id == product.id ){
