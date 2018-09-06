@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../../services/shared/shared.service';
-import { DataService } from '../../services/data/data.service';
-import { UserService } from '../../services/user/user.service';
-import { ShopService } from '../../services/shop/shop.service';
+import { SharedService } from '../../../services/shared/shared.service';
+import { DataService } from '../../../services/data/data.service';
+import { UserService } from '../../../services/user/user.service';
+import { ShopService } from '../../../services/shop/shop.service';
 
 @Component({
     selector: 'app-header',

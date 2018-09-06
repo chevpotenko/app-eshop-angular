@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Goods } from '../../class/goods';
-import { DataService } from '../../services/data/data.service';
-import { SharedService } from '../../services/shared/shared.service';
-import { ShopService } from '../../services/shop/shop.service';
+import { Goods } from '../../../class/goods';
+import { DataService } from '../../../services/data/data.service';
+import { SharedService } from '../../../services/shared/shared.service';
+import { ShopService } from '../../../services/shop/shop.service';
 
 @Component({
 	selector: 'app-shop-list',

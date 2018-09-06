@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from '../../app-routing.module';
+import { SharedModule  } from '../shared/shared.module';
 
 import { PageIndexComponent } from './pages/index/page-index.component';
-import { HeaderComponent } from '../../shared/header/header.component';
-import { FooterComponent } from '../../shared/footer/footer.component';
-import { ShopListComponent } from '../../shared/shop-list/shop-list.component';
+import { HeaderComponent } from '../shared/header/header.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 import { AdviceComponent } from './components/advice/advice.component';
 import { SubscriptionComponent } from './components/subscription/subscription.component';
 import { MainBannerComponent } from './components/main-banner/main-banner.component';
@@ -18,13 +18,13 @@ import { ArticlesComponent } from './components/articles/articles.component';
     imports: [
         CommonModule,
         FormsModule,
+        SharedModule,
         AppRoutingModule
     ],
     declarations: [
         PageIndexComponent,
         HeaderComponent,
         FooterComponent,
-        ShopListComponent,
         AdviceComponent,
         SubscriptionComponent,
         MainBannerComponent,
@@ -35,7 +35,6 @@ import { ArticlesComponent } from './components/articles/articles.component';
         PageIndexComponent,
         HeaderComponent,
         FooterComponent,
-        ShopListComponent,
         AdviceComponent,
         SubscriptionComponent,
         MainBannerComponent,

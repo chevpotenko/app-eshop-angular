@@ -13,12 +13,11 @@ import { DataService } from './services/data/data.service';
 import { ShopService } from './services/shop/shop.service';
 
 import { PageIndexModule } from './modules/index/index.module';
+import { CatalogModule } from './modules/catalog/catalog.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-
-import { PageCatalogComponent } from './modules/catalog/pages/catalog/page-catalog.component';
 
 import { PageAboutComponent } from './modules/about/pages/about/page-about.component';
 
@@ -36,20 +35,20 @@ import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart
 
 @NgModule({
 	declarations: [
-		AppComponent,		
-		PageCatalogComponent,
+		AppComponent,
 		PageAboutComponent,
 		PageContactComponent,
 		PageShopIdComponent,
 		SignupComponent,
 		ProfileComponent,
 		SigninComponent,
-		ShoppingCartComponent		
+		ShoppingCartComponent			
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
-		PageIndexModule,		
+		PageIndexModule,
+		CatalogModule,		
 		AppRoutingModule,
 		HttpModule,
 		HttpClientModule,
@@ -63,7 +62,7 @@ import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart
 		DataService,
 		UserService,
 		ShopService
-	],
+	],	
 	bootstrap: [AppComponent]
 })
 
