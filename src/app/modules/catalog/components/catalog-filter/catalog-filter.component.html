@@ -1,105 +1,38 @@
 <div class="catalog-filter">
     <p class="section-name">Filter By:</p>
     <form class="form-filter">
-        <div class="param" [ngClass]="{'active': filterCategories.categories}">
+        <div class="param"
+             *ngFor="let item of params; let item_index=index"
+             [ngClass]="{'active': shownSections[item_index]}">
             <div class="param-caption"                         
-                (click)="toggleParam('categories')">
-                <span>Categories</span>
+                (click)="toggleSection(item_index)">
+                <span>{{ item.name }}</span>
                 <span class="param-icon">
                     <i class="fas fa-chevron-down"></i>
                 </span>
             </div>
-            <div class="param-list">
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="top">
+            <div *ngIf="item.type=='checkbox'" class="param-list">
+                <label *ngFor="let value of item.values; let value_index=index" class="param-item">
+                    <input class="checkbox"
+                            type="checkbox"
+                            [attr.value]="value"
+                            [attr.name]="'id_'+item.id+'_'+value_index"
+                            (click)="getData($event)">
                     <span class="checkbox-sign"></span>
-                    Top
-                </label>
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="bottom">
-                    <span class="checkbox-sign"></span>
-                    Bottom
-                </label>
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="dress">
-                    <span class="checkbox-sign"></span>
-                    Accessories
-                </label>
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="footwear">
-                    <span class="checkbox-sign"></span>
-                    Footwear
-                </label>
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="other">
-                    <span class="checkbox-sign"></span>
-                    Other
+                    {{ value }}
                 </label>
             </div>
-        </div>
-        <div class="param" [ngClass]="{'active': filterCategories.price}">
-            <div class="param-caption"
-                (click)="toggleParam('price')">
-                <span>Price</span>
-                <span class="param-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </span>
-            </div>                   
-            <div class="param-list">
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="top">
-                    <span class="checkbox-sign"></span>
-                    Top
+            <div *ngIf="item.type=='radio'" class="param-list">
+                <label *ngFor="let value of item.values;" class="param-item">
+                    <input class="radio"
+                            type="radio"
+                            [attr.value]="value"
+                            [attr.name]="'id_'+item.id"
+                            (click)="getData($event)">
+                    <span class="radio-sign"></span>
+                    {{ value }}
                 </label>
             </div>
-        </div>                                
-        <div class="param" [ngClass]="{'active': filterCategories.size}">
-            <div class="param-caption"                         
-                (click)="toggleParam('size')">
-                <span>Size</span>
-                <span class="param-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </span>
-            </div>
-            <div class="param-list">
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="top">
-                    <span class="checkbox-sign"></span>
-                    Top
-                </label>
-            </div>
-        </div>                                
-        <div class="param" [ngClass]="{'active': filterCategories.brand}">
-            <div class="param-caption"                         
-                (click)="toggleParam('brand')">
-                <span>Brand</span>
-                <span class="param-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </span>
-            </div>
-            <div class="param-list">
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="top">
-                    <span class="checkbox-sign"></span>
-                    Top
-                </label>
-            </div>
-        </div>                                
-        <div class="param" [ngClass]="{'active': filterCategories.color}">
-            <div class="param-caption"                         
-                (click)="toggleParam('color')">
-                <span>Color</span>
-                <span class="param-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </span>
-            </div>
-            <div class="param-list">
-                <label class="param-item">
-                    <input class="checkbox" type="checkbox" name="top">
-                    <span class="checkbox-sign"></span>
-                    Top
-                </label>
-            </div>
-        </div>                                
+        </div>              
     </form>
 </div> 

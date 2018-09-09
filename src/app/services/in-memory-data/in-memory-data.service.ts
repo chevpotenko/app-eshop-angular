@@ -173,6 +173,39 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        return { banners, catalog, shop, cart, user, signup, shoppingcart, pages, subscribers };
+        const params = [
+            {
+                id: 1,
+                name: 'Categories',
+                type: 'checkbox',
+                values: ['Top', 'Bottom', 'Accessories', 'Footwear', 'Other']
+            },
+            {
+                id: 2,
+                name: 'Price',
+                type: 'radio',
+                values: ['0 - 50 $', '50 - 100 $' , '> 100 $'],
+            },
+            {
+                id: 3,
+                name: 'Size',
+                type: 'checkbox',
+                values: ['S', 'M', 'L'],
+            },
+            {
+                id: 4,
+                name: 'Brand',
+                type: 'checkbox',
+                values: ['Brand 1', 'Brand 2'],
+            },
+            {
+                id: 5,
+                name: 'Color',
+                type: 'checkbox',
+                values: ['Red', 'White']
+            }
+        ]
+
+        return { banners, catalog, shop, params, cart, user, signup, shoppingcart, pages, subscribers };
     }
 }

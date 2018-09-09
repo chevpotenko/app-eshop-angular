@@ -16,21 +16,14 @@ import { PageIndexModule } from './modules/index/index.module';
 import { CatalogModule } from './modules/catalog/catalog.module';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 
 import { PageAboutComponent } from './modules/about/pages/about/page-about.component';
-
 import { PageContactComponent } from './modules/contact/pages/contact/page-contact.component';
-
 import { PageShopIdComponent } from './modules/catalog/pages/id/page-shop-id.component';
-
 import { SignupComponent } from './modules/user/pages/signup/signup.component';
-
 import { ProfileComponent } from './modules/user/pages/profile/profile.component';
-
 import { SigninComponent } from './modules/user/pages/signin/signin.component';
-
 import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart/shopping-cart.component';
 
 @NgModule({

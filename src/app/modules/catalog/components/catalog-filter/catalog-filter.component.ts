@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpParams } from '@angular/common/http';
+import { DataService } from '../../../../services/data/data.service';
 
 @Component({
 	selector: 'catalog-filter',
@@ -7,23 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogFilterComponent implements OnInit {
 
-	private filterCategories = {
-		categories: false,
-		price: false,        
-		size: false,
-		brand: false,
-		color: false
-	};
+	private params: Array<object>;
+	private queryObj: HttpParams;
+	private shownSections: Array<boolean> = [];
 
-	constructor() { }
+	constructor(private dataService: DataService) {
+		this.queryObj = new HttpParams();
+	}
 
 	ngOnInit() {
+		this.dataService.getAll('api/params/').subscribe(result => {
+			this.params = result;
+			this.params.forEach((element, index)=> {
+				this.shownSections[index] = false;
+			});
+        });
 	}
 
-	toggleParam(name){
-		for (let category in this.filterCategories){           
-			this.filterCategories[category] = (name !== category) ? false : true; 
+	toggleSection(id) {
+		this.shownSections.forEach((value, index) => {
+			this.shownSections[index] = id === index ? !value : value;
+		});
+	}
+
+	getData(event) {
+		if (event.target.checked) {
+			this.queryObj = this.queryObj.set(event.target.name, event.target.value);
+		} else {
+			this.queryObj = this.queryObj.delete(event.target.name, event.target.value);
 		}
+		this.dataService.getQuery('api/shtop', this.queryObj).subscribe(result => { });
 	}
-
 }

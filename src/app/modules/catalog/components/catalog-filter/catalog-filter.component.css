@@ -34,11 +34,13 @@
 .param.active .param-icon {
     transform: rotate(180deg);
 }
-.param .checkbox{
+.param .checkbox,
+.param .radio{
     height: 0;
     width: 0;
     visibility: hidden;     
 }
+.param .radio-sign,
 .param .checkbox-sign{
     position: absolute;
     top: 5px;
@@ -49,6 +51,7 @@
     border: 1px solid #000;
     border-radius:2px; 
 }
+.param .radio:checked + .radio-sign,
 .param .checkbox:checked + .checkbox-sign{    
     background: #000;
 }
