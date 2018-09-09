@@ -103,7 +103,7 @@ export class InMemoryDataService implements InMemoryDbService {
         const shop = [
             { 
                 id: 1,
-                name: "Product name 1",
+                name: "Fashion Product Name 1",
                 category: "Top",
                 price: "100",
                 rating: "5",
@@ -112,7 +112,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             { 
                 id: 2,
-                name: "Product name 2",
+                name: "Fashion Product Name 2",
                 category: "Top",
                 price: "100",
                 rating: "5",
@@ -121,7 +121,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             { 
                 id: 3,
-                name: "Product name 3",
+                name: "Fashion Product Name 3",
                 category: "Top",
                 price: "100",
                 rating: "5",
@@ -130,7 +130,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             { 
                 id: 4,
-                name: "Product name 4",
+                name: "Fashion Product Name 4",
                 category: "Top",
                 price: "100",
                 rating: "5",

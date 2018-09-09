@@ -1,6 +1,6 @@
 <section *ngIf="product" class="section contact center"> 
     <div class="product center">
-        <div class="caption">
+        <div class="section-caption caption">
             <h2 class="product-name">{{product.name}}</h2>
             <p class="product-categories">Women/Dress</p>
         </div>
@@ -24,20 +24,20 @@
                         <div class="row">
                             <span class="product-price">${{product.price}}</span>
                             <span class="discount-percent">30% <span>OFF</span></span>
-                            <span class="available-quantity">5 pieces left</span>
+                            <span class="available-quantity additional-info">5 pieces left</span>
                         </div>
                         <div class="row">                            
-                            <span class="discount-sum">$1000</span>
+                            <span class="discount-sum additional-info">$1000</span>
                         </div>                        
                     </div>                    
                     <div class="column column--right">
                         <div class="">
-                            <span class="product-review">7 review</span>
+                            <span class="product-review additional-info">7 review</span>
                         </div>  
                     </div>                    
                 </div>
                 <div class="product-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusamus soluta dignissimos rerum nulla, ratione optio quo at harum! Quae mollitia illo placeat sunt, sequi laborum ut modi debitis amet.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusamus soluta dignissimos rerum nulla, ratione optio quo at harum!</p>
                 </div>
                 <div class="params">
                     <table class="params-table">
@@ -60,7 +60,9 @@
                         </tr>
                         <tr>
                             <td>Quantity</td>
-                            <td></td>
+                            <td>
+                                <input class="products-quantity" type="number" value="5" min="0" max="100">
+                            </td>
                         </tr>
                         <tr>
                             <td>Shipping</td>
@@ -73,11 +75,11 @@
                     </table>
                 </div>
                 <div class="product-control">
-                    <button class="btn">BUY NOW</button>
-                    <button class="btn">ADD TO MY CART</button>
+                    <button class="btn btn-buy">BUY NOW</button>
+                    <button class="btn btn-cart">ADD TO MY CART</button>
                 </div>
                 <div class="product-share">
-                    <h4>Share on:</h4>
+                    <h4 class="additional-info">Share on:</h4>
                     <div>
                         <ul class="socialmenu">
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -87,8 +89,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="product-description">
-                    <h3>Product Detail</h3>
+                <div class="product-detail">
+                    <h3 class="section-caption underline">Product Detail</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio accusamus culpa facere ipsam sed illo debitis mollitia sit vel temporibus, qui dolorem quasi, maxime nam possimus dicta odit, quos cupiditate.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio accusamus culpa facere ipsam sed illo debitis mollitia sit vel temporibus, qui dolorem quasi, maxime nam possimus dicta odit, quos cupiditate.</p>
                 </div>
