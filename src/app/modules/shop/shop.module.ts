@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule  } from '../shared/shared.module';
 
-import { CatalogFilterComponent } from './components/catalog-filter/catalog-filter.component';
 import { PageCatalogComponent } from './pages/catalog/page-catalog.component';
+import { CatalogFilterComponent } from './components/catalog-filter/catalog-filter.component';
+import { CatalogPaginationComponent } from './components/catalog-pagination/catalog-pagination.component';
 
 @NgModule({
 	imports: [
@@ -13,10 +14,8 @@ import { PageCatalogComponent } from './pages/catalog/page-catalog.component';
 	],
 	declarations: [
 		PageCatalogComponent,
-		CatalogFilterComponent
-	],
-	exports: [
-		PageCatalogComponent
+		CatalogFilterComponent,
+		CatalogPaginationComponent
 	]
 })
-export class CatalogModule { }
+export class ShopModule { }

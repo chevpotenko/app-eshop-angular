@@ -98,30 +98,3 @@
 .catalog-title{
     font: 18px 'Merriweather', serif;
 }
-.pagination{
-    margin-left: 40px;
-}
-.pagination-list{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.pagination-list li{
-    display: inline-block; 
-}
-.pagination-list a{
-    display:inline-block;
-    width: 30px;
-    height: 30px;
-    text-decoration: none;
-    color: #333;
-    line-height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    background-color: none;
-    transition: background-color .3s ease; 
-}
-.pagination-list a:hover{
-    background-color: #bdbdbd;
-}
-/*-------------------------------------*/

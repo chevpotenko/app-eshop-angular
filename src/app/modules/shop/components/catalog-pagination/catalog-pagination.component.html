@@ -1,0 +1,9 @@
+<div class="pagination">
+	<ul class="pagination-list">
+		<li *ngFor="let page of pages; let pageNumber=index">
+			<span (click)="goToPage(pageNumber)">
+				{{ pageNumber + 1 }}
+			</span>
+		</li>
+	</ul>
+</div>

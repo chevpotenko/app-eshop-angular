@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageIndexComponent } from './modules/index/pages/index/page-index.component';
-import { PageCatalogComponent } from './modules/catalog/pages/catalog/page-catalog.component';
-import { PageShopIdComponent } from './modules/catalog/pages/id/page-shop-id.component';
+import { PageCatalogComponent } from './modules/shop/pages/catalog/page-catalog.component';
+import { PageShopIdComponent } from './modules/shop/pages/id/page-shop-id.component';
 import { SignupComponent } from './modules/user/pages/signup/signup.component';
 import { SigninComponent } from './modules/user/pages/signin/signin.component';
 import { ProfileComponent } from './modules/user/pages/profile/profile.component';

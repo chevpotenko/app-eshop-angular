@@ -32,14 +32,8 @@ import { ArticlesComponent } from './components/articles/articles.component';
         ArticlesComponent
     ],
     exports: [
-        PageIndexComponent,
         HeaderComponent,
-        FooterComponent,
-        AdviceComponent,
-        SubscriptionComponent,
-        MainBannerComponent,
-        BrandsComponent,
-        ArticlesComponent        	
+        FooterComponent
     ]
 })
 

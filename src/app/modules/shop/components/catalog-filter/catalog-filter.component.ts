@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpParams } from '@angular/common/http';
+import { Component,  OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
+import { SharedService } from '../../../../services/shared/shared.service';
 
 @Component({
 	selector: 'catalog-filter',
@@ -9,12 +9,11 @@ import { DataService } from '../../../../services/data/data.service';
 })
 export class CatalogFilterComponent implements OnInit {
 
-	private params: Array<object>;
-	private queryObj: HttpParams;
+	private params;
 	private shownSections: Array<boolean> = [];
 
-	constructor(private dataService: DataService) {
-		this.queryObj = new HttpParams();
+	constructor(private dataService: DataService,
+				private sharedService: SharedService) {		
 	}
 
 	ngOnInit() {
@@ -34,10 +33,10 @@ export class CatalogFilterComponent implements OnInit {
 
 	getData(event) {
 		if (event.target.checked) {
-			this.queryObj = this.queryObj.set(event.target.name, event.target.value);
+			this.sharedService.data.queryObj = this.sharedService.data.queryObj.set(event.target.name, event.target.value);
 		} else {
-			this.queryObj = this.queryObj.delete(event.target.name, event.target.value);
+			this.sharedService.data.queryObj = this.sharedService.data.queryObj.delete(event.target.name, event.target.value);
 		}
-		this.dataService.getQuery('api/shtop', this.queryObj).subscribe(result => { });
+		this.dataService.getQuery('api/shop', this.sharedService.data.queryObj).subscribe(result => { });
 	}
 }
