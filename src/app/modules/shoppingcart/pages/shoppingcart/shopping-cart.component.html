@@ -1,26 +1,26 @@
 <div class="shoppingcart center">
     <h2 class="section-title">Shopping cart</h2>
     <div *ngIf="shoppingCart" class="shoppingcart-content">
-        <ul class="shoppingcart-list">
-            <li class="shoppingcart-item">
-                <span class="column name">Name</span>
-                <span class="column price">Price</span>           
-                <span class="column quantity">Quantity</span>
-                <span class="column total">Total</span>
-                <span class="column"></span>
-            </li>
-            <li *ngFor="let cartItem of shoppingCart" class="shoppingcart-item">
-                <span class="column name">{{cartItem.product.name}}</span>
-                <span class="column price">${{cartItem.product.price}}</span>           
-                <span class="column quantity">{{cartItem.qty}}</span>
-                <span class="column total">${{cartItem.total}}</span>
-                <span class="column">
-                <span class="btn-counter btn-increment">+</span>
-                <span class="btn-counter btn-decrement">-</span>
-                </span>
-            </li>
-        </ul>
-        <div class="shoppingcart-results">Total: ${{shoppingCart.totalPrice}}</div>
+        <table class="shoppingcart-table">
+            <tr>
+                <th class="name">Name</th>
+                <th class="price">Price</th>           
+                <th class="quantity">Quantity</th>
+                <th class="total">Total</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let cartItem of shoppingCart">
+                <td>{{ cartItem.product.name }}</td>
+                <td>${{ cartItem.product.price }}</td>           
+                <td>{{ cartItem.qty }}</td>
+                <td>${{ cartItem.total }}</td>
+                <td>
+                    <span class="btn-counter btn-increment">+</span>
+                    <span class="btn-counter btn-decrement">-</span>
+                </td>
+            </tr>
+        </table>
+        <div class="shoppingcart-results">Total: ${{ shoppingCart.totalPrice }}</div>
     </div>
     <div>
         <a class="btn-catalog" routerLink="/catalog">Catalog</a>
