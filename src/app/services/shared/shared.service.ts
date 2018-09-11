@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class SharedService {
@@ -12,8 +11,7 @@ export class SharedService {
 		user: {
 			signin: false
 		},
-		currentCategory: "",
-		queryObj: new HttpParams()
+		currentCategory: ""		
 	};
 
 	constructor() { }

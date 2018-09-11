@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
-import { SharedService } from '../../../../services/shared/shared.service';
+import { HttpParamsService } from '../../../../services/http-params/http-params.service';
 
 @Component({
 	selector: 'catalog-pagination',
@@ -12,16 +12,15 @@ export class CatalogPaginationComponent implements OnInit {
 	private pages: Array<number> = [1, 2, 3, 4, 5];
 
 	constructor(private dataService: DataService,
-				private sharedService: SharedService) {		
+				private httpParamsService: HttpParamsService) {		
 	}
 
 	ngOnInit() {
 	}
 
 	goToPage(pageNumber) {
-		this.sharedService.data.queryObj = this.sharedService.data.queryObj.set('page', pageNumber);
-		this.dataService.getQuery('api/shop', this.sharedService.data.queryObj).subscribe(result => { });
-		
+		this.httpParamsService.httpParams = this.httpParamsService.httpParams.set('page', pageNumber);
+		this.dataService.getQuery('api/shops',this.httpParamsService.httpParams).subscribe(result => { });		
 	}
 
 }
