@@ -14,23 +14,23 @@ import { ShopService } from './services/shop/shop.service';
 
 import { PageIndexModule } from './modules/index/index.module';
 import { ShopModule } from './modules/shop/shop.module';
+import { SharedModule } from './modules/shared/shared.module';
+import { PageAboutModule } from './modules/about/about.module';
+import { PageContactModule } from './modules/contact/contact.module';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { PageAboutComponent } from './modules/about/pages/about/page-about.component';
-import { PageContactComponent } from './modules/contact/pages/contact/page-contact.component';
 import { PageShopIdComponent } from './modules/shop/pages/id/page-shop-id.component';
 import { SignupComponent } from './modules/user/pages/signup/signup.component';
 import { ProfileComponent } from './modules/user/pages/profile/profile.component';
 import { SigninComponent } from './modules/user/pages/signin/signin.component';
 import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart/shopping-cart.component';
 
+import { routing } from './app-routing.module';
+
 @NgModule({
 	declarations: [
 		AppComponent,
-		PageAboutComponent,
-		PageContactComponent,
 		PageShopIdComponent,
 		SignupComponent,
 		ProfileComponent,
@@ -38,12 +38,15 @@ import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart
 		ShoppingCartComponent			
 	],
 	imports: [
-		BrowserModule,
+		BrowserModule,		
 		FormsModule,
+		SharedModule,
 		PageIndexModule,
-		ShopModule,		
-		AppRoutingModule,
-		HttpModule,
+		PageAboutModule,
+		PageContactModule,
+		ShopModule,	
+		routing,
+		HttpModule,		
 		HttpClientModule,
 		HttpClientInMemoryWebApiModule.forRoot(
 			InMemoryDataService
@@ -58,7 +61,6 @@ import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart
 	],	
 	bootstrap: [AppComponent]
 })
-
 
 export class AppModule {
 

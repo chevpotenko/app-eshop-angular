@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from '../../app-routing.module';
-import { SharedModule  } from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
+import { indexRouting } from './index.routing';
 
 import { PageIndexComponent } from './pages/index/page-index.component';
 import { HeaderComponent } from '../shared/header/header.component';
@@ -17,9 +17,9 @@ import { ArticlesComponent } from './components/articles/articles.component';
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule,
+        FormsModule,        
         SharedModule,
-        AppRoutingModule
+        indexRouting
     ],
     declarations: [
         PageIndexComponent,
@@ -32,6 +32,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
         ArticlesComponent
     ],
     exports: [
+        PageIndexComponent,
         HeaderComponent,
         FooterComponent
     ]

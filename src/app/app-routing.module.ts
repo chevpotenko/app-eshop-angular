@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+
 import { PageIndexComponent } from './modules/index/pages/index/page-index.component';
 import { PageCatalogComponent } from './modules/shop/pages/catalog/page-catalog.component';
 import { PageShopIdComponent } from './modules/shop/pages/id/page-shop-id.component';
@@ -7,8 +8,6 @@ import { SignupComponent } from './modules/user/pages/signup/signup.component';
 import { SigninComponent } from './modules/user/pages/signin/signin.component';
 import { ProfileComponent } from './modules/user/pages/profile/profile.component';
 import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart/shopping-cart.component';
-import { PageAboutComponent } from './modules/about/pages/about/page-about.component';
-import { PageContactComponent } from './modules/contact/pages/contact/page-contact.component';
 
 
 const routes: Routes = [
@@ -19,13 +18,8 @@ const routes: Routes = [
     { path: 'user/signin', component: SigninComponent },
     { path: 'user/profile', component: ProfileComponent },
     { path: 'shoppingcart', component: ShoppingCartComponent },
-    { path: 'about', component: PageAboutComponent },
-    { path: 'contact', component: PageContactComponent },
+    { path: 'contact', loadChildren: './modules/contact/contact.module#PageContactModule' },
+    { path: 'about', loadChildren: './modules/about/about.module#PageAboutModule' },
     { path: '', component: PageIndexComponent }
 ];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [ RouterModule ]
-})
-export class AppRoutingModule { }
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
