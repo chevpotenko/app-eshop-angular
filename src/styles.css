@@ -1,16 +1,36 @@
 html, body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 100%; }
 
-body {
+body { 
   /*font-family: 'Merriweather', serif;*/
   font-family: 'Lato', sans-serif; }
+
 body.is-overlay{
   position: fixed;
   overflow: hidden;
 }
+
+.content {
+  flex: 1 0 auto;
+}
+
 .wrapper {
-  background: fff; }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff; }
+
+.footer-wr{
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;  
+  justify-content: space-between;
+  padding: 31px 0;
+  font-size: 14px; }
 
 .center {
   max-width: 1140px;
@@ -94,6 +114,8 @@ input:focus {
     width: 22px;
     height: 22px;
     margin: 0 -2px 0 0; }
+  .socialmenu li:last-child {  
+    margin: 0; }
   .socialmenu a {
     color: #333;
     transition: .2s ease color; }
@@ -480,11 +502,7 @@ input.subscription-email {
   margin-top: 130px;
   background-color: #f9f9f9; }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 31px 0;
-  font-size: 14px; }
+
 
 .footer-menu {
   list-style: none;
