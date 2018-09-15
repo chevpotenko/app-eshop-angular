@@ -20,7 +20,7 @@ export class CatalogPaginationComponent implements OnInit {
 
 	goToPage(pageNumber) {
 		this.httpParamsService.httpParams = this.httpParamsService.httpParams.set('page', pageNumber);
-		this.dataService.getQuery('api/shops',this.httpParamsService.httpParams).subscribe(result => { });		
+		this.dataService.getQuery('api/shop',this.httpParamsService.httpParams).subscribe(result => { });		
 	}
 
 }

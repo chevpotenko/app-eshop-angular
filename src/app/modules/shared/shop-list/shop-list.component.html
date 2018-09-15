@@ -13,9 +13,9 @@
                     <i class="fas fa-heart fa-2x"></i>
                 </span>
             </div>
-            <a href="#"
-                (click)="addToCart($event, item.id)"
-                class="shop-item-btnbuy">Shop Now</a>
+            <button type="button"
+                    (click)="addToCart(item, 1)"
+                    class="shop-item-btnbuy">Shop Now</button>
         </div>
         <h3 class="shop-item-name">
             <a routerLink="/shop/{{item.id}}">

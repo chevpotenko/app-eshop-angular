@@ -39,6 +39,6 @@ export class CatalogFilterComponent implements OnInit {
 			this.httpParamsService.httpParams = this.httpParamsService.httpParams.delete(event.target.name, event.target.value);
 			this.httpParamsService.httpParams = this.httpParamsService.httpParams.set('page', '0');
 		}
-		this.dataService.getQuery('api/shops', this.httpParamsService.httpParams).subscribe(result => { });
+		this.dataService.getQuery('api/shop', this.httpParamsService.httpParams).subscribe(result => { });
 	}
 }

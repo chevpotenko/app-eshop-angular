@@ -343,11 +343,12 @@ input.subscription-email {
   width: 100px;
   height: 30px;
   background: #ffac03;
+  border: none;
   color: #fff;
   text-align: center;
   line-height: 30px;
-  text-decoration: none;
-  transition: .2s ease background; }
+  transition: .2s ease background;
+  cursor: pointer; }
   .shop-item-btnbuy:hover {
     background: #f44336; }
 

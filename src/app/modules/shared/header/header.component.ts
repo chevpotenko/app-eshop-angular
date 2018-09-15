@@ -23,13 +23,8 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.dataService.getAll('api/shoppingcart').subscribe((result) => {      
-            let cart:any = result,
-                cartTotal; 
-                
-            cartTotal = this.shopService.updateCartTotal(cart);
-            this.sharedService.setCartTotalQty(cartTotal.qty);
-            this.sharedService.setCartTotalPrice(cartTotal.total);
+        this.dataService.getAll('api/shoppingcart').subscribe((result) => {   
+           this.shopService.updateCartTotal(result);
         });
 
         this.dataService.getAll('api/catalog').subscribe((result) => { 

@@ -61,7 +61,7 @@
                         <tr>
                             <td>Quantity</td>
                             <td>
-                                <input class="products-quantity" type="number" value="5" min="0" max="100">
+                                <input [(ngModel)]="quantity" type="number" value="5" min="0" max="100" class="products-quantity">
                             </td>
                         </tr>
                         <tr>
@@ -75,8 +75,10 @@
                     </table>
                 </div>
                 <div class="product-control">
-                    <button class="btn btn-buy">BUY NOW</button>
-                    <button class="btn btn-cart">ADD TO MY CART</button>
+                    <button class="btn btn-buy">BUY NOW</button>                   
+                    <button type="button"
+                        (click)="addToCart(product)"
+                        class="btn btn-cart">ADD TO MY CART</button>
                 </div>
                 <div class="product-share">
                     <h4 class="additional-info">Share on:</h4>
