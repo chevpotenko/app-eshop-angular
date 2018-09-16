@@ -1,0 +1,31 @@
+.checkout-row{
+    margin-bottom: 20px;
+}
+.checkout-item{
+    width: 45%;
+}
+.checkout-item label span{
+    color: red;
+}
+.checkout-item input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.checkout .btn--send {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background: #ffac03;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    transition: .2s ease background;
+    border: none;
+    cursor: pointer;
+}
+.checkout .btn--send:hover {
+    background: #f44336; 
+}
+.checkout button:focus{
+    outline: none; 
+}

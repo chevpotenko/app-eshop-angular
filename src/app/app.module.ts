@@ -15,6 +15,7 @@ import { ShopService } from './services/shop/shop.service';
 import { PageIndexModule } from './modules/index/index.module';
 import { ShopModule } from './modules/shop/shop.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { PageCheckoutModule } from './modules/checkout/checkout.module';
 import { PageAboutModule } from './modules/about/about.module';
 import { PageContactModule } from './modules/contact/contact.module';
 
@@ -35,16 +36,17 @@ import { routing } from './app-routing.module';
 		SignupComponent,
 		ProfileComponent,
 		SigninComponent,
-		ShoppingCartComponent			
+		ShoppingCartComponent
 	],
 	imports: [
 		BrowserModule,		
 		FormsModule,
 		SharedModule,
 		PageIndexModule,
+		PageCheckoutModule,	
 		PageAboutModule,
 		PageContactModule,
-		ShopModule,	
+		ShopModule,
 		routing,
 		HttpModule,		
 		HttpClientModule,

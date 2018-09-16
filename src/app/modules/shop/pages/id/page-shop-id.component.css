@@ -160,7 +160,10 @@ figure{
 .btn-buy{
     background: #ffac03;
     color: #fff;
+    line-height: 47px;
     border: 1px solid transparent;
+    text-align: center;
+    text-decoration: none;
 }
 .btn-cart{
     position: absolute;

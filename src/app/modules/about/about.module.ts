@@ -11,8 +11,7 @@ import { PageAboutComponent } from './pages/about/page-about.component';
     ],
     declarations: [
         PageAboutComponent
-    ],
-    exports: [ ]
+    ]
 })
 
 export class PageAboutModule { }

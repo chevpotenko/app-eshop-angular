@@ -16,7 +16,7 @@ export class PageShopIdComponent implements OnInit {
     constructor(private dataService: DataService,
                 private shopService: ShopService,
                 private route: ActivatedRoute) {
-        this.quantity = 0;
+        this.quantity = 1;
     }
 
     ngOnInit() {
