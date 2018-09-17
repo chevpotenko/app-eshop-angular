@@ -1,10 +1,17 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
 
 import { PageCheckoutComponent } from './pages/checkout/checkout.component';
 
-export  const routes: Routes = [    
-    { path: 'checkout', component: PageCheckoutComponent }
+const routes: Routes = [    
+    { path: '', component: PageCheckoutComponent }
 ];
+
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
   
-export  const checkoutRouting: ModuleWithProviders = RouterModule.forChild(routes);
+export  class checkoutRouting {
+
+}

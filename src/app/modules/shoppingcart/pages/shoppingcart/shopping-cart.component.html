@@ -1,27 +1,8 @@
 <div class="shoppingcart center">
     <h2 class="section-title">Shopping cart</h2>
-    <div *ngIf="shoppingCart" class="shoppingcart-content">
-        <table class="shoppingcart-table">
-            <tr>
-                <th class="name">Name</th>
-                <th class="price">Price</th>           
-                <th class="quantity">Quantity</th>
-                <th class="total">Total</th>
-                <th></th>
-            </tr>
-            <tr *ngFor="let cartItem of shoppingCart">
-                <td>{{ cartItem.product.name }}</td>
-                <td>${{ cartItem.product.price }}</td>           
-                <td>{{ cartItem.qty }}</td>
-                <td>${{ cartItem.total }}</td>
-                <td>
-                    <span class="btn-counter btn-increment">+</span>
-                    <span class="btn-counter btn-decrement">-</span>
-                </td>
-            </tr>
-        </table>
-        <div class="shoppingcart-results">Total: ${{ shoppingCart.totalPrice }}</div>
-    </div>
+    <div  class="shoppingcart-content">
+        <shoppingcart-table [shoppingcart]="shoppingcart"></shoppingcart-table>  
+    </div>   
     <div class="shoppingcart-footer">
         <a class="btn-catalog" routerLink="/catalog">Continue shopping</a>
         <a class="btn-checkout" routerLink="/checkout">Checkout</a>

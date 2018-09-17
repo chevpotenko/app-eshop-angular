@@ -1,10 +1,17 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
 
 import { PageAboutComponent } from './pages/about/page-about.component';
 
-export  const routes: Routes = [    
-    { path: 'about', component: PageAboutComponent }
+const routes: Routes = [    
+    { path: '', component: PageAboutComponent }
 ];
-  
-export  const aboutRouting: ModuleWithProviders = RouterModule.forChild(routes);
+
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
+
+export class aboutRouting {
+
+}

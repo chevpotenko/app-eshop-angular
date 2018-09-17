@@ -1,10 +1,17 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
 
 import { PageContactComponent } from './pages/contact/page-contact.component';
 
-export  const routes: Routes = [    
-    { path: 'contact', component: PageContactComponent }
+const routes: Routes = [    
+    { path: '', component: PageContactComponent }
 ];
+
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
   
-export  const contactRouting: ModuleWithProviders = RouterModule.forChild(routes);
+export  class contactRouting {
+
+};

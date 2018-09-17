@@ -8,7 +8,7 @@ import { DataService } from '../../../../services/data/data.service';
 })
 export class ShoppingCartComponent implements OnInit {
     
-    public shoppingCart;
+    public shoppingcart;
 
     constructor(private dataService: DataService) {
 
@@ -16,7 +16,7 @@ export class ShoppingCartComponent implements OnInit {
 
     ngOnInit() {
         this.dataService.getAll('api/shoppingcart').subscribe( result => {
-            this.shoppingCart = result;
+            this.shoppingcart = result;
         })
     }  
 
