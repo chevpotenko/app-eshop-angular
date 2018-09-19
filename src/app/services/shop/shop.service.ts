@@ -9,13 +9,15 @@ export class ShopService {
 
     constructor(private dataService: DataService,
                 private sharedService: SharedService) {
-        this.getCart();
+
+        this.getCart().subscribe((result) => {
+            this.cart = result;
+        }); 
+              
     }
 
-    private getCart() {
-        this.dataService.getAll('api/shoppingcart/').subscribe((result) => {
-            this.cart = result;
-		});
+    getCart() {
+        return this.dataService.getAll('api/shoppingcart/');
     }
     
     updateCartTotal(cart) {		

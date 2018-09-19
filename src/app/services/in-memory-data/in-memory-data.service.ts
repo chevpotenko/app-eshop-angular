@@ -30,7 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 product: {
                     id: 1,
-                    name: "Product name here",
+                    name: "Fashion Product Name 1",
                     category: "Top",
                     price: "100",
                     rating: "5",
@@ -44,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 product: {
                     id: 2,
-                    name: "Product name here",
+                    name: "Fashion Product Name 2",
                     category: "Top",
                     price: "100",
                     rating: "5",

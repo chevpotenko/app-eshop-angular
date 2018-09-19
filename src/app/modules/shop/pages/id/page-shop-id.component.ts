@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
 import { ShopService } from '../../../../services/shop/shop.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-page-shop-id',
@@ -15,12 +15,13 @@ export class PageShopIdComponent implements OnInit {
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
-                private route: ActivatedRoute) {
+                private activatedRoute: ActivatedRoute,
+                private router: Router,) {
         this.quantity = 1;
     }
 
     ngOnInit() {
-        let productId = this.route.snapshot.paramMap.get('id');
+        let productId = this.activatedRoute.snapshot.paramMap.get('id');
         this.dataService.getSingle('api/shop/', productId).subscribe((result) => {
             this.product = result;
         });
@@ -28,6 +29,11 @@ export class PageShopIdComponent implements OnInit {
 
     addToCart(product) {	
 		this.shopService.addProductToCart(product, this.quantity);
-	}
+    }
+    
+    buyNow(product) {
+        this.shopService.addProductToCart(product, this.quantity);
+        this.router.navigate(['/checkout']);
+    }
 
 }

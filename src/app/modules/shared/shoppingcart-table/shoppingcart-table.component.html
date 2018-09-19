@@ -13,8 +13,10 @@
 			<td>{{ cartItem.qty }}</td>
 			<td>${{ cartItem.total }}</td>
 			<td>
-				<span class="btn-counter btn-increment">+</span>
-				<span class="btn-counter btn-decrement">-</span>
+				<span class="btn-counter btn-increment"
+						(click)="updateProductAmounts(cartItem.id, 'increase')">+</span>
+				<span class="btn-counter btn-decrement"
+						(click)="updateProductAmounts(cartItem.id, 'decrease')">-</span>
 			</td>
 		</tr>
 	</table>

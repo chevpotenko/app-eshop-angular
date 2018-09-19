@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../../services/data/data.service';
 
 @Component({
     selector: 'app-shopping-cart',
@@ -7,17 +6,11 @@ import { DataService } from '../../../../services/data/data.service';
     styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-    
-    public shoppingcart;
 
-    constructor(private dataService: DataService) {
-
+    constructor() {
     }
 
     ngOnInit() {
-        this.dataService.getAll('api/shoppingcart').subscribe( result => {
-            this.shoppingcart = result;
-        })
     }  
 
 }

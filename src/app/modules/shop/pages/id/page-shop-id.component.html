@@ -75,10 +75,12 @@
                     </table>
                 </div>
                 <div class="product-control">
-                    <a [routerLink]="['/checkout', {id: product.id, name: product.name, price: product.price, quantity: quantity}]" class="btn btn-buy">BUY NOW</a>                   
+                    <button  type="button"
+                            (click)="buyNow(product)"
+                            class="btn btn-buy">BUY NOW</button>                   
                     <button type="button"
-                        (click)="addToCart(product)"
-                        class="btn btn-cart">ADD TO MY CART</button>
+                            (click)="addToCart(product)"
+                            class="btn btn-cart">ADD TO MY CART</button>
                 </div>
                 <div class="product-share">
                     <h4 class="additional-info">Share on:</h4>
