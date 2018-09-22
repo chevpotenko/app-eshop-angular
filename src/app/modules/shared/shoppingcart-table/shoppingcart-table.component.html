@@ -9,9 +9,9 @@
 		</tr>
 		<tr *ngFor="let cartItem of shoppingcart">
 			<td>{{ cartItem.product.name }}</td>
-			<td>${{ cartItem.product.price }}</td>           
+			<td>$ {{ cartItem.product.price }}</td>           
 			<td>{{ cartItem.qty }}</td>
-			<td>${{ cartItem.total }}</td>
+			<td>$ {{ cartItem.total }}</td>
 			<td>
 				<span class="btn-counter btn-increment"
 						(click)="updateProductAmounts(cartItem.id, 'increase')">+</span>
@@ -19,6 +19,12 @@
 						(click)="updateProductAmounts(cartItem.id, 'decrease')">-</span>
 			</td>
 		</tr>
-	</table>
-	<div class="shoppingcart-results">Total: </div>
+		<tr>
+			<td>Total:</td>
+			<td></td>
+			<td></td>
+			<td>$ {{ orderTotal.price }}</td>
+			<td></td>
+		</tr>	
+	</table>	
 </div>

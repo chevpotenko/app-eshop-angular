@@ -9,15 +9,17 @@ import { ShopService } from '../../../services/shop/shop.service';
 export class ShoppingcartTableComponent implements OnInit {
 
     private shoppingcart: any;
+    private orderTotal:any;
 
     constructor(private shopService: ShopService) {
-
+       
     }
 
     ngOnInit() {
         this.shopService.getCart().subscribe((result) => {
             this.shopService.cart = result;
             this.shoppingcart = this.shopService.cart;
+            this.orderTotal = this.shopService.orderTotal;
 		});
     }
     

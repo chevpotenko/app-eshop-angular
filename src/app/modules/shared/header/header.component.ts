@@ -13,6 +13,7 @@ import { ShopService } from '../../../services/shop/shop.service';
 export class HeaderComponent implements OnInit {
   
     public data;
+    public orderTotal;
     public catalog;
     
     constructor(private sharedService: SharedService,
@@ -20,13 +21,10 @@ export class HeaderComponent implements OnInit {
                 private shopService: ShopService, 
                 private userService: UserService) {
         this.data = this.sharedService.data;
+        this.orderTotal = this.shopService.orderTotal;
     }
 
     ngOnInit() {
-        this.dataService.getAll('api/shoppingcart').subscribe((result) => {   
-           this.shopService.updateCartTotal(result);
-        });
-
         this.dataService.getAll('api/catalog').subscribe((result) => { 
             this.catalog = result;            
         });

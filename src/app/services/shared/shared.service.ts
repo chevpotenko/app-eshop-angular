@@ -3,11 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SharedService {
 
-	public data = {
-		cart: {
-			totalQty: 0,
-			totalPrice: 0
-		},
+	public data = {		
 		user: {
 			signin: false
 		},
@@ -16,24 +12,12 @@ export class SharedService {
 
 	constructor() { }
 
-	setCartTotalQty(amount){
-		this.data.cart.totalQty = amount;
+	setCurrentCategory(category){
+		this.data.currentCategory = category;
 	}
-
-	getCartTotalQty(){
-		return this.data.cart.totalQty;
-	}
-
-	setCartTotalPrice(price){
-		this.data.cart.totalPrice = price;
-	}  
 
 	getcurrentCategory(){
 		return this.data.currentCategory;
-	}
-
-	getCartTotalPrice(){
-		return this.data.cart.totalPrice;
 	}
 
 	getUserSignIn(){
@@ -43,9 +27,5 @@ export class SharedService {
 	setUserSignIn(signin){
 		this.data.user.signin = signin;
 	}
-
-	setCurrentCategory(category){
-		this.data.currentCategory	 = category;
-	}
-
+	
 }

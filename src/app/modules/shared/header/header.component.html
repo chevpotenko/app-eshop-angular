@@ -23,8 +23,8 @@
                 </li>
                 <li class="usercart">
                     <a routerLink="/shoppingcart">
-                        <span class="usercart-amount amount">{{data.cart.totalQty}}</span>
-                        <span class="usercart-totalprice">${{data.cart.totalPrice}}</span>
+                        <span *ngIf="orderTotal" class="usercart-amount amount">{{ orderTotal.quantity }}</span>
+                        <span *ngIf="orderTotal" class="usercart-totalprice">${{ orderTotal.price }}</span>
                     </a>							
                 </li>
             </ul>

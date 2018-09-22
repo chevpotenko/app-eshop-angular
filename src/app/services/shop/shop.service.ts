@@ -1,35 +1,24 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data/data.service';
-import { SharedService } from '../shared/shared.service';
 
 @Injectable()
 export class ShopService {
 
     public cart;
+    public orderTotal = {
+        price: 0,
+        quantity: 0
+    };
 
-    constructor(private dataService: DataService,
-                private sharedService: SharedService) {
-
+    constructor(private dataService: DataService) {
         this.getCart().subscribe((result) => {
             this.cart = result;
-        }); 
-              
+            this.getOrderTotal();
+        });  
     }
 
     getCart() {
         return this.dataService.getAll('api/shoppingcart/');
-    }
-    
-    updateCartTotal(cart) {		
-		let result = cart.reduce((accumulator, item, index) => {
-			return {
-				total : accumulator.total += parseInt(item.total),
-				qty : accumulator.qty += parseInt(item.qty)
-			}			
-        }, { total: 0, qty: 0 });
-        this.sharedService.setCartTotalPrice(result.total);
-        this.sharedService.setCartTotalQty(result.qty);
-        return result;
     }
 
     updateCartItem (product, cart, itemCart, itemsAmount) {       
@@ -69,13 +58,18 @@ export class ShopService {
         if (itemCart.isItem){				
             this.dataService.update('api/shoppingcart/', itemCart.data.id, itemCart.data).subscribe(() => {
                 this.cart.splice(itemCart.index, 1, itemCart.data);
-                this.updateCartTotal(this.cart);
+                this.getOrderTotal();
             });
         } else {                 
             this.dataService.add('api/shoppingcart/', itemCart.data).subscribe(() => {
                 this.cart.push(itemCart.data);
-                this.updateCartTotal(this.cart);
+                this.getOrderTotal();
             });
         }	
+    }
+
+    getOrderTotal() {
+        this.orderTotal.price = this.cart.reduce((accum, current) => { return accum + current.total }, 0);
+        this.orderTotal.quantity = this.cart.reduce((accum, current) => { return accum + current.qty }, 0);
     }
 }
