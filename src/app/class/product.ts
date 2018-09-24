@@ -1,5 +1,5 @@
-export class Goods {
-    _id: string;
+export class Product {
+    _id: number;
     name: string;
     category: string;
     price: number;

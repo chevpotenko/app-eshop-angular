@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../../services/shop/shop.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ShopService } from '../../../services/shop/shop.service';
 })
 export class ShoppingcartTableComponent implements OnInit {
 
-    private shoppingcart: any;
+    private shoppingcart:any;
     private orderTotal:any;
 
     constructor(private shopService: ShopService) {

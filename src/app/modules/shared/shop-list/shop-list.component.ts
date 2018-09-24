@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Goods } from '../../../class/goods';
+import { Product } from '../../../class/product';
 import { ShopService } from '../../../services/shop/shop.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ShopService } from '../../../services/shop/shop.service';
 
 export class ShopListComponent implements OnInit {
 
-	@Input() list: Goods[];	
+	@Input() list: Product[];	
 	
 	constructor(private shopService: ShopService) {
 
