@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../../../../services/shared/shared.service';
 import { DataService } from '../../../../services/data/data.service';
+import { Category } from '../../../../class/category';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-page-catalog',
@@ -9,22 +10,46 @@ import { DataService } from '../../../../services/data/data.service';
 })
 export class PageCatalogComponent implements OnInit {   
     
+    private catalog;
     private products;
-    private data;
+    private currentCategoryId;
+    private currentCategoryName;    
 
-    constructor(private sharedService: SharedService,
-                private dataService: DataService) {
-        this.data = this.sharedService.data;
-    }   
-    
+    constructor(private dataService: DataService,
+                private activatedRoute: ActivatedRoute) {
+      
+    }
 
     ngOnInit() {
         this.dataService.getAll('api/shop/').subscribe((result) => {
             this.products = result;
-            if(this.products){
-                this.sharedService.setCurrentCategory(this.products[0].category);
-            }  
+        });
+        this.getCurrentCategoryId();
+        this.getCatalog();       
+    }
+
+    getCatalog() {
+        this.dataService.getAll<Category[]>('api/catalog/').subscribe((catalog) => {
+            this.catalog = catalog
+            this.currentCategoryName = this.getCurrentCategoryName();
         });
     }
 
+    getCurrentCategoryName(){
+        let currentCategory = this.catalog.find(category => {
+           return category.id === parseInt(this.currentCategoryId) ? true : false;
+        });
+        return currentCategory.name;
+    }
+
+    getCurrentCategoryId() {
+        this.activatedRoute.params.subscribe(params => {
+            if(this.catalog){
+                this.currentCategoryId = params['id'];
+                this.currentCategoryName = this.getCurrentCategoryName();
+            } else {
+                this.currentCategoryId = params['id'];
+            }          
+        });
+    }
 }

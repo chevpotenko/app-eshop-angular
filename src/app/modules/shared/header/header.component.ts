@@ -35,8 +35,4 @@ export class HeaderComponent implements OnInit {
         });        
     }
 
-    setCurrentCategory(category) {
-        this.sharedService.setCurrentCategory(category);
-    }
-
 }

@@ -6,18 +6,11 @@ export class SharedService {
 	public data = {		
 		user: {
 			signin: false
-		},
-		currentCategory: ""		
+		}	
 	};
 
-	constructor() { }
+	constructor() {
 
-	setCurrentCategory(category){
-		this.data.currentCategory = category;
-	}
-
-	getcurrentCategory(){
-		return this.data.currentCategory;
 	}
 
 	getUserSignIn(){

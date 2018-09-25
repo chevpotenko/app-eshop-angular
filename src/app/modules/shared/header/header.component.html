@@ -44,8 +44,7 @@
                     <li *ngFor="let item of catalog">
                         <a routerLink="/catalog/{{item.id}}"
                             routerLinkActive="active"
-                            [routerLinkActiveOptions]="{exact: true}"
-                            (click)="setCurrentCategory(item.name)">                            
+                            [routerLinkActiveOptions]="{exact: true}">                            
                                 {{ item.name }}
                             </a>
                     </li>

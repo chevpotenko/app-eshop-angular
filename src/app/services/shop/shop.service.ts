@@ -69,7 +69,11 @@ export class ShopService {
     }
 
     getOrderTotal() {
-        this.orderTotal.price = this.cart.reduce((accum, current) => { return accum + current.total }, 0);
-        this.orderTotal.quantity = this.cart.reduce((accum, current) => { return accum + current.qty }, 0);
+        this.orderTotal.price = this.cart.reduce((accum, current) => {
+            return accum + current.total
+         }, 0);         
+        this.orderTotal.quantity = this.cart.reduce((accum, current) => {
+            return accum + current.qty
+        }, 0);
     }
 }
