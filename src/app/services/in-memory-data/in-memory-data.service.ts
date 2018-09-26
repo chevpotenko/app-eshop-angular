@@ -17,48 +17,32 @@ export class InMemoryDataService implements InMemoryDbService {
                     }
                 ]
             }
-        ];  
-
-        const cart = [
-            {
-                id: 'add',      
-                totalQty: 2    
+        ];         
+        
+        const banners = [
+            { 
+                url: "#",
+                img: "assets/img/banners/banner_big.jpg"
+            },
+            { 
+                url: "#",
+                img: "assets/img/banners/banner_middle.jpg"
+            },
+            { 
+                url: "#",
+                img: "assets/img/banners/banner_small_1.jpg"
+            },
+            { 
+                url: "#",
+                img: "assets/img/banners/banner_small_2.jpg"
             }
         ];
-
-        const shoppingcart = [            
+         
+        const subscribers = [
             {
-                product: {
-                    id: 1,
-                    name: "Fashion Product Name 1",
-                    category: "Top",
-                    price: "100",
-                    rating: "5",
-                    discount: "10",
-                    img: "assets/img/shop/shop_item.jpg"
-                },
                 id: 1,
-                qty: 1,
-                total: 100
-            },
-            {
-                product: {
-                    id: 2,
-                    name: "Fashion Product Name 2",
-                    category: "Top",
-                    price: "100",
-                    rating: "5",
-                    discount: "10",
-                    img: "assets/img/shop/shop_item.jpg"
-                },
-                id: 2,
-                qty: 1,
-                total: 100
-            }            
-        ];
-
-        const signup = [
-                
+                email:'test@test.com'
+            }
         ];
 
         const user = [
@@ -77,26 +61,38 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: 'signin',      
-                signin: true
+                signin: false
             }
-        ];
+        ];        
 
-        const banners = [
+        const signup = [
+                
+        ];              
+
+        const catalog = [
             { 
-                url: "#",
-                img: "assets/img/banners/banner_big.jpg"
+                id: 1,
+                name: "Men",                
+                parentCategory: "",
+                img: ""
             },
             { 
-                url: "#",
-                img: "assets/img/banners/banner_middle.jpg"
+                id: 2,
+                name: "Women",                
+                parentCategory: "",                
+                img: ""
             },
             { 
-                url: "#",
-                img: "assets/img/banners/banner_small_1.jpg"
+                id: 3,
+                name: "Bridal",                
+                parentCategory: "",                
+                img: ""
             },
             { 
-                url: "#",
-                img: "assets/img/banners/banner_small_2.jpg"
+                id: 4,
+                name: "Baby&Kids",                
+                parentCategory: "",                
+                img: ""
             }
         ];
 
@@ -139,41 +135,7 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        const catalog = [
-            { 
-                id: 1,
-                name: "Men",                
-                parentCategory: "",
-                img: ""
-            },
-            { 
-                id: 2,
-                name: "Women",                
-                parentCategory: "",                
-                img: ""
-            },
-            { 
-                id: 3,
-                name: "Bridal",                
-                parentCategory: "",                
-                img: ""
-            },
-            { 
-                id: 4,
-                name: "Baby&Kids",                
-                parentCategory: "",                
-                img: ""
-            }
-        ];
-
-        const subscribers = [
-            {
-                id: 1,
-                email:'test@test.com'
-            }
-        ];
-
-        const params = [
+        const productparams = [
             {
                 id: 1,
                 name: 'Categories',
@@ -204,8 +166,39 @@ export class InMemoryDataService implements InMemoryDbService {
                 type: 'checkbox',
                 values: ['Red', 'White']
             }
-        ]
+        ];     
+        
+        const shoppingcart = [            
+            {
+                product: {
+                    id: 1,
+                    name: "Fashion Product Name 1",
+                    category: "Top",
+                    price: "100",
+                    rating: "5",
+                    discount: "10",
+                    img: "assets/img/shop/shop_item.jpg"
+                },
+                id: 1,
+                qty: 1,
+                total: 100
+            },
+            {
+                product: {
+                    id: 2,
+                    name: "Fashion Product Name 2",
+                    category: "Top",
+                    price: "100",
+                    rating: "5",
+                    discount: "10",
+                    img: "assets/img/shop/shop_item.jpg"
+                },
+                id: 2,
+                qty: 1,
+                total: 100
+            }            
+        ];          
 
-        return { banners, catalog, shop, params, cart, user, signup, shoppingcart, pages, subscribers };
+        return { pages, banners, subscribers, user, signup, catalog, shop, productparams, shoppingcart };
     }
 }

@@ -17,6 +17,7 @@ const routes: Routes = [
     { path: 'user/signup', component: SignupComponent },
     { path: 'user/signin', component: SigninComponent },
     { path: 'user/profile', component: ProfileComponent },
+    { path: 'user/logout', component: PageIndexComponent },
     { path: 'shoppingcart', component: ShoppingCartComponent },
     { path: 'checkout', loadChildren: './modules/checkout/checkout.module#PageCheckoutModule' },
     { path: 'contact', loadChildren: './modules/contact/contact.module#PageContactModule' },
