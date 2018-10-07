@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data/data.service';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 
 @Injectable()
 export class ShopService {
@@ -21,7 +23,13 @@ export class ShopService {
         return this.dataService.getAll('api/shoppingcart/');
     }
 
-    updateCartItem (product, cart, itemCart, itemsAmount) {       
+    updateCartItem (product, cart, itemsAmount) {
+        let itemCart = {
+            data: null,
+            isItem: false,
+            index: undefined
+        };
+        
         cart.forEach((item, index) => {            
             if (item.product.id == product.id){
                 itemCart.data = {
@@ -36,24 +44,26 @@ export class ShopService {
         });
         return itemCart;               
     }
-    
-    addProductToCart(product, itemsAmount) {        
-        let itemCart = {
-            data: null,
-            isItem: false,
-            index: undefined
-        };
 
-        itemCart = this.updateCartItem(product, this.cart, itemCart, itemsAmount);			
-
-        if (!itemCart.isItem){
-            itemCart.data = {
+    createCartItem(product, cart, itemsAmount) {
+        return {
+            data: {
                 product: product,
-                id: this.cart.length + 1, 
+                id: cart.length + 1, 
                 qty: itemsAmount,
                 total: parseInt(product.price) * parseInt(itemsAmount)
-            }               
-        }		
+            },
+            isItem: true,	               
+            index: cart.length
+        }  
+    }
+    
+    addProductToCart(product, itemsAmount) {    
+        let itemCart = this.updateCartItem(product, this.cart, itemsAmount);			
+
+        if (!itemCart.isItem){
+            itemCart = this.createCartItem(product, this.cart, itemsAmount);    
+        }
 
         if (itemCart.isItem){				
             this.dataService.update('api/shoppingcart/', itemCart.data.id, itemCart.data).subscribe(() => {
