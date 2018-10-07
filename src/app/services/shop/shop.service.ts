@@ -1,89 +1,119 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data/data.service';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-
+import { Observable } from 'rxjs/Rx';
+import { CartItem, OrderTotal } from '../../class/cart';
 
 @Injectable()
 export class ShopService {
 
-    public cart;
-    public orderTotal = {
+    public cart = new BehaviorSubject([]);
+
+    public orderTotal = new BehaviorSubject({
         price: 0,
         quantity: 0
-    };
+    });
 
     constructor(private dataService: DataService) {
-        this.getCart().subscribe((result) => {
-            this.cart = result;
-            this.getOrderTotal();
-        });  
+        this.fetchCart().subscribe((result: CartItem[]) => {
+            this.setCart(result);
+            this.calculateOrderTotal();
+        }); 
     }
 
-    getCart() {
+    get getCart(): Observable<CartItem[]> {
+        return this.cart.asObservable();
+    }
+
+    setCart(cart: CartItem[]): void {
+        this.cart.next(cart);
+    }
+
+    addCartItem(user: CartItem): void {
+        this.cart.next([...this.cart.getValue(), user])
+    }
+
+    removeCartItem(id: string) {
+        this.cart.next(this.cart.getValue().filter(v => v.id !== id));
+    }
+
+    updateCartItem(cartItem: CartItem) {
+        this.cart.next(this.cart.getValue().map(item => {
+            return item.id == cartItem.id ?  cartItem : item;
+        }));
+    }
+
+    fetchCart() {
         return this.dataService.getAll('api/shoppingcart/');
     }
 
-    updateCartItem (product, cart, itemsAmount) {
+    get getOrderTotal(): Observable<OrderTotal> {
+        return this.orderTotal.asObservable();
+    }
+
+    setOrderTotal(orderTotal: OrderTotal): void {
+        this.orderTotal.next(orderTotal);
+    }
+
+    calculateCartItem (product, itemsAmount) {
         let itemCart = {
-            data: null,
-            isItem: false,
-            index: undefined
+            product: null,
+            id: undefined,
+            total: undefined,
+            qty: undefined
         };
         
-        cart.forEach((item, index) => {            
+        this.cart.getValue().forEach(item => {            
             if (item.product.id == product.id){
-                itemCart.data = {
+                itemCart = {
                     product: item.product,
                     id: item.id, 
-                    qty: parseInt(item.qty) + parseInt(itemsAmount),
-                    total: parseInt(item.total) + (parseInt(item.product.price) * parseInt(itemsAmount))
-                };               				 
-                itemCart.isItem = true;	               
-                itemCart.index = index;	               
+                    qty: item.qty + itemsAmount,
+                    total: item.total + (item.product.price * itemsAmount)
+                };             
             }            		
         });
+
         return itemCart;               
     }
 
-    createCartItem(product, cart, itemsAmount) {
+    createCartItem(product, itemsAmount) {
         return {
-            data: {
-                product: product,
-                id: cart.length + 1, 
-                qty: itemsAmount,
-                total: parseInt(product.price) * parseInt(itemsAmount)
-            },
-            isItem: true,	               
-            index: cart.length
-        }  
+            product: product,
+            id: this.cart.getValue().length + 1, 
+            qty: itemsAmount,
+            total: product.price * itemsAmount
+        };
     }
     
-    addProductToCart(product, itemsAmount) {    
-        let itemCart = this.updateCartItem(product, this.cart, itemsAmount);			
+    addProductToCart(product, itemsAmount) { 
+        let itemCart = this.calculateCartItem(product, itemsAmount);
 
-        if (!itemCart.isItem){
-            itemCart = this.createCartItem(product, this.cart, itemsAmount);    
+        if(!itemCart.id) {
+            itemCart = this.createCartItem(product, itemsAmount);
+            this.dataService.add('api/shoppingcart/', itemCart).subscribe(() => {
+                this.addCartItem(itemCart);
+                this.calculateOrderTotal();
+            });
+        } else {
+            this.dataService.update('api/shoppingcart/', itemCart.id, itemCart).subscribe(() => {
+                this.updateCartItem(itemCart);
+                this.calculateOrderTotal();
+            });
         }
-
-        if (itemCart.isItem){				
-            this.dataService.update('api/shoppingcart/', itemCart.data.id, itemCart.data).subscribe(() => {
-                this.cart.splice(itemCart.index, 1, itemCart.data);
-                this.getOrderTotal();
-            });
-        } else {                 
-            this.dataService.add('api/shoppingcart/', itemCart.data).subscribe(() => {
-                this.cart.push(itemCart.data);
-                this.getOrderTotal();
-            });
-        }	
     }
 
-    getOrderTotal() {
-        this.orderTotal.price = this.cart.reduce((accum, current) => {
+    calculateOrderTotal() {        
+        let price = this.cart.getValue().reduce((accum, current) => {
             return accum + current.total
-         }, 0);         
-        this.orderTotal.quantity = this.cart.reduce((accum, current) => {
+        }, 0);         
+        let quantity = this.cart.getValue().reduce((accum, current) => {
             return accum + current.qty
         }, 0);
+
+        this.setOrderTotal({
+            price: price,
+            quantity: quantity
+        });
     }
 }

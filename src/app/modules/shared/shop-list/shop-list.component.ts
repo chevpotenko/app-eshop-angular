@@ -20,7 +20,7 @@ export class ShopListComponent implements OnInit {
 		    
 	}
 	
-	addToCart(id, amount) {	
-		this.shopService.addProductToCart(id, amount);
+	addToCart(product, amount) {	
+		this.shopService.addProductToCart(product, amount);
 	}
 }

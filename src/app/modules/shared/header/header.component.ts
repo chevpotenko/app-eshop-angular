@@ -21,7 +21,9 @@ export class HeaderComponent implements OnInit {
                 private shopService: ShopService, 
                 private userService: UserService) {
         this.data = this.sharedService.data;
-        this.orderTotal = this.shopService.orderTotal;
+        this.shopService.orderTotal.subscribe(result => {
+            this.orderTotal = result;
+        });
     }
 
     ngOnInit() {

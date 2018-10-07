@@ -5,7 +5,7 @@
 			<th class="price">Price</th>           
 			<th class="quantity">Quantity</th>
 			<th class="total">Total</th>
-			<th></th>
+			<th></th>	
 		</tr>
 		<tr *ngFor="let cartItem of shoppingcart">
 			<td>{{ cartItem.product.name }}</td>
@@ -14,9 +14,9 @@
 			<td>$ {{ cartItem.total }}</td>
 			<td>
 				<span class="btn-counter btn-increment"
-						(click)="updateProductAmounts(cartItem.id, 'increase')">+</span>
+						(click)="updateProductAmounts(cartItem, 'increase')">+</span>
 				<span class="btn-counter btn-decrement"
-						(click)="updateProductAmounts(cartItem.id, 'decrease')">-</span>
+						(click)="updateProductAmounts(cartItem, 'decrease')">-</span>
 			</td>
 		</tr>
 		<tr>

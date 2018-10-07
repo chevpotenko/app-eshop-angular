@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../../services/shop/shop.service';
+import { CartItem } from '../../../class/cart';
 
 @Component({
     selector: 'shoppingcart-table',
@@ -15,34 +16,25 @@ export class ShoppingcartTableComponent implements OnInit {
        
     }
 
-    ngOnInit() {
-        this.shopService.getCart().subscribe((result) => {
-            this.shopService.cart = result;
-            this.shoppingcart = this.shopService.cart;
-            this.orderTotal = this.shopService.orderTotal;
-		});
+    ngOnInit() {                        
+        this.shopService.cart.subscribe(result => {
+            this.shoppingcart = result;
+        });
+        this.shopService.orderTotal.subscribe(result => {
+            this.orderTotal = result;
+        });
     }
     
-    updateProductAmounts(id, actionType) {
-        let item;  
-              
-        item = this.shoppingcart.find((item) => {
-            if(item.id == id){
-                return true;
-            }
-        });
-
+    updateProductAmounts(cartItem, actionType) {   
         switch(actionType) {
             case 'increase': 
-                this.shopService.addProductToCart(item.product, 1);
+                this.shopService.addProductToCart(cartItem.product, 1);
                 break;
             case 'decrease':
-                if (item.qty > 0) {
-                    this.shopService.addProductToCart(item.product, -1);                    
+                if (cartItem.qty > 0) {
+                    this.shopService.addProductToCart(cartItem.product, -1);                    
                 }                
                 break;
-            default:
-                item.qty = item.qty;
         }
     }
 

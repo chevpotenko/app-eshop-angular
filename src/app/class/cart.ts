@@ -6,3 +6,8 @@ export class CartItem {
     qty: number;
     total: number
 }
+
+export class OrderTotal {
+    price: number;
+    quantity: number
+}
