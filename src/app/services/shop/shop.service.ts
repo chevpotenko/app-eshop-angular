@@ -56,25 +56,15 @@ export class ShopService {
     }
 
     calculateCartItem (product, itemsAmount) {
-        let itemCart = {
-            product: null,
-            id: undefined,
-            total: undefined,
-            qty: undefined
-        };
-        
-        this.cart.getValue().forEach(item => {            
-            if (item.product.id == product.id){
-                itemCart = {
-                    product: item.product,
-                    id: item.id, 
-                    qty: item.qty + itemsAmount,
-                    total: item.total + (item.product.price * itemsAmount)
-                };             
-            }            		
+        let itemCart = this.cart.getValue().find(item => {            
+            return item.product.id == product.id
         });
-
-        return itemCart;               
+        if (itemCart) {
+            itemCart.qty = itemCart.qty + itemsAmount;
+            itemCart.total = itemCart.total + (itemCart.product.price * itemsAmount);
+            return itemCart;
+        }
+        return false;
     }
 
     createCartItem(product, itemsAmount) {
@@ -89,7 +79,7 @@ export class ShopService {
     addProductToCart(product, itemsAmount) { 
         let itemCart = this.calculateCartItem(product, itemsAmount);
 
-        if(!itemCart.id) {
+        if(!itemCart) {
             itemCart = this.createCartItem(product, itemsAmount);
             this.dataService.add('api/shoppingcart/', itemCart).subscribe(() => {
                 this.addCartItem(itemCart);
