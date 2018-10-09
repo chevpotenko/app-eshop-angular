@@ -8,7 +8,6 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data/in-memory-data.service';
 
 import { UserService } from './services/user/user.service';
-import { SharedService } from './services/shared/shared.service';
 import { DataService } from './services/data/data.service';
 import { ShopService } from './services/shop/shop.service';
 
@@ -50,7 +49,6 @@ import { routing } from './app-routing.module';
 	],
 	providers: [
 		HttpClientModule,
-		SharedService,
 		DataService,
 		UserService,
 		ShopService

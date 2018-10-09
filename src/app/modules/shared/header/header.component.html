@@ -4,10 +4,10 @@
             <div class="auth">
                 <ul class="auth-menu">
                     <li><i class="fas fa-user-circle fa-2x"></i></li>
-                    <li *ngIf="!data.user.signin"><a  routerLink="/user/signin">Login</a></li>
-                    <li *ngIf="!data.user.signin"> | </li>
-                    <li *ngIf="!data.user.signin"><a routerLink="/user/signup">SignUp</a></li>						
-                    <li *ngIf="data.user.signin"><a href="/user/logout">Logout</a></li>						
+                    <li *ngIf="!signin"><a routerLink="/user/signin">Login</a></li>
+                    <li *ngIf="!signin"> | </li>
+                    <li *ngIf="!signin"><a routerLink="/user/signup">SignUp</a></li>						
+                    <li *ngIf="signin"><a href="/user/logout">Logout</a></li>
                 </ul>
             </div>
             <div class="logo">

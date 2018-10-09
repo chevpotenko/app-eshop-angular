@@ -1,35 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../../class/user';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
-import {  of } from 'rxjs/observable/of';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-const httpOptions = {
-  	headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable()
 export class UserService {
+
+	public signin = new BehaviorSubject(false);
 	
-	constructor(private http: HttpClient) {
+	constructor() {
 
 	}
 
-	addUser(user:User): Observable<User> {
-		return this.http.post<User>('api/user/signup', user, httpOptions)
+	get getSignin(): Observable<boolean> {
+        return this.signin.asObservable();
+    }
+
+    setSignin(value: boolean):void {
+        this.signin.next(value);
 	}
 
-	signinUser(user:User): Observable<User> {
-		return this.http.post<User>('api/user/signin', user, httpOptions)
-	}
-
-	getUser(): Observable<User> {
-		return this.http.get<User>('api/user/signup');   
-	}
-
-	isUserSignin() {
-		return this.http.get('api/user/signin'); 
-	}
-	
 }

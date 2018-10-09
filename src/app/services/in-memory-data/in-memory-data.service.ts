@@ -63,7 +63,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 id: 'signin',      
                 signin: false
             }
-        ];        
+        ];
 
         const signup = [
                 
@@ -199,6 +199,6 @@ export class InMemoryDataService implements InMemoryDbService {
             }            
         ];          
 
-        return { pages, banners, subscribers, user, signup, catalog, shop, productparams, shoppingcart };
+        return { pages, banners, subscribers, user, signup, catalog, shop, productparams, shoppingcart};
     }
 }
