@@ -1,5 +1,6 @@
 export class User {
     id: number;
+    signin: boolean;
     email: string;
     password: string;
 }

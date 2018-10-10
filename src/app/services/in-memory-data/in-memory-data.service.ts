@@ -45,29 +45,27 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        const user = [
+        const users = [
             {
-                id: 'signup',      
-                users: [
-                    {
-                        email: 'test@test.com',
-                        password: 'test'
-                    },
-                    {
-                        email: 'test2@test.com',
-                        password: 'test'
-                    }
-                ]
+                id: 1,
+                email: 'test@test.com',
+                password: 'test',
+                signin: false
             },
             {
-                id: 'signin',      
+                id: 2,
+                email: 'test2@test.com',
+                password: 'test',
                 signin: false
             }
         ];
-
-        const signup = [
-                
-        ];              
+        
+        const user = [
+            {
+                id: 'signin',
+                signin: false
+            }
+        ];
 
         const catalog = [
             { 
@@ -199,6 +197,6 @@ export class InMemoryDataService implements InMemoryDbService {
             }            
         ];          
 
-        return { pages, banners, subscribers, user, signup, catalog, shop, productparams, shoppingcart};
+        return { pages, banners, subscribers, user, users, catalog, shop, productparams, shoppingcart};
     }
 }

@@ -21,28 +21,25 @@ export class SigninComponent implements OnInit {
 
     }
 
+    ngOnInit() {        
+        this.csrfToken =  this.userService.getCookie('XSRF-TOKEN');
+    }
+
     signinUser($event, email, password) {
         $event.preventDefault(); 
-        this.dataService.add('api/user/signin', {email, password} as User).subscribe(
-            (user) => {   
+        this.dataService.getQuery('api/users', {email, password} as User).subscribe(
+            (user) => {
                 this.err = '';
                 this.userService.setSignin(true); 
                 this.router.navigate(['/user/profile']);
             },
             (err) => {
-                this.err = Array.isArray(err.error.message) ? err.error.message.join(', ') : err.error.message;
+                if(err.error) {
+                    this.err = Array.isArray(err.error.message) ? err.error.message.join(', ') : err.error.message;                    
+                } else {
+                    this.err = err.body.error;
+                }
             } 
         );
     }
-    
-    ngOnInit() { 
-        let getCookie = function(name) {
-            let match = document.cookie.match(new RegExp(name + '=([^;]+)'));
-            if (match) {
-                return match[1];
-            }
-        }
-        this.csrfToken =  getCookie('XSRF-TOKEN');
-    }
-    
 }

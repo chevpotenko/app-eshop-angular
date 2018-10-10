@@ -55,7 +55,7 @@ export class ShopService {
         this.orderTotal.next(orderTotal);
     }
 
-    calculateCartItem (product, itemsAmount) {
+    calculateCartItem(product, itemsAmount) {
         let itemCart = this.cart.getValue().find(item => {            
             return item.product.id == product.id
         });
