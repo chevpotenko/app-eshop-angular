@@ -12,6 +12,8 @@ export class PageShopIdComponent implements OnInit {
 
     public product;
     public quantity;
+    private selectedSize: string;
+    private selectedColor: string;
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
@@ -34,6 +36,14 @@ export class PageShopIdComponent implements OnInit {
     buyNow(product) {
         this.shopService.addProductToCart(product, this.quantity);
         this.router.navigate(['/checkout']);
+    }
+
+    onSelectSize(size:string) {
+        this.selectedSize = size;
+    }
+
+    onSelectColor(color:string) {
+        this.selectedColor = color;
     }
 
 }

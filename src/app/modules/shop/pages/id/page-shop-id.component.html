@@ -1,7 +1,7 @@
 <section *ngIf="product" class="section contact center"> 
     <div class="product center">
         <div class="section-caption caption">
-            <h2 class="product-name">{{product.name}}</h2>
+            <h2 class="product-name">{{ product.name }}</h2>
             <p class="product-categories">Women/Dress</p>
         </div>
         <div class="product-content">
@@ -22,7 +22,7 @@
                 <div class="product-info">
                     <div class="column">
                         <div class="row">
-                            <span class="product-price">${{product.price}}</span>
+                            <span class="product-price">${{ product.price }}</span>
                             <span class="discount-percent">30% <span>OFF</span></span>
                             <span class="available-quantity additional-info">5 pieces left</span>
                         </div>
@@ -41,21 +41,24 @@
                 </div>
                 <div class="params">
                     <table class="params-table">
-                        <tr>
+                        <tr *ngIf="product.sizes">
                             <td>Size</td>
-                            <td class="param-size-value">
-                                <span>S</span>
-                                <span class="active">M</span>
-                                <span>L</span>
-                                <span class="readonly">XL</span>
+                            <td class="param-size">
+                                <span *ngFor="let size of product.sizes"
+                                        [class.active]="size === selectedSize"
+                                        (click)="onSelectSize(size)" >{{ size }}</span>
                             </td>
                         </tr>
-                        <tr>
+                        <tr *ngIf="product.colors">
                             <td>Color</td>
-                            <td class="param-color">
-                                <span class="beige"></span>
-                                <span class="orange"></span>
-                                <span class="red"></span>
+                            <td>                                
+                                <span *ngFor="let color of product.colors"
+                                        class="param-color"
+                                        [ngClass]="color"
+                                        [class.active]="color === selectedColor"
+                                        (click)="onSelectColor(color)">
+                                            <span></span>
+                                    </span>                                
                             </td>
                         </tr>
                         <tr>

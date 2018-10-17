@@ -102,7 +102,9 @@ export class InMemoryDataService implements InMemoryDbService {
                 price: "100",
                 rating: "5",
                 discount: "10",
-                img: "assets/img/shop/shop_item.jpg"
+                img: "assets/img/shop/shop_item.jpg",
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["beige", "orange", "red"]
             },
             { 
                 id: 2,
@@ -111,7 +113,9 @@ export class InMemoryDataService implements InMemoryDbService {
                 price: "100",
                 rating: "5",
                 discount: "10",
-                img: "assets/img/shop/shop_item.jpg"
+                img: "assets/img/shop/shop_item.jpg",
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["beige", "orange", "red"]
             },
             { 
                 id: 3,
@@ -120,7 +124,9 @@ export class InMemoryDataService implements InMemoryDbService {
                 price: "100",
                 rating: "5",
                 discount: "10",
-                img: "assets/img/shop/shop_item.jpg"
+                img: "assets/img/shop/shop_item.jpg",
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["beige", "orange", "red"]
             },
             { 
                 id: 4,
@@ -175,7 +181,9 @@ export class InMemoryDataService implements InMemoryDbService {
                     price: "100",
                     rating: "5",
                     discount: "10",
-                    img: "assets/img/shop/shop_item.jpg"
+                    img: "assets/img/shop/shop_item.jpg",
+                    sizes: ["S", "M", "L", "XL"],
+                    colors: ["beige", "orange", "red"]
                 },
                 id: 1,
                 qty: 1,
@@ -189,7 +197,9 @@ export class InMemoryDataService implements InMemoryDbService {
                     price: "100",
                     rating: "5",
                     discount: "10",
-                    img: "assets/img/shop/shop_item.jpg"
+                    img: "assets/img/shop/shop_item.jpg",
+                    sizes: ["S", "M", "L", "XL"],
+                    colors: ["beige", "orange", "red"]
                 },
                 id: 2,
                 qty: 1,
