@@ -139,7 +139,7 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        const productImages = [
+        const productimages = [
             {
                 id: '1',
                 images:[
@@ -250,6 +250,6 @@ export class InMemoryDataService implements InMemoryDbService {
             }            
         ];          
 
-        return { pages, banners, subscribers, user, users, catalog, shop, productImages, productparams, shoppingcart};
+        return { pages, banners, subscribers, user, users, catalog, shop, productimages, productparams, shoppingcart};
     }
 }

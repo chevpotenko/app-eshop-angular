@@ -1,11 +1,20 @@
-<figure class="image">
-  <img [attr.src]="images" alt="product">
-  <div class="shop-item-like">
-      <span>
-          <i class="far fa-heart fa-2x"></i>
-      </span>
-      <span class="active">
-          <i class="fas fa-heart fa-2x"></i>
-      </span>
-  </div>
-</figure>
+<div *ngIf="images" class="carousel">
+    <figure class="carousel-current">
+      <img [attr.src]="images.images[0]" alt="product">
+      <div class="shop-item-like">
+          <span>
+              <i class="far fa-heart fa-2x"></i>
+          </span>
+          <span class="active">
+              <i class="fas fa-heart fa-2x"></i>
+          </span>
+      </div>
+    </figure>
+    <div class="carousel-images">
+        <ul class="carousel-list">
+            <li *ngFor="let image of images.images" class="carousel-item">
+                <img [attr.src]="image" alt="product">
+            </li>
+        </ul>
+    </div>
+</div>
