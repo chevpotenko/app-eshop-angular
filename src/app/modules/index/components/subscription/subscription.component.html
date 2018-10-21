@@ -12,11 +12,11 @@
             [class.error]="!email.valid && !email.pristine"
             class="subscription-email">
         <input type="submit"
-                (click)="subscribe($event, form, email)"
-                [disabled]="!email.valid"
-                [class.disabled]="!email.valid"
-                class="subscription-submit"
-                value="SUBSCRIBE">
+            (click)="subscribe($event, form, email)"
+            [disabled]="!email.valid"
+            [class.disabled]="!email.valid"
+            class="subscription-submit"
+            value="SUBSCRIBE">
     </form>
     <div class="overlay" *ngIf="isOverlay" (click)="toggleOverlay()">
 		<div class="popup">

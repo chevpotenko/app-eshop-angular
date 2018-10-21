@@ -6,17 +6,7 @@
         </div>
         <div class="product-content">
             <div class="column">
-                <figure class="image">
-                    <img [attr.src]="product.img" alt="product">
-                    <div class="shop-item-like">
-                        <span>
-                            <i class="far fa-heart fa-2x"></i>
-                        </span>
-                        <span class="active">
-                            <i class="fas fa-heart fa-2x"></i>
-                        </span>
-                    </div>
-                </figure>
+                <product-carousel [images]="product.img"></product-carousel>
             </div>
             <div class="column">
                 <div class="product-info">

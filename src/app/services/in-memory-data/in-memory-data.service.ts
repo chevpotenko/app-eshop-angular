@@ -139,6 +139,49 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
+        const productImages = [
+            {
+                id: '1',
+                images:[
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg'
+                ]
+            },
+            {
+                id: '2',
+                images:[
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg'
+                ]
+            },
+            {
+                id: '3',
+                images:[
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg'
+                ]
+            },
+            {
+                id: '4',
+                images:[
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg',
+                    'assets/img/shop/shop_item.jpg'
+                ]
+            }
+        ];
+
         const productparams = [
             {
                 id: 1,
@@ -207,6 +250,6 @@ export class InMemoryDataService implements InMemoryDbService {
             }            
         ];          
 
-        return { pages, banners, subscribers, user, users, catalog, shop, productparams, shoppingcart};
+        return { pages, banners, subscribers, user, users, catalog, shop, productImages, productparams, shoppingcart};
     }
 }
