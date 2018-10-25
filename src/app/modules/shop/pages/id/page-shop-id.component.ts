@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
 import { ShopService } from '../../../../services/shop/shop.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 
 @Component({
     selector: 'app-page-shop-id',
@@ -11,9 +12,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class PageShopIdComponent implements OnInit {
 
     public product;
+    public productImages;
     public quantity;
     private selectedSize: string;
     private selectedColor: string;
+    private galleryOptions: NgxGalleryOptions[];
+    private galleryImages: NgxGalleryImage[];    
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
@@ -23,10 +27,36 @@ export class PageShopIdComponent implements OnInit {
     }
 
     ngOnInit() {
+
         let productId = this.activatedRoute.snapshot.paramMap.get('id');
         this.dataService.getSingle('api/shop/', productId).subscribe((result) => {
             this.product = result;
         });
+        this.dataService.getSingle('api/productimages/', productId).subscribe((result) => {            
+            this.productImages = result;
+        });
+        
+        this.galleryOptions = [
+            {
+                width: '100%',
+                height: '500px',
+                thumbnailsColumns: 4,
+                imageAnimation: NgxGalleryAnimation.Slide
+            },
+            {
+                breakpoint: 800,
+                width: '100%',
+                height: '600px',
+                imagePercent: 80,
+                thumbnailsPercent: 20,
+                thumbnailsMargin: 20,
+                thumbnailMargin: 20
+            },  
+            {
+                breakpoint: 400,
+                preview: false
+            }
+        ];
     }
 
     addToCart(product) {	

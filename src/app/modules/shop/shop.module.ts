@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FormsModule } from '@angular/forms';
+
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { SharedModule  } from '../shared/shared.module';
 import { HttpParamsService } from '../.././services/http-params/http-params.service';
@@ -16,7 +17,8 @@ import { ProductCarouselComponent } from './components/product-carousel/product-
 	imports: [
 		CommonModule,
 		SharedModule,
-		FormsModule
+		FormsModule,
+		NgxGalleryModule
 	],
 	declarations: [
 		PageCatalogComponent,

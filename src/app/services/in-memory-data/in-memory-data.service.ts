@@ -143,41 +143,121 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 id: '1',
                 images:[
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg'
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    }
                 ]
             },
             {
                 id: '2',
                 images:[
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg'
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    }
                 ]
             },
             {
                 id: '3',
                 images:[
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg'
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    }
                 ]
             },
             {
                 id: '4',
                 images:[
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg',
-                    'assets/img/shop/shop_item.jpg'
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    },
+                    {
+                        small: 'assets/img/shop/shop_item.jpg',
+                        medium: 'assets/img/shop/shop_item.jpg',
+                        big: 'assets/img/shop/shop_item.jpg',
+                    }
                 ]
             }
         ];

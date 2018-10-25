@@ -14,6 +14,7 @@ import { ShopService } from './services/shop/shop.service';
 import { SharedModule } from './modules/shared/shared.module';
 import { PageIndexModule } from './modules/index/index.module';
 import { ShopModule } from './modules/shop/shop.module';
+
 import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart/shopping-cart.component';
 import { SignupComponent } from './modules/user/pages/signup/signup.component';
 import { SigninComponent } from './modules/user/pages/signin/signin.component';

@@ -5,8 +5,10 @@
             <p class="product-categories">Women/Dress</p>
         </div>
         <div class="product-content">
-            <div class="column">               
-                <product-carousel [productId]="product.id"></product-carousel>
+            <div class="column">
+                <div *ngIf="productImages">
+                    <ngx-gallery [options]="galleryOptions" [images]="productImages.images"></ngx-gallery>
+                </div>
             </div>
             <div class="column">
                 <div class="product-info">
