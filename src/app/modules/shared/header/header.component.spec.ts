@@ -1,14 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { DataService } from '../../../services/data/data.service';
+import { ShopService } from '../../../services/shop/shop.service';
+import { UserService } from '../../../services/user/user.service';
 
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
+
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      imports: [ RouterTestingModule, HttpClientTestingModule ],
+      declarations: [ HeaderComponent ],
+      providers: [ DataService, ShopService, UserService ]
     })
     .compileComponents();
   }));
@@ -22,4 +31,5 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

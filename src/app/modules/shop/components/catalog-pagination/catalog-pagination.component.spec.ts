@@ -1,4 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { DataService } from '../../../../services/data/data.service';
+import { HttpParamsService } from '../../../../services/http-params/http-params.service';
 
 import { CatalogPaginationComponent } from './catalog-pagination.component';
 
@@ -8,7 +12,9 @@ describe('CatalogPaginationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CatalogPaginationComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ CatalogPaginationComponent ],
+      providers: [ DataService, HttpParamsService ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 
 import { PageAboutComponent } from './page-about.component';
+import { DataService } from '../../../../services/data/data.service';
 
 describe('PageAboutComponent', () => {
   let component: PageAboutComponent;
@@ -8,7 +10,9 @@ describe('PageAboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageAboutComponent ]
+      declarations: [ PageAboutComponent ],
+      providers: [ DataService ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   }));

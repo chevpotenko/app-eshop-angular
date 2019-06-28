@@ -1,14 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { DataService } from '../../../../services/data/data.service';
 
 import { SubscriptionComponent } from './subscription.component';
 
 describe('SubscriptionComponent', () => {
+  
   let component: SubscriptionComponent;
   let fixture: ComponentFixture<SubscriptionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubscriptionComponent ]
+      imports: [ CommonModule, FormsModule, HttpClientTestingModule ],
+      declarations: [ SubscriptionComponent ],
+      providers: [ DataService ]
     })
     .compileComponents();
   }));
@@ -22,4 +30,5 @@ describe('SubscriptionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

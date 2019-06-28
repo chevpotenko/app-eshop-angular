@@ -16,8 +16,8 @@ export class PageShopIdComponent implements OnInit {
     public quantity;
     private selectedSize: string;
     private selectedColor: string;
-    private galleryOptions: NgxGalleryOptions[];
-    private galleryImages: NgxGalleryImage[];    
+    galleryOptions: NgxGalleryOptions[];
+    galleryImages: NgxGalleryImage[];    
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
