@@ -17,25 +17,25 @@ export class PageShopIdComponent implements OnInit {
     private selectedSize: string;
     private selectedColor: string;
     galleryOptions: NgxGalleryOptions[];
-    galleryImages: NgxGalleryImage[];    
+    galleryImages: NgxGalleryImage[];
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
                 private activatedRoute: ActivatedRoute,
-                private router: Router,) {
+                private router: Router) {
         this.quantity = 1;
     }
 
     ngOnInit() {
 
-        let productId = this.activatedRoute.snapshot.paramMap.get('id');
+        const productId = this.activatedRoute.snapshot.paramMap.get('id');
         this.dataService.getSingle('api/shop/', productId).subscribe((result) => {
             this.product = result;
         });
-        this.dataService.getSingle('api/productimages/', productId).subscribe((result) => {            
+        this.dataService.getSingle('api/productimages/', productId).subscribe((result) => {
             this.productImages = result;
         });
-        
+
         this.galleryOptions = [
             {
                 width: '100%',
@@ -51,7 +51,7 @@ export class PageShopIdComponent implements OnInit {
                 thumbnailsPercent: 20,
                 thumbnailsMargin: 20,
                 thumbnailMargin: 20
-            },  
+            },
             {
                 breakpoint: 400,
                 preview: false
@@ -59,20 +59,20 @@ export class PageShopIdComponent implements OnInit {
         ];
     }
 
-    addToCart(product) {	
-		this.shopService.addProductToCart(product, this.quantity);
+    addToCart(product) {
+      this.shopService.addProductToCart(product, this.quantity);
     }
-    
+
     buyNow(product) {
         this.shopService.addProductToCart(product, this.quantity);
         this.router.navigate(['/checkout']);
     }
 
-    onSelectSize(size:string) {
+    onSelectSize(size: string) {
         this.selectedSize = size;
     }
 
-    onSelectColor(color:string) {
+    onSelectColor(color: string) {
         this.selectedColor = color;
     }
 

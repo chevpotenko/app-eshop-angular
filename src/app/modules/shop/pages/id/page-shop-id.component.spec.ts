@@ -1,6 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { PageShopIdComponent } from './page-shop-id.component';
+import { DataService } from '../../../../services/data/data.service';
+import { ShopService } from '../../../../services/shop/shop.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import {
+  NgxGalleryComponent,
+  NgxGalleryImageComponent,
+  NgxGalleryThumbnailsComponent,
+  NgxGalleryPreviewComponent,
+  NgxGalleryActionComponent,
+  NgxGalleryBulletsComponent, NgxGalleryArrowsComponent
+} from 'ngx-gallery';
 
 describe('PageShopIdComponent', () => {
   let component: PageShopIdComponent;
@@ -8,7 +20,25 @@ describe('PageShopIdComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageShopIdComponent ]
+      imports: [
+        FormsModule,
+        HttpClientTestingModule,
+        RouterTestingModule
+      ],
+      providers: [
+        DataService,
+        ShopService
+      ],
+      declarations: [
+        NgxGalleryComponent,
+        NgxGalleryImageComponent,
+        NgxGalleryThumbnailsComponent,
+        NgxGalleryPreviewComponent,
+        PageShopIdComponent,
+        NgxGalleryActionComponent,
+        NgxGalleryBulletsComponent,
+        NgxGalleryArrowsComponent
+      ]
     })
     .compileComponents();
   }));
