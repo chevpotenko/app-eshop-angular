@@ -3,6 +3,7 @@ import { DataService } from '../../../../services/data/data.service';
 import { ShopService } from '../../../../services/shop/shop.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
     selector: 'app-page-shop-id',
@@ -29,10 +30,10 @@ export class PageShopIdComponent implements OnInit {
     ngOnInit() {
 
         const productId = this.activatedRoute.snapshot.paramMap.get('id');
-        this.dataService.getSingle('api/shop/', productId).subscribe((result) => {
+        this.dataService.getSingle(`${environment.apiUrl}api/products`, productId).subscribe((result) => {
             this.product = result;
         });
-        this.dataService.getSingle('api/productimages/', productId).subscribe((result) => {
+        this.dataService.getSingle(`${environment.apiUrl}api/productimages/`, productId).subscribe((result) => {
             this.productImages = result;
         });
 

@@ -1,26 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
 import { HttpParamsService } from '../../../../services/http-params/http-params.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
-	selector: 'catalog-pagination',
-	templateUrl: './catalog-pagination.component.html',
-	styleUrls: ['./catalog-pagination.component.css']
+  selector: 'catalog-pagination',
+  templateUrl: './catalog-pagination.component.html',
+  styleUrls: ['./catalog-pagination.component.css']
 })
-export class CatalogPaginationComponent implements OnInit {
+export class CatalogPaginationComponent {
+  public pages: Array<number> = [1, 2, 3, 4, 5];
 
-	private pages: Array<number> = [1, 2, 3, 4, 5];
+  constructor(private dataService: DataService,
+        private httpParamsService: HttpParamsService) {}
 
-	constructor(private dataService: DataService,
-				private httpParamsService: HttpParamsService) {		
-	}
-
-	ngOnInit() {
-	}
-
-	goToPage(pageNumber) {
-		this.httpParamsService.httpParams = this.httpParamsService.httpParams.set('page', pageNumber);
-		this.dataService.getQuery('api/shop',this.httpParamsService.httpParams).subscribe(result => { });		
-	}
-
+  goToPage(pageNumber) {
+    this.httpParamsService.httpParams = this.httpParamsService.httpParams.set('page', pageNumber);
+    this.dataService.getQuery(`${environment.apiUrl}api/products`, this.httpParamsService.httpParams).subscribe(result => { });
+  }
 }

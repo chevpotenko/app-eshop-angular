@@ -3,6 +3,7 @@ import { DataService } from '../../../services/data/data.service';
 import { UserService } from '../../../services/user/user.service';
 import { ShopService } from '../../../services/shop/shop.service';
 import { Signin } from '../../../class/user';
+import { environment } from '../../../../environments/environment';
 
 @Component({
     selector: 'app-header',
@@ -11,16 +12,13 @@ import { Signin } from '../../../class/user';
 })
 
 export class HeaderComponent implements OnInit {
-  
     public signin;
     public orderTotal;
     public catalog;
-    
-    constructor(private dataService: DataService, 
-                private shopService: ShopService,   
-                private userService: UserService) {
 
-    }
+    constructor(private dataService: DataService,
+                private shopService: ShopService,
+                private userService: UserService) {}
 
     ngOnInit() {
         this.userService.signin.subscribe( result => {
@@ -31,13 +29,12 @@ export class HeaderComponent implements OnInit {
             this.orderTotal = result;
         });
 
-        this.dataService.getAll('api/catalog').subscribe( result => { 
-            this.catalog = result;            
+        this.dataService.getAll(`${environment.apiUrl}api/catalogs`).subscribe( result => {
+            this.catalog = result;
         });
 
-        this.dataService.getSingle('api/user/', 'signin').subscribe( (result:Signin) => {
+        this.dataService.getSingle(`${environment.apiUrl}api/user/`, 'signin').subscribe( (result: Signin) => {
             this.userService.setSignin(result.signin);
         });
     }
-
 }

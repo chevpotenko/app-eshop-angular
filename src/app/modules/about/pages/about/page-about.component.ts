@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
+import { environment } from 'environments/environment';
 
 @Component({
     selector: 'app-page-about',
@@ -7,17 +8,14 @@ import { DataService } from '../../../../services/data/data.service';
     styleUrls: ['./page-about.component.css']
 })
 export class PageAboutComponent implements OnInit {
-
     public data = null;
 
-    constructor(private dataService: DataService) {
-        
-    }
+    constructor(private dataService: DataService) {}
 
     ngOnInit() {
-        this.dataService.getAll('api/pages/about').subscribe(result => {
+        this.dataService.getAll(`${environment.apiUrl}api/pages/about`).subscribe(result => {
             this.data = result;
-        });        
+        });
     }
-
 }
+

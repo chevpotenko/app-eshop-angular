@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DataService } from '../../../../services/data/data.service';
 import { UserService } from '../../../../services/user/user.service';
 import { User } from '../../../../class/user';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
     selector: 'app-signin',
@@ -10,36 +11,33 @@ import { User } from '../../../../class/user';
     styleUrls: ['./signin.component.css']
 })
 
-export class SigninComponent implements OnInit {  
-
+export class SigninComponent implements OnInit {
     public csrfToken: string;
-    public err: string = '';
+    public err = '';
 
     constructor(private userService: UserService,
                 private dataService: DataService,
-                private router: Router) {
+                private router: Router) {}
 
-    }
-
-    ngOnInit() {        
+    ngOnInit() {
         this.csrfToken =  this.userService.getCookie('XSRF-TOKEN');
     }
 
     signinUser($event, email, password) {
-        $event.preventDefault(); 
-        this.dataService.getQuery('api/users', {email, password} as User).subscribe(
+        $event.preventDefault();
+        this.dataService.getQuery(`${environment.apiUrl}api/users`, {email, password} as User).subscribe(
             (user) => {
                 this.err = '';
-                this.userService.setSignin(true); 
+                this.userService.setSignin(true);
                 this.router.navigate(['/user/profile']);
             },
             (err) => {
-                if(err.error) {
-                    this.err = Array.isArray(err.error.message) ? err.error.message.join(', ') : err.error.message;                    
+                if (err.error) {
+                    this.err = Array.isArray(err.error.message) ? err.error.message.join(', ') : err.error.message;
                 } else {
                     this.err = err.body.error;
                 }
-            } 
+            }
         );
     }
 }

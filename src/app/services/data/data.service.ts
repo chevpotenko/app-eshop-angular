@@ -4,10 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class DataService {
-
-    constructor(private http: HttpClient) { 
-
-    }
+    constructor(private http: HttpClient) {}
 
     public getAll<T>(url: string): Observable<T> {
         return this.http.get<T>(url);
@@ -21,7 +18,7 @@ export class DataService {
         return this.http.get<T>(url + id);
     }
 
-    public add<T>(url: string,  data: any): Observable<T> {    
+    public add<T>(url: string,  data: any): Observable<T> {
         return this.http.post<T>(url, data);
     }
 
@@ -31,6 +28,5 @@ export class DataService {
 
     public update<T>(url: string, id: number, itemToUpdate: any): Observable<T> {
         return this.http.put<T>(url + id, itemToUpdate);
-    } 
-
+    }
 }

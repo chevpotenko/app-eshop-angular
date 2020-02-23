@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
-import { Banner } from '../../../../class/banner';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
     selector: 'app-main-banner',
@@ -8,15 +8,11 @@ import { Banner } from '../../../../class/banner';
     styleUrls: ['./main-banner.component.css']
 })
 export class MainBannerComponent implements OnInit {
-
     public banners;
-
-    constructor(private dataService: DataService) {
-
-    }
+    constructor(private dataService: DataService) {}
 
     ngOnInit() {
-        this.dataService.getAll('api/banners').subscribe((result) => {
+        this.dataService.getAll(`${environment.apiUrl}api/banners`).subscribe((result) => {
             this.banners = result;
         });
     }

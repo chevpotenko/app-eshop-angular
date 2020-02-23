@@ -41,8 +41,8 @@ import { routing } from './app-routing.module';
 		ShopModule,
 		routing,
 		HttpModule,
-		HttpClientModule,
-		HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+		HttpClientModule
+		// HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
 	],
 	providers: [
 		HttpClientModule,

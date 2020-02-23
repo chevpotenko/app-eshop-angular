@@ -1,9 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
-
     createDb() {
-
         const pages = [
             {
                 id: "about",
@@ -17,27 +15,27 @@ export class InMemoryDataService implements InMemoryDbService {
                     }
                 ]
             }
-        ];         
-        
+        ];
+
         const banners = [
-            { 
+            {
                 url: "#",
                 img: "assets/img/banners/banner_big.jpg"
             },
-            { 
+            {
                 url: "#",
                 img: "assets/img/banners/banner_middle.jpg"
             },
-            { 
+            {
                 url: "#",
                 img: "assets/img/banners/banner_small_1.jpg"
             },
-            { 
+            {
                 url: "#",
                 img: "assets/img/banners/banner_small_2.jpg"
             }
         ];
-         
+
         const subscribers = [
             {
                 id: 1,
@@ -59,7 +57,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 signin: false
             }
         ];
-        
+
         const user = [
             {
                 id: 'signin',
@@ -67,35 +65,35 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        const catalog = [
-            { 
+        const catalogs = [
+            {
                 id: 1,
-                name: "Men",                
+                name: "Men",
                 parentCategory: "",
                 img: ""
             },
-            { 
+            {
                 id: 2,
-                name: "Women",                
-                parentCategory: "",                
+                name: "Women",
+                parentCategory: "",
                 img: ""
             },
-            { 
+            {
                 id: 3,
-                name: "Bridal",                
-                parentCategory: "",                
+                name: "Bridal",
+                parentCategory: "",
                 img: ""
             },
-            { 
+            {
                 id: 4,
-                name: "Baby&Kids",                
-                parentCategory: "",                
+                name: "Baby&Kids",
+                parentCategory: "",
                 img: ""
             }
         ];
 
-        const shop = [
-            { 
+        const products = [
+            {
                 id: 1,
                 name: "Fashion Product Name 1",
                 category: "Top",
@@ -106,7 +104,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 sizes: ["S", "M", "L", "XL"],
                 colors: ["beige", "orange", "red"]
             },
-            { 
+            {
                 id: 2,
                 name: "Fashion Product Name 2",
                 category: "Top",
@@ -117,7 +115,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 sizes: ["S", "M", "L", "XL"],
                 colors: ["beige", "orange", "red"]
             },
-            { 
+            {
                 id: 3,
                 name: "Fashion Product Name 3",
                 category: "Top",
@@ -128,7 +126,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 sizes: ["S", "M", "L", "XL"],
                 colors: ["beige", "orange", "red"]
             },
-            { 
+            {
                 id: 4,
                 name: "Fashion Product Name 4",
                 category: "Top",
@@ -293,9 +291,9 @@ export class InMemoryDataService implements InMemoryDbService {
                 type: 'checkbox',
                 values: ['Red', 'White']
             }
-        ];     
-        
-        const shoppingcart = [            
+        ];
+
+        const shoppingcart = [
             {
                 product: {
                     id: 1,
@@ -327,9 +325,9 @@ export class InMemoryDataService implements InMemoryDbService {
                 id: 2,
                 qty: 1,
                 total: 100
-            }            
-        ];          
+            }
+        ];
 
-        return { pages, banners, subscribers, user, users, catalog, shop, productimages, productparams, shoppingcart};
+        return { pages, banners, subscribers, user, users, catalogs, products, productimages, productparams, shoppingcart};
     }
 }
