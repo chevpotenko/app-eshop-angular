@@ -4,14 +4,14 @@ export class InMemoryDataService implements InMemoryDbService {
     createDb() {
         const pages = [
             {
-                id: "about",
-                caption: "About",
-                description: "",
-                text: "Lorem ipsum dolor sit amet, enim ludus voluptatum eu pri. Per quot oratio ex, ex decore ornatus sit, vide wisi invidunt id vix. Ex ius quodsi definitiones, no nostro molestiae appellantur sed. Eu possit iudicabit referrentur vim, in graeco diceret assentior eum. Ius audire molestie fabellas ut. Iudico lobortis sed ut, inani regione eleifend mel et. Vix an habemus oportere pericula, usu reque perpetua forensibus an, veri natum usu cu. Suas consul omnium at cum, an eos habeo liber. Dolores mediocrem molestiae ex sit, viderer malorum forensibus et his. Has in cibo propriae, vidisse integre nam ut, cu vel minim invenire intellegebat. Ex duo melius dolores mnesarchum, mea possim numquam facilisis ei, at pri erant ridens delenit. Quo an omnes dolorem imperdiet, duo magna noluisse adversarium eu. Tation prompta evertitur duo ei, id dolor elaboraret his, sed ea iuvaret partiendo suscipiantur. Ut per tale assum dignissim, ut quo nibh numquam consetetur. Justo ridens eam an. Nam ad porro cetero sadipscing. Vix consul tractatos theophrastus et, eum ea fabellas consulatu. Eius idque senserit sit te. Adhuc appareat at ius, sed possim nusquam fabellas ea. Aliquam urbanitas per an, cu nibh posse putent nam, lorem inermis dolorem id pri. Dicat primis dictas.",
+                id: 'about',
+                caption: 'About',
+                description: '',
+                text: 'Lorem ipsum dolor sit amet, enim ludus voluptatum eu pri. Per quot oratio ex, ex decore ornatus sit, vide wisi invidunt id vix. Ex ius quodsi definitiones, no nostro molestiae appellantur sed. Eu possit iudicabit referrentur vim, in graeco diceret assentior eum. Ius audire molestie fabellas ut. Iudico lobortis sed ut, inani regione eleifend mel et. Vix an habemus oportere pericula, usu reque perpetua forensibus an, veri natum usu cu. Suas consul omnium at cum, an eos habeo liber. Dolores mediocrem molestiae ex sit, viderer malorum forensibus et his. Has in cibo propriae, vidisse integre nam ut, cu vel minim invenire intellegebat. Ex duo melius dolores mnesarchum, mea possim numquam facilisis ei, at pri erant ridens delenit. Quo an omnes dolorem imperdiet, duo magna noluisse adversarium eu. Tation prompta evertitur duo ei, id dolor elaboraret his, sed ea iuvaret partiendo suscipiantur. Ut per tale assum dignissim, ut quo nibh numquam consetetur. Justo ridens eam an. Nam ad porro cetero sadipscing. Vix consul tractatos theophrastus et, eum ea fabellas consulatu. Eius idque senserit sit te. Adhuc appareat at ius, sed possim nusquam fabellas ea. Aliquam urbanitas per an, cu nibh posse putent nam, lorem inermis dolorem id pri. Dicat primis dictas.',
                 images: [
                     {
-                        "caption": "Image",
-                        "src": "assets/img/pages/about/image_1.jpg"
+                        'caption': 'Image',
+                        'src': 'assets/img/pages/about/image_1.jpg'
                     }
                 ]
             }
@@ -19,27 +19,27 @@ export class InMemoryDataService implements InMemoryDbService {
 
         const banners = [
             {
-                url: "#",
-                img: "assets/img/banners/banner_big.jpg"
+                url: '#',
+                img: 'assets/img/banners/banner_big.jpg'
             },
             {
-                url: "#",
-                img: "assets/img/banners/banner_middle.jpg"
+                url: '#',
+                img: 'assets/img/banners/banner_middle.jpg'
             },
             {
-                url: "#",
-                img: "assets/img/banners/banner_small_1.jpg"
+                url: '#',
+                img: 'assets/img/banners/banner_small_1.jpg'
             },
             {
-                url: "#",
-                img: "assets/img/banners/banner_small_2.jpg"
+                url: '#',
+                img: 'assets/img/banners/banner_small_2.jpg'
             }
         ];
 
         const subscribers = [
             {
                 id: 1,
-                email:'test@test.com'
+                email: 'test@test.com'
             }
         ];
 
@@ -68,79 +68,79 @@ export class InMemoryDataService implements InMemoryDbService {
         const catalogs = [
             {
                 id: 1,
-                name: "Men",
-                parentCategory: "",
-                img: ""
+                name: 'Men',
+                parentCategory: '',
+                img: ''
             },
             {
                 id: 2,
-                name: "Women",
-                parentCategory: "",
-                img: ""
+                name: 'Women',
+                parentCategory: '',
+                img: ''
             },
             {
                 id: 3,
-                name: "Bridal",
-                parentCategory: "",
-                img: ""
+                name: 'Bridal',
+                parentCategory: '',
+                img: ''
             },
             {
                 id: 4,
-                name: "Baby&Kids",
-                parentCategory: "",
-                img: ""
+                name: 'Baby&Kids',
+                parentCategory: '',
+                img: ''
             }
         ];
 
         const products = [
             {
                 id: 1,
-                name: "Fashion Product Name 1",
-                category: "Top",
-                price: "100",
-                rating: "5",
-                discount: "10",
-                img: "assets/img/shop/shop_item.jpg",
-                sizes: ["S", "M", "L", "XL"],
-                colors: ["beige", "orange", "red"]
+                name: 'Fashion Product Name 1',
+                category: 'Top',
+                price: '100',
+                rating: '5',
+                discount: '10',
+                img: 'assets/img/shop/shop_item.jpg',
+                sizes: ['S', 'M', 'L', 'XL'],
+                colors: ['beige', 'orange', 'red']
             },
             {
                 id: 2,
-                name: "Fashion Product Name 2",
-                category: "Top",
-                price: "100",
-                rating: "5",
-                discount: "10",
-                img: "assets/img/shop/shop_item.jpg",
-                sizes: ["S", "M", "L", "XL"],
-                colors: ["beige", "orange", "red"]
+                name: 'Fashion Product Name 2',
+                category: 'Top',
+                price: '100',
+                rating: '5',
+                discount: '10',
+                img: 'assets/img/shop/shop_item.jpg',
+                sizes: ['S', 'M', 'L', 'XL'],
+                colors: ['beige', 'orange', 'red']
             },
             {
                 id: 3,
-                name: "Fashion Product Name 3",
-                category: "Top",
-                price: "100",
-                rating: "5",
-                discount: "10",
-                img: "assets/img/shop/shop_item.jpg",
-                sizes: ["S", "M", "L", "XL"],
-                colors: ["beige", "orange", "red"]
+                name: 'Fashion Product Name 3',
+                category: 'Top',
+                price: '100',
+                rating: '5',
+                discount: '10',
+                img: 'assets/img/shop/shop_item.jpg',
+                sizes: ['S', 'M', 'L', 'XL'],
+                colors: ['beige', 'orange', 'red']
             },
             {
                 id: 4,
-                name: "Fashion Product Name 4",
-                category: "Top",
-                price: "100",
-                rating: "5",
-                discount: "10",
-                img: "assets/img/shop/shop_item.jpg"
+                name: 'Fashion Product Name 4',
+                category: 'Top',
+                price: '100',
+                rating: '5',
+                discount: '10',
+                img: 'assets/img/shop/shop_item.jpg'
             }
         ];
 
         const productimages = [
             {
                 id: '1',
-                images:[
+                images: [
                     {
                         small: 'assets/img/shop/shop_item.jpg',
                         medium: 'assets/img/shop/shop_item.jpg',
@@ -170,7 +170,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: '2',
-                images:[
+                images: [
                     {
                         small: 'assets/img/shop/shop_item.jpg',
                         medium: 'assets/img/shop/shop_item.jpg',
@@ -200,7 +200,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: '3',
-                images:[
+                images: [
                     {
                         small: 'assets/img/shop/shop_item.jpg',
                         medium: 'assets/img/shop/shop_item.jpg',
@@ -230,7 +230,7 @@ export class InMemoryDataService implements InMemoryDbService {
             },
             {
                 id: '4',
-                images:[
+                images: [
                     {
                         small: 'assets/img/shop/shop_item.jpg',
                         medium: 'assets/img/shop/shop_item.jpg',
@@ -297,14 +297,14 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 product: {
                     id: 1,
-                    name: "Fashion Product Name 1",
-                    category: "Top",
-                    price: "100",
-                    rating: "5",
-                    discount: "10",
-                    img: "assets/img/shop/shop_item.jpg",
-                    sizes: ["S", "M", "L", "XL"],
-                    colors: ["beige", "orange", "red"]
+                    name: 'Fashion Product Name 1',
+                    category: 'Top',
+                    price: '100',
+                    rating: '5',
+                    discount: '10',
+                    img: 'assets/img/shop/shop_item.jpg',
+                    sizes: ['S', 'M', 'L', 'XL'],
+                    colors: ['beige', 'orange', 'red']
                 },
                 id: 1,
                 qty: 1,
@@ -313,14 +313,14 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 product: {
                     id: 2,
-                    name: "Fashion Product Name 2",
-                    category: "Top",
-                    price: "100",
-                    rating: "5",
-                    discount: "10",
-                    img: "assets/img/shop/shop_item.jpg",
-                    sizes: ["S", "M", "L", "XL"],
-                    colors: ["beige", "orange", "red"]
+                    name: 'Fashion Product Name 2',
+                    category: 'Top',
+                    price: '100',
+                    rating: '5',
+                    discount: '10',
+                    img: 'assets/img/shop/shop_item.jpg',
+                    sizes: ['S', 'M', 'L', 'XL'],
+                    colors: ['beige', 'orange', 'red']
                 },
                 id: 2,
                 qty: 1,
