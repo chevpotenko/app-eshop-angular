@@ -293,7 +293,7 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        const shoppingcart = [
+        const cart = [
             {
                 product: {
                     id: 1,
@@ -328,6 +328,6 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        return { pages, banners, subscribers, user, users, catalogs, products, productimages, productparams, shoppingcart};
+        return { pages, banners, subscribers, user, users, catalogs, products, productimages, productparams, cart };
     }
 }

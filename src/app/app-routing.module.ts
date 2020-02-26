@@ -11,9 +11,9 @@ import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart
 
 
 const routes: Routes = [
-    { path: 'catalog', component: PageCatalogComponent }, 
-    { path: 'catalog/:id', component: PageCatalogComponent }, 
-    { path: 'shop/:id', component: PageShopIdComponent },  
+    { path: 'catalog', component: PageCatalogComponent },
+    { path: 'catalog/:id', component: PageCatalogComponent },
+    { path: 'products/:id', component: PageShopIdComponent },
     { path: 'user/signup', component: SignupComponent },
     { path: 'user/signin', component: SigninComponent },
     { path: 'user/profile', component: ProfileComponent },

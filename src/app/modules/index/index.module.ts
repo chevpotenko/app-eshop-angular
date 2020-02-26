@@ -17,7 +17,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule,        
+        FormsModule,
         SharedModule,
         indexRouting
     ],
@@ -31,7 +31,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
         BrandsComponent,
         ArticlesComponent
     ],
-    exports: [       
+    exports: [
         HeaderComponent,
         FooterComponent
     ]

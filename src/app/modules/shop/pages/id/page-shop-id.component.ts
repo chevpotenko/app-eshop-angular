@@ -30,7 +30,7 @@ export class PageShopIdComponent implements OnInit {
     ngOnInit() {
 
         const productId = this.activatedRoute.snapshot.paramMap.get('id');
-        this.dataService.getSingle(`${environment.apiUrl}api/products`, productId).subscribe((result) => {
+        this.dataService.getSingle(`${environment.apiUrl}api/products/`, productId).subscribe((result) => {
             this.product = result;
         });
         this.dataService.getSingle(`${environment.apiUrl}api/productimages/`, productId).subscribe((result) => {
