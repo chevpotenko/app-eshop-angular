@@ -9,7 +9,7 @@ import { CartItem } from '../../../class/cart';
 })
 export class ShoppingcartTableComponent implements OnInit {
     public shoppingcart: CartItem[];
-    private orderTotal: any;
+    public orderTotal: any;
 
     constructor(private shopService: ShopService) {}
 

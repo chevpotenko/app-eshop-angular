@@ -1,30 +1,30 @@
 <div>
-	<table *ngIf="shoppingcart" class="shoppingcart-table">
-		<tr>
-			<th class="name">Name</th>
-			<th class="price">Price</th>           
-			<th class="quantity">Quantity</th>
-			<th class="total">Total</th>
-			<th></th>	
-		</tr>
-		<tr *ngFor="let cartItem of shoppingcart">
-			<td>{{ cartItem.product.name }}</td>
-			<td>$ {{ cartItem.product.price }}</td>           
-			<td>{{ cartItem.qty }}</td>
-			<td>$ {{ cartItem.total }}</td>
-			<td>
-				<span class="btn-counter btn-increment"
-						(click)="updateProductAmounts(cartItem, 'increase')">+</span>
-				<span class="btn-counter btn-decrement"
-						(click)="updateProductAmounts(cartItem, 'decrease')">-</span>
-			</td>
-		</tr>
-		<tr>
-			<td>Total:</td>
-			<td></td>
-			<td></td>
-			<td>$ {{ orderTotal.price }}</td>
-			<td></td>
-		</tr>	
-	</table>	
+    <table *ngIf="shoppingcart.length > 0" class="shoppingcart-table">
+        <tr>
+            <th class="name">Name</th>
+            <th class="price">Price</th>
+            <th class="quantity">Quantity</th>
+            <th class="total">Total</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let cartItem of shoppingcart">
+            <td>{{ cartItem.product.name }}</td>
+            <td>$ {{ cartItem.product.price }}</td>
+            <td>{{ cartItem.qty }}</td>
+            <td>$ {{ cartItem.total }}</td>
+            <td>
+                <span class="btn-counter btn-increment"
+                      (click)="updateProductAmounts(cartItem, 'increase')">+</span>
+                <span class="btn-counter btn-decrement"
+                      (click)="updateProductAmounts(cartItem, 'decrease')">-</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td></td>
+            <td></td>
+            <td>$ {{ orderTotal.price }}</td>
+            <td></td>
+        </tr>
+    </table>
 </div>

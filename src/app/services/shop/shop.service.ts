@@ -43,7 +43,7 @@ export class ShopService {
     }
 
     fetchCart() {
-        return this.dataService.getAll(`${environment.apiUrl}api/shoppingcart/`);
+        return this.dataService.getAll(`${environment.apiUrl}api/cart`);
     }
 
     get getOrderTotal(): Observable<OrderTotal> {
@@ -78,12 +78,12 @@ export class ShopService {
 
         if (!itemCart) {
             itemCart = this.createCartItem(product, itemsAmount);
-            this.dataService.add(`${environment.apiUrl}api/shoppingcart/`, itemCart).subscribe(() => {
+            this.dataService.add(`${environment.apiUrl}api/cart/`, itemCart).subscribe(() => {
                 this.addCartItem(itemCart);
                 this.calculateOrderTotal();
             });
         } else {
-            this.dataService.update(`${environment.apiUrl}api/shoppingcart/`, itemCart.id, itemCart).subscribe(() => {
+            this.dataService.update(`${environment.apiUrl}api/cart/`, itemCart.id, itemCart).subscribe(() => {
                 this.updateCartItem(itemCart);
                 this.calculateOrderTotal();
             });
