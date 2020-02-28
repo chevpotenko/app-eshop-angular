@@ -1,6 +1,6 @@
 export class Category {
     id: number;
-    name: string;                
+    name: string;
     parentCategory: string;
-    img: string
+    img: string;
 }
