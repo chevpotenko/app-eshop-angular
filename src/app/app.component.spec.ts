@@ -12,19 +12,17 @@ import { FooterComponent } from './modules/shared/footer/footer.component';
 import { DataService } from './services/data/data.service';
 
 describe('AppComponent', () => {
-  
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule, RouterTestingModule ], 
-      declarations: [ AppComponent, HeaderComponent, FooterComponent ],
-      providers:  [ DataService, ShopService, UserService ]
-    }).compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            imports: [ HttpClientTestingModule, RouterTestingModule ],
+            declarations: [ AppComponent, HeaderComponent, FooterComponent ],
+            providers:  [ DataService, ShopService, UserService ]
+        }).compileComponents();
+    }));
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
- 
+    it('should create the app', async(() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        const app = fixture.debugElement.componentInstance;
+        expect(app).toBeTruthy();
+    }));
 });

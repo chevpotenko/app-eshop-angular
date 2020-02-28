@@ -26,33 +26,31 @@ import { AppComponent } from './app.component';
 import { routing } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SignupComponent,
-    ProfileComponent,
-    SigninComponent,
-    ShoppingCartComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    SharedModule,
-    PageIndexModule,
-    ShopModule,
-    routing,
-    HttpModule,
-    HttpClientModule
-    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
-  ],
-  providers: [
-    HttpClientModule,
-    DataService,
-    UserService,
-    ShopService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        SignupComponent,
+        ProfileComponent,
+        SigninComponent,
+        ShoppingCartComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        SharedModule,
+        PageIndexModule,
+        ShopModule,
+        routing,
+        HttpModule,
+        HttpClientModule
+        // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+    ],
+    providers: [
+        HttpClientModule,
+        DataService,
+        UserService,
+        ShopService
+    ],
+    bootstrap: [ AppComponent ]
 })
 
-export class AppModule {
-
-}
+export class AppModule {}
