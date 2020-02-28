@@ -4,7 +4,7 @@
         <div class="param"
              *ngFor="let item of params; let item_index=index"
              [ngClass]="{'active': shownSections[item_index]}">
-            <div class="param-caption"                         
+            <div class="param-caption"
                 (click)="toggleSection(item_index)">
                 <span>{{ item.name }}</span>
                 <span class="param-icon">
@@ -33,6 +33,6 @@
                     {{ value }}
                 </label>
             </div>
-        </div>              
+        </div>
     </form>
-</div> 
+</div>

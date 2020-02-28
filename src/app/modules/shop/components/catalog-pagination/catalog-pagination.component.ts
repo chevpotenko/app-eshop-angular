@@ -4,7 +4,7 @@ import { HttpParamsService } from '../../../../services/http-params/http-params.
 import { environment } from '../../../../../environments/environment';
 
 @Component({
-  selector: 'catalog-pagination',
+  selector: 'app-catalog-pagination',
   templateUrl: './catalog-pagination.component.html',
   styleUrls: ['./catalog-pagination.component.css']
 })

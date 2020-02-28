@@ -4,7 +4,7 @@
     align-items: center;
     padding: 5px 0;
     margin-bottom: 7px;
-    border-bottom: 1px solid #eee;   
+    border-bottom: 1px solid #eee;
     cursor: pointer;
 }
 .param.active .param-list {
@@ -22,7 +22,7 @@
     max-height: 0;
     overflow: hidden;
     padding: 0 0 0 15px;
-    transition: max-height .3s ease-out; 
+    transition: max-height .3s ease-out;
 }
 .param-icon{
     display: inline-block;
@@ -38,7 +38,7 @@
 .param .radio{
     height: 0;
     width: 0;
-    visibility: hidden;     
+    visibility: hidden;
 }
 .param .radio-sign,
 .param .checkbox-sign{
@@ -49,9 +49,9 @@
     width: 10px;
     height: 10px;
     border: 1px solid #000;
-    border-radius:2px; 
+    border-radius:2px;
 }
 .param .radio:checked + .radio-sign,
-.param .checkbox:checked + .checkbox-sign{    
+.param .checkbox:checked + .checkbox-sign{
     background: #000;
 }
