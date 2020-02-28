@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PageCheckoutComponent } from './pages/checkout/checkout.component';
 
-const routes: Routes = [    
+const routes: Routes = [
     { path: '', component: PageCheckoutComponent }
 ];
 
@@ -11,7 +11,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-  
-export  class checkoutRouting {
 
-}
+export  class CheckoutRouting {}
