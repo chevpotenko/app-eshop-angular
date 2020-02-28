@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { contactRouting } from './contact.routing';
+import { ContactRouting } from './contact.routing';
 import { PageContactComponent } from './pages/contact/page-contact.component';
 
 @NgModule({
     imports: [
         CommonModule,
-        contactRouting
+        ContactRouting
     ],
-    declarations: [
-      PageContactComponent
-    ],
-    exports: [ ]
+    declarations: [ PageContactComponent ],
+    exports: []
 })
 
 export class PageContactModule { }

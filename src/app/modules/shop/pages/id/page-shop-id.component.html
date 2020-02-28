@@ -1,4 +1,4 @@
-<section *ngIf="product" class="section contact center"> 
+<section *ngIf="product" class="section contact center">
     <div class="product center">
         <div class="section-caption caption">
             <h2 class="product-name">{{ product.name }}</h2>
@@ -7,7 +7,8 @@
         <div class="product-content">
             <div class="column">
                 <div *ngIf="productImages">
-                    <ngx-gallery [options]="galleryOptions" [images]="productImages.images"></ngx-gallery>
+                    <ngx-gallery [options]="galleryOptions"
+                                 [images]="productImages"></ngx-gallery>
                 </div>
             </div>
             <div class="column">
@@ -18,15 +19,15 @@
                             <span class="discount-percent">30% <span>OFF</span></span>
                             <span class="available-quantity additional-info">5 pieces left</span>
                         </div>
-                        <div class="row">                            
+                        <div class="row">
                             <span class="discount-sum additional-info">$1000</span>
-                        </div>                        
-                    </div>                    
+                        </div>
+                    </div>
                     <div class="column column--right">
                         <div class="">
                             <span class="product-review additional-info">7 review</span>
-                        </div>  
-                    </div>                    
+                        </div>
+                    </div>
                 </div>
                 <div class="product-description">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusamus soluta dignissimos rerum nulla, ratione optio quo at harum!</p>
@@ -43,14 +44,14 @@
                         </tr>
                         <tr *ngIf="product.colors">
                             <td>Color</td>
-                            <td>                                
+                            <td>
                                 <span *ngFor="let color of product.colors"
                                         class="param-color"
                                         [ngClass]="color"
                                         [class.active]="color === selectedColor"
                                         (click)="onSelectColor(color)">
                                             <span></span>
-                                    </span>                                
+                                    </span>
                             </td>
                         </tr>
                         <tr>
@@ -72,7 +73,7 @@
                 <div class="product-control">
                     <button  type="button"
                             (click)="buyNow(product)"
-                            class="btn btn-buy">BUY NOW</button>                   
+                            class="btn btn-buy">BUY NOW</button>
                     <button type="button"
                             (click)="addToCart(product)"
                             class="btn btn-cart">ADD TO MY CART</button>
@@ -94,6 +95,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio accusamus culpa facere ipsam sed illo debitis mollitia sit vel temporibus, qui dolorem quasi, maxime nam possimus dicta odit, quos cupiditate.</p>
                 </div>
             </div>
-        </div>         
+        </div>
     </div>
 </section>
