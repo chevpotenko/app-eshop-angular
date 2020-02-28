@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PageAboutComponent } from './pages/about/page-about.component';
 
-const routes: Routes = [    
+const routes: Routes = [
     { path: '', component: PageAboutComponent }
 ];
 
@@ -12,6 +12,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class aboutRouting {
-
-}
+export class AboutRouting {}
