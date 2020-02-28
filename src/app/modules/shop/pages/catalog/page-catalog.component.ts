@@ -19,9 +19,10 @@ export class PageCatalogComponent implements OnInit {
                 private activatedRoute: ActivatedRoute) {}
 
     ngOnInit() {
-        this.dataService.getAll(`${environment.apiUrl}api/products`).subscribe((result) => {
-            this.products = result;
-        });
+        this.dataService.getAll(`${environment.apiUrl}api/products`)
+            .subscribe((result) => {
+                this.products = result;
+            });
         this.getCurrentCategoryId();
         this.getCatalog();
     }

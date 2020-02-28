@@ -1,5 +1,5 @@
 <div class="category">
-    <div class="center">    
+    <div class="center">
         <div class="category-description">
             <div class="category-column">
                 <div class="breadcrumbs">
@@ -16,20 +16,20 @@
         </div>
     </div>
 </div>
-<div class="section shop catalog center"> 
+<div class="section shop catalog center">
     <div class="catalog-controls">
         <div class="catalog-search">
             <p class="section-name">Search Option</p>
-            <form class="form-search" name="catalog-search">                
+            <form class="form-search" name="catalog-search">
                 <input class="form-search-input" type="text">
                 <button class="btn-catalog-search" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
         </div>
-        <catalog-filter></catalog-filter>
+        <app-catalog-filter></app-catalog-filter>
     </div>
-    <div class="catalog-results">         
+    <div class="catalog-results">
         <div class="catalog-info">
             <div class="column">
                 <div class="catalog-title">102 Items Found</div>
@@ -42,9 +42,9 @@
                         <option value="name">Name</option>
                     </select>
                 </div>
-                <catalog-pagination></catalog-pagination>
-            </div>                        
+                <app-catalog-pagination></app-catalog-pagination>
+            </div>
         </div>
         <app-shop-list [list]="products"></app-shop-list>
-    </div>    
+    </div>
 </div>

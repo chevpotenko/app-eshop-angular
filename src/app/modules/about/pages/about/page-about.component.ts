@@ -18,4 +18,3 @@ export class PageAboutComponent implements OnInit {
         });
     }
 }
-

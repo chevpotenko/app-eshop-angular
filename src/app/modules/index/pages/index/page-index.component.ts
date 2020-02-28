@@ -14,9 +14,11 @@ export class PageIndexComponent implements OnInit {
     constructor(private dataService: DataService) {}
 
      ngOnInit() {
-        this.dataService.getAll<Product[]>(`${environment.apiUrl}api/products`).subscribe((result) => {
-            this.products = result;
-        });
+        this.dataService
+            .getAll<Product[]>(`${environment.apiUrl}api/products`)
+            .subscribe((result) => {
+                this.products = result;
+            });
     }
 }
 
