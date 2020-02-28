@@ -4,6 +4,7 @@ import { ShopService } from '../../../../services/shop/shop.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 import { environment } from '../../../../../environments/environment';
+import { Product } from '../../../../class/product';
 
 @Component({
     selector: 'app-page-shop-id',
@@ -11,14 +12,33 @@ import { environment } from '../../../../../environments/environment';
     styleUrls: ['./page-shop-id.component.css']
 })
 export class PageShopIdComponent implements OnInit {
-
+    public selectedSize: string;
+    public selectedColor: string;
     public product;
     public productImages;
     public quantity;
-    private selectedSize: string;
-    private selectedColor: string;
-    galleryOptions: NgxGalleryOptions[];
-    galleryImages: NgxGalleryImage[];
+    public galleryImages: NgxGalleryImage[];
+    public galleryOptions: NgxGalleryOptions[] = [
+        {
+            width: '100%',
+            height: '500px',
+            thumbnailsColumns: 4,
+            imageAnimation: NgxGalleryAnimation.Slide
+        },
+        {
+            breakpoint: 800,
+            width: '100%',
+            height: '600px',
+            imagePercent: 80,
+            thumbnailsPercent: 20,
+            thumbnailsMargin: 20,
+            thumbnailMargin: 20
+        },
+        {
+            breakpoint: 400,
+            preview: false
+        }
+    ];
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
@@ -28,36 +48,23 @@ export class PageShopIdComponent implements OnInit {
     }
 
     ngOnInit() {
-
         const productId = this.activatedRoute.snapshot.paramMap.get('id');
-        this.dataService.getSingle(`${environment.apiUrl}api/products/`, productId).subscribe((result) => {
-            this.product = result;
-        });
-        this.dataService.getSingle(`${environment.apiUrl}api/productimages/`, productId).subscribe((result) => {
-            this.productImages = result;
-        });
+        this.dataService
+            .getSingle(`${environment.apiUrl}api/products/`, productId)
+            .subscribe((result: Product) => {
+                this.product = result;
+                this.productImages = this.createImgConfig(result);
+            });
+    }
 
-        this.galleryOptions = [
-            {
-                width: '100%',
-                height: '500px',
-                thumbnailsColumns: 4,
-                imageAnimation: NgxGalleryAnimation.Slide
-            },
-            {
-                breakpoint: 800,
-                width: '100%',
-                height: '600px',
-                imagePercent: 80,
-                thumbnailsPercent: 20,
-                thumbnailsMargin: 20,
-                thumbnailMargin: 20
-            },
-            {
-                breakpoint: 400,
-                preview: false
-            }
-        ];
+    createImgConfig(product) {
+        return product.images.map(img => {
+            return {
+                small: `${environment.apiUrl}assets/img/products/small/${img}`,
+                medium: `${environment.apiUrl}assets/img/products/medium/${img}`,
+                big: `${environment.apiUrl}assets/img/products/big/${img}`
+            };
+        });
     }
 
     addToCart(product) {
@@ -76,5 +83,4 @@ export class PageShopIdComponent implements OnInit {
     onSelectColor(color: string) {
         this.selectedColor = color;
     }
-
 }

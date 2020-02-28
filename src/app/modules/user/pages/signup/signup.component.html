@@ -4,12 +4,12 @@
     <form calss="useraccount-form">
         <div class="useraccount-row">
             <label for="email">E-mail:</label>
-            <input type="text" id="email" name="email" #email autocomplete="off">  
+            <input type="text" id="email" name="email" #email autocomplete="off"/>
         </div>
         <div class="useraccount-row">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" #password>
-            <input *ngIf="csrfToken" type="hidden" name="_csrf"  [attr.value]="csrfToken">  
+            <input type="password" id="password" name="password" #password/>
+            <input *ngIf="csrfToken" type="hidden" name="_csrf"  [attr.value]="csrfToken"/>
         </div>
         <div class="useraccount-row">
             <button class="btn-submit" (click)="addUser($event, email.value, password.value);">Sign up</button>
