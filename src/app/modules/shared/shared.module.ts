@@ -5,17 +5,17 @@ import { ShopListComponent } from './shop-list/shop-list.component';
 import { ShoppingcartTableComponent } from './shoppingcart-table/shoppingcart-table.component';
 
 @NgModule({
-	declarations: [
-		ShopListComponent,
-		ShoppingcartTableComponent
-	],
-	imports: [		
-		CommonModule,
-		RouterModule		
-	],
-	exports: [
-		ShopListComponent,
-		ShoppingcartTableComponent
-	]
+    declarations: [
+        ShopListComponent,
+        ShoppingcartTableComponent
+    ],
+    imports: [
+        CommonModule,
+        RouterModule
+    ],
+    exports: [
+        ShopListComponent,
+        ShoppingcartTableComponent
+    ]
 })
 export class SharedModule { }
