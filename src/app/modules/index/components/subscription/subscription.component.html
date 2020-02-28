@@ -2,12 +2,12 @@
     <h2 class="subscription-title">Subscribe our newsletter and  keep update fo new product & Promotion</h2>
     <form #form="ngForm" class="subscription-form">
         <input type="email"
-            ngModel           
+            ngModel
             [email]="true"
             #email="ngModel"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
             name="subscription"
-            value=""            
+            value=""
             placeholder="Your Email Address"
             [class.error]="!email.valid && !email.pristine"
             class="subscription-email">
@@ -19,9 +19,9 @@
             value="SUBSCRIBE">
     </form>
     <div class="overlay" *ngIf="isOverlay" (click)="toggleOverlay()">
-		<div class="popup">
+        <div class="popup">
             <p>You have successfully subscribed to Uinity Fashion!</p>
             <div class="btn-close-popup">x</div>
         </div>
-	</div>
+    </div>
 </section>

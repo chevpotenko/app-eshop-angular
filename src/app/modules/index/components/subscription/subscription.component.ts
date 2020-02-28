@@ -17,12 +17,14 @@ export class SubscriptionComponent {
     subscribe(event, elForm, elEmail) {
         event.preventDefault();
         if (this.isSubscribed) { return; }
-        this.dataService.add(`${environment.apiUrl}api/subscribers`, {email: elEmail.value}).subscribe(() => {
-            this.isSubscribed = true;
-            this.isOverlay = true;
-            elForm.resetForm();
-            this.renderer.addClass(document.body, 'is-overlay');
-        });
+        this.dataService
+            .add(`${environment.apiUrl}api/subscribers`, { email: elEmail.value })
+            .subscribe(() => {
+                this.isSubscribed = true;
+                this.isOverlay = true;
+                elForm.resetForm();
+                this.renderer.addClass(document.body, 'is-overlay');
+            });
     }
 
     toggleOverlay() {

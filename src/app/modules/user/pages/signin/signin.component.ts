@@ -25,19 +25,21 @@ export class SigninComponent implements OnInit {
 
     signinUser($event, email, password) {
         $event.preventDefault();
-        this.dataService.getQuery(`${environment.apiUrl}api/users`, {email, password} as User).subscribe(
-            (user) => {
-                this.err = '';
-                this.userService.setSignin(true);
-                this.router.navigate(['/user/profile']);
-            },
-            (err) => {
-                if (err.error) {
-                    this.err = Array.isArray(err.error.message) ? err.error.message.join(', ') : err.error.message;
-                } else {
-                    this.err = err.body.error;
+        this.dataService
+            .getQuery(`${environment.apiUrl}api/users`, { email, password } as User)
+            .subscribe(
+                (user) => {
+                    this.err = '';
+                    this.userService.setSignin(true);
+                    this.router.navigate(['/user/profile']);
+                },
+                (err) => {
+                    if (err.error) {
+                        this.err = Array.isArray(err.error.message) ? err.error.message.join(', ') : err.error.message;
+                    } else {
+                        this.err = err.body.error;
+                    }
                 }
-            }
-        );
+            );
     }
 }
