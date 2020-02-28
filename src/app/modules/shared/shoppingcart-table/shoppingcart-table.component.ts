@@ -3,7 +3,7 @@ import { ShopService } from '../../../services/shop/shop.service';
 import { CartItem } from '../../../class/cart';
 
 @Component({
-    selector: 'shoppingcart-table',
+    selector: 'app-shoppingcart-table',
     templateUrl: './shoppingcart-table.component.html',
     styleUrls: ['./shoppingcart-table.component.css']
 })

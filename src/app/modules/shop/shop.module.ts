@@ -14,21 +14,21 @@ import { CatalogPaginationComponent } from './components/catalog-pagination/cata
 import { ProductCarouselComponent } from './components/product-carousel/product-carousel.component';
 
 @NgModule({
-	imports: [
-		CommonModule,
-		SharedModule,
-		FormsModule,
-		NgxGalleryModule
-	],
-	declarations: [
-		PageCatalogComponent,
-		PageShopIdComponent,
-		CatalogFilterComponent,
-		CatalogPaginationComponent,
-		ProductCarouselComponent
-	],
-	providers: [
-		HttpParamsService
-	]
+    imports: [
+        CommonModule,
+        SharedModule,
+        FormsModule,
+        NgxGalleryModule
+    ],
+    declarations: [
+        PageCatalogComponent,
+        PageShopIdComponent,
+        CatalogFilterComponent,
+        CatalogPaginationComponent,
+        ProductCarouselComponent
+    ],
+    providers: [
+        HttpParamsService
+    ]
 })
 export class ShopModule { }
