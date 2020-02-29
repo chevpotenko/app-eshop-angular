@@ -99,10 +99,11 @@ export class InMemoryDataService implements InMemoryDbService {
                 name: 'Fashion Product Name 1',
                 category: 'Top',
                 price: '100',
+                sizes: ['S', 'M', 'L', 'XL'],
+                brand: 'Brand 1',
+                colors: ['beige', 'orange', 'red'],
                 rating: '5',
                 discount: '10',
-                sizes: ['S', 'M', 'L', 'XL'],
-                colors: ['beige', 'orange', 'red'],
                 images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             },
             {
@@ -110,10 +111,11 @@ export class InMemoryDataService implements InMemoryDbService {
                 name: 'Fashion Product Name 2',
                 category: 'Top',
                 price: '100',
+                sizes: ['S', 'M', 'L', 'XL'],
+                brand: 'Brand 1',
+                colors: ['beige', 'orange', 'red'],
                 rating: '5',
                 discount: '10',
-                sizes: ['S', 'M', 'L', 'XL'],
-                colors: ['beige', 'orange', 'red'],
                 images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             },
             {
@@ -121,10 +123,11 @@ export class InMemoryDataService implements InMemoryDbService {
                 name: 'Fashion Product Name 3',
                 category: 'Top',
                 price: '100',
+                sizes: ['S', 'M', 'L', 'XL'],
+                brand: 'Brand 1',
+                colors: ['beige', 'orange', 'red'],
                 rating: '5',
                 discount: '10',
-                sizes: ['S', 'M', 'L', 'XL'],
-                colors: ['beige', 'orange', 'red'],
                 images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             },
             {
@@ -132,10 +135,11 @@ export class InMemoryDataService implements InMemoryDbService {
                 name: 'Fashion Product Name 4',
                 category: 'Top',
                 price: '100',
+                sizes: ['S', 'M', 'L', 'XL'],
+                brand: 'Brand 1',
+                colors: ['beige', 'orange', 'red'],
                 rating: '5',
                 discount: '10',
-                sizes: ['S', 'M', 'L', 'XL'],
-                colors: ['beige', 'orange', 'red'],
                 images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             }
         ];
