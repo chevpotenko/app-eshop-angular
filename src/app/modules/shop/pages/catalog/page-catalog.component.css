@@ -15,7 +15,7 @@
 .catalog-info{
     padding-bottom: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #eee;    
+    border-bottom: 1px solid #eee;
 }
 /*-------------------------------------*/
 .category-description{
@@ -41,12 +41,12 @@
 .breadcrumbs{
     padding-top: 20px;
     margin-bottom: 10px;
-    color: #bdbdbd;   
+    color: #bdbdbd;
 }
 .breadcrumbs a,
-.breadcrumbs span{  
+.breadcrumbs span{
     color: #bdbdbd;
-    font-size: 'Lato', sans-serif; 
+    font-family: 'Lato', sans-serif;
     text-decoration: none;
 }
 .breadcrumbs a:hover{
@@ -55,7 +55,7 @@
 .category-name{
     margin-bottom: 10px;
     font-size: 70px;
-    color: #ffab00;    
+    color: #ffab00;
 }
 .category-name:first-letter{
     text-transform: capitalize;
@@ -67,8 +67,8 @@
 .form-search{
     position: relative;
 }
-.btn-catalog-search{    
-    position: absolute;    
+.btn-catalog-search{
+    position: absolute;
     right: 5px;
     top: 9px;
     background: none;
@@ -84,11 +84,11 @@
 .catalog-info .column-right{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 .select-sort{
     width: 130px;
-    height: 30px;    
+    height: 30px;
     margin-left: 20px;
 }
 .catalog-info{
@@ -97,4 +97,11 @@
 }
 .catalog-title{
     font: 18px 'Merriweather', serif;
+}
+:host .catalog-results ::ng-deep .shop-list{
+    flex-wrap: wrap;
+    justify-content: start;
+}
+:host .catalog-results ::ng-deep .shop-item{
+    width: 33%;
 }

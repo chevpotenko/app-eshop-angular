@@ -12,6 +12,22 @@ body.is-overlay{
   overflow: hidden;
 }
 
+input[type="text"],
+input[type="email"] {
+  padding: 15px 20px;
+  border: 1px solid #000; }
+
+input:focus {
+  outline: none; }
+
+.clearfix:after{
+  content: ' ';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
 .content {
   flex: 1 0 auto;
 }
@@ -35,14 +51,6 @@ body.is-overlay{
 .center {
   max-width: 1140px;
   margin: 0 auto; }
-
-input[type="text"],
-input[type="email"] {
-  padding: 15px 20px;
-  border: 1px solid #000; }
-
-input:focus {
-  outline: none; }
 
 .section-title,
 .section-description {
@@ -503,8 +511,6 @@ input.subscription-email {
   margin-top: 130px;
   background-color: #f9f9f9; }
 
-
-
 .footer-menu {
   list-style: none;
   padding: 0;
@@ -567,19 +573,4 @@ input.subscription-email {
     background: #f44336; }
   .useraccount button:focus{
     outline: none; }
-/*---------------------------------------*/
-.clearfix:after{
-  content: ' ';
-  display: block;
-  clear: both;
-  height: 0;
-  visibility: hidden;
-}
-/*---------------------------------------*/
-.catalog-results .shop-list{
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.catalog-results .shop-item{
-  width: 33%;
-}
+
