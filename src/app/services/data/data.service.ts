@@ -11,7 +11,7 @@ export class DataService {
     }
 
     public getQuery<T>(url: string, params): Observable<T> {
-        return this.http.get<T>(url, {params});
+        return this.http.get<T>(url, { params });
     }
 
     public getSingle<T>(url: string, id: string): Observable<T> {

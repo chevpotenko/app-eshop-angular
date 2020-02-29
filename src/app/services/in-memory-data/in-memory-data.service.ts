@@ -95,50 +95,52 @@ export class InMemoryDataService implements InMemoryDbService {
 
         const products = [
             {
-                id: 1,
+                id: 0,
                 name: 'Fashion Product Name 1',
                 category: 'Top',
                 price: '100',
                 rating: '5',
                 discount: '10',
-                img: 'assets/img/shop/shop_item.jpg',
                 sizes: ['S', 'M', 'L', 'XL'],
-                colors: ['beige', 'orange', 'red']
+                colors: ['beige', 'orange', 'red'],
+                images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             },
             {
-                id: 2,
+                id: 1,
                 name: 'Fashion Product Name 2',
                 category: 'Top',
                 price: '100',
                 rating: '5',
                 discount: '10',
-                img: 'assets/img/shop/shop_item.jpg',
                 sizes: ['S', 'M', 'L', 'XL'],
-                colors: ['beige', 'orange', 'red']
+                colors: ['beige', 'orange', 'red'],
+                images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             },
             {
-                id: 3,
+                id: 2,
                 name: 'Fashion Product Name 3',
                 category: 'Top',
                 price: '100',
                 rating: '5',
                 discount: '10',
-                img: 'assets/img/shop/shop_item.jpg',
                 sizes: ['S', 'M', 'L', 'XL'],
-                colors: ['beige', 'orange', 'red']
+                colors: ['beige', 'orange', 'red'],
+                images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             },
             {
-                id: 4,
+                id: 3,
                 name: 'Fashion Product Name 4',
                 category: 'Top',
                 price: '100',
                 rating: '5',
                 discount: '10',
-                img: 'assets/img/shop/shop_item.jpg'
+                sizes: ['S', 'M', 'L', 'XL'],
+                colors: ['beige', 'orange', 'red'],
+                images: ['shop_item.jpg', 'shop_item.jpg', 'shop_item.jpg']
             }
         ];
 
-        const productsparams = [
+        const filters = [
             {
                 id: 1,
                 name: 'Categories',
@@ -173,6 +175,9 @@ export class InMemoryDataService implements InMemoryDbService {
 
         const cart = [
             {
+                id: 1,
+                qty: 1,
+                total: 100,
                 product: {
                     id: 1,
                     name: 'Fashion Product Name 1',
@@ -183,12 +188,12 @@ export class InMemoryDataService implements InMemoryDbService {
                     img: 'assets/img/shop/shop_item.jpg',
                     sizes: ['S', 'M', 'L', 'XL'],
                     colors: ['beige', 'orange', 'red']
-                },
-                id: 1,
-                qty: 1,
-                total: 100
+                }
             },
             {
+                id: 2,
+                qty: 1,
+                total: 100,
                 product: {
                     id: 2,
                     name: 'Fashion Product Name 2',
@@ -199,13 +204,10 @@ export class InMemoryDataService implements InMemoryDbService {
                     img: 'assets/img/shop/shop_item.jpg',
                     sizes: ['S', 'M', 'L', 'XL'],
                     colors: ['beige', 'orange', 'red']
-                },
-                id: 2,
-                qty: 1,
-                total: 100
+                }
             }
         ];
 
-        return { pages, banners, subscribers, user, users, catalogs, products, productsparams, cart };
+        return { pages, banners, subscribers, user, users, catalogs, products, filters, cart };
     }
 }

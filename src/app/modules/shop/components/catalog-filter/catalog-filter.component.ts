@@ -17,7 +17,7 @@ export class CatalogFilterComponent implements OnInit {
 
   ngOnInit() {
     this.dataService
-        .getAll(`${environment.apiUrl}api/productparams/`)
+        .getAll(`${environment.apiUrl}api/filters/`)
         .subscribe(result => {
           this.params = result;
           this.params.forEach((element, index) => this.shownSections[index] = false);

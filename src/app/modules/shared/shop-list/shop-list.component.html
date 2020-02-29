@@ -1,7 +1,7 @@
 <div class="shop-list">
     <div *ngFor="let item of list" class="shop-item">
         <div class="shop-item-photo">
-            <a routerLink="/products/{{item._id}}">
+            <a routerLink="/products/{{item.id}}">
                 <img src="{{basePath}}assets/img/products/medium/{{item.images[0]}}" alt="">
             </a>
             <div class="shop-item-price">${{item.price}}</div>
@@ -18,7 +18,7 @@
                     class="shop-item-btnbuy">Shop Now</button>
         </div>
         <h3 class="shop-item-name">
-            <a routerLink="/products/{{item._id}}">
+            <a routerLink="/products/{{item.id}}">
                 {{item.name}}
             </a>
         </h3>
