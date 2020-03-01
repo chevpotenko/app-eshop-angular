@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data/in-memory-data.service';
@@ -44,6 +44,10 @@ import { environment } from '../environments/environment';
         routing,
         HttpModule,
         HttpClientModule,
+        HttpClientXsrfModule.withOptions({
+            cookieName: 'XSRF-TOKEN-Cookie',
+            headerName: 'XSRF-TOKEN-Header',
+        }),
         environment.production ?
             [] : HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
     ],

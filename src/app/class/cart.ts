@@ -1,13 +1,17 @@
-import { Product } from './product';
-
 export class CartItem {
-    product: Product;
     id: number;
-    qty: number;
-    total: number;
+    product: {
+        id: number;
+        name: string;
+        price: number;
+        color: string;
+        size: string;
+        qty: number;
+        total: number;
+    };
 }
 
 export class OrderTotal {
-    price: number;
+    total: number;
     quantity: number;
 }

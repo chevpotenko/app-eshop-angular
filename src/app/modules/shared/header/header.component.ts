@@ -29,12 +29,16 @@ export class HeaderComponent implements OnInit {
             this.orderTotal = result;
         });
 
-        this.dataService.getAll(`${environment.apiUrl}api/catalogs`).subscribe( result => {
-            this.catalog = result;
-        });
+        this.dataService
+            .getAll(`${environment.apiUrl}api/catalogs`)
+            .subscribe( result => {
+                this.catalog = result;
+            });
 
-        this.dataService.getSingle(`${environment.apiUrl}api/user/`, 'signin').subscribe( (result: Signin) => {
-            this.userService.setSignin(result.signin);
-        });
+        this.dataService
+            .getSingle(`${environment.apiUrl}api/user/`, 'signin')
+            .subscribe( (result: Signin) => {
+                this.userService.setSignin(result.signin);
+            });
     }
 }

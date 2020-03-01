@@ -18,6 +18,6 @@ export class ShopListComponent implements OnInit {
     ngOnInit() {}
 
     addToCart(product, amount) {
-        this.shopService.addProductToCart(product, amount);
+        // this.shopService.addProductToCart(product, amount);
     }
 }

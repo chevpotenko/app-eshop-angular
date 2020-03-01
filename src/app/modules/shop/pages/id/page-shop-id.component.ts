@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 import { environment } from '../../../../../environments/environment';
 import { Product } from '../../../../class/product';
+import { CartItem } from '../../../../class/cart';
 
 @Component({
     selector: 'app-page-shop-id',
@@ -14,9 +15,10 @@ import { Product } from '../../../../class/product';
 export class PageShopIdComponent implements OnInit {
     public selectedSize: string;
     public selectedColor: string;
-    public product;
-    public productImages;
-    public quantity;
+    public cart: CartItem[];
+    public cartItemId: number;
+    public product: Product;
+    public quantity = 1;
     public galleryImages: NgxGalleryImage[];
     public galleryOptions: NgxGalleryOptions[] = [
         {
@@ -43,17 +45,17 @@ export class PageShopIdComponent implements OnInit {
     constructor(private dataService: DataService,
                 private shopService: ShopService,
                 private activatedRoute: ActivatedRoute,
-                private router: Router) {
-        this.quantity = 1;
-    }
+                private router: Router) {}
 
-    ngOnInit() {
+    async ngOnInit() {
         const productId = this.activatedRoute.snapshot.paramMap.get('id');
-        this.dataService
+        await this.dataService
             .getSingle(`${environment.apiUrl}api/products/`, productId)
             .subscribe((result: Product) => {
                 this.product = result;
-                this.productImages = this.createImgConfig(result);
+                this.galleryImages = this.createImgConfig(result);
+                this.getCart();
+                this.cartItemId = this.getCartItemId();
             });
     }
 
@@ -68,11 +70,12 @@ export class PageShopIdComponent implements OnInit {
     }
 
     addToCart(product) {
-      this.shopService.addProductToCart(product, this.quantity);
+        const cartItem = this.setCartItem(product);
+        this.shopService.addProductToCart(cartItem);
     }
 
     buyNow(product) {
-        this.shopService.addProductToCart(product, this.quantity);
+        this.addToCart(product);
         this.router.navigate(['/checkout']);
     }
 
@@ -82,5 +85,32 @@ export class PageShopIdComponent implements OnInit {
 
     onSelectColor(color: string) {
         this.selectedColor = color;
+    }
+
+    getCart() {
+        this.shopService.getCart.subscribe( result => {
+            this.cart = result;
+        });
+    }
+
+    getCartItemId() {
+        const cartItem = this.cart.find(item => item.product.id === this.product.id);
+        return cartItem ? cartItem.id : this.cart.length + 1;
+    }
+
+
+    setCartItem({ id, name, price }) {
+        return {
+            id: this.cartItemId,
+            product: {
+                id,
+                name,
+                price,
+                size: this.selectedSize,
+                color: this.selectedColor,
+                qty: this.quantity,
+                total: this.quantity * price
+            }
+        };
     }
 }

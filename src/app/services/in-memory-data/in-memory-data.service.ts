@@ -180,34 +180,26 @@ export class InMemoryDataService implements InMemoryDbService {
         const cart = [
             {
                 id: 1,
-                qty: 1,
-                total: 100,
                 product: {
                     id: 1,
                     name: 'Fashion Product Name 1',
-                    category: 'Top',
                     price: '100',
-                    rating: '5',
-                    discount: '10',
-                    img: 'assets/img/shop/shop_item.jpg',
-                    sizes: ['S', 'M', 'L', 'XL'],
-                    colors: ['beige', 'orange', 'red']
+                    size: '',
+                    color: '',
+                    qty: 1,
+                    total: 100
                 }
             },
             {
                 id: 2,
-                qty: 1,
-                total: 100,
                 product: {
-                    id: 2,
-                    name: 'Fashion Product Name 2',
-                    category: 'Top',
+                    id: 1,
+                    name: 'Fashion Product Name 1',
                     price: '100',
-                    rating: '5',
-                    discount: '10',
-                    img: 'assets/img/shop/shop_item.jpg',
-                    sizes: ['S', 'M', 'L', 'XL'],
-                    colors: ['beige', 'orange', 'red']
+                    size: '',
+                    color: '',
+                    qty: 1,
+                    total: 100
                 }
             }
         ];

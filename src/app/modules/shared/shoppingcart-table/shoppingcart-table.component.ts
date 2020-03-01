@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../../services/shop/shop.service';
-import { CartItem } from '../../../class/cart';
+import {CartItem, OrderTotal} from '../../../class/cart';
 
 @Component({
     selector: 'app-shoppingcart-table',
@@ -9,7 +9,7 @@ import { CartItem } from '../../../class/cart';
 })
 export class ShoppingcartTableComponent implements OnInit {
     public shoppingcart: CartItem[];
-    public orderTotal: any;
+    public orderTotal: OrderTotal;
 
     constructor(private shopService: ShopService) {}
 
@@ -25,11 +25,15 @@ export class ShoppingcartTableComponent implements OnInit {
     updateProductAmounts(cartItem, actionType) {
         switch (actionType) {
             case 'increase':
-                this.shopService.addProductToCart(cartItem.product, 1);
+                cartItem.product.qty = cartItem.product.qty + 1;
+                cartItem.product.total = cartItem.product.qty * cartItem.product.price;
+                this.shopService.addProductToCart(cartItem);
                 break;
             case 'decrease':
-                if (cartItem.qty > 0) {
-                    this.shopService.addProductToCart(cartItem.product, -1);
+                if (cartItem.product.qty > 0) {
+                    cartItem.product.qty = cartItem.product.qty - 1;
+                    cartItem.product.total = cartItem.product.qty * cartItem.product.price;
+                    this.shopService.addProductToCart(cartItem);
                 }
                 break;
         }

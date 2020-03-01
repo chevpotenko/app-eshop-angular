@@ -9,15 +9,12 @@ import { environment } from '../../../environments/environment';
 export class ShopService {
     public cart = new BehaviorSubject([]);
     public orderTotal = new BehaviorSubject({
-        price: 0,
+        total: 0,
         quantity: 0
     });
 
     constructor(private dataService: DataService) {
-        this.fetchCart().subscribe((result: CartItem[]) => {
-            this.setCart(result);
-            this.calculateOrderTotal();
-        });
+        this.fetchCart();
     }
 
     get getCart(): Observable<CartItem[]> {
@@ -26,6 +23,10 @@ export class ShopService {
 
     setCart(cart: CartItem[]): void {
         this.cart.next(cart);
+    }
+
+    get getOrderTotal(): Observable<OrderTotal> {
+        return this.orderTotal.asObservable();
     }
 
     addCartItem(user: CartItem): void {
@@ -43,58 +44,33 @@ export class ShopService {
     }
 
     fetchCart() {
-        return this.dataService.getAll(`${environment.apiUrl}api/cart`);
-    }
-
-    get getOrderTotal(): Observable<OrderTotal> {
-        return this.orderTotal.asObservable();
+        return this.dataService
+            .getAll(`${environment.apiUrl}api/cart`)
+            .subscribe((result: CartItem[]) => {
+                this.setCart(result);
+                this.calculateOrderTotal();
+            });
     }
 
     setOrderTotal(orderTotal: OrderTotal): void {
         this.orderTotal.next(orderTotal);
     }
 
-    calculateCartItem(product, itemsAmount) {
-        const itemCart = this.cart.getValue().find(item => item.product.id === product.id);
-        if (itemCart) {
-            itemCart.qty = itemCart.qty + itemsAmount;
-            itemCart.total = itemCart.total + (itemCart.product.price * itemsAmount);
-            return itemCart;
-        }
-        return false;
-    }
 
-    createCartItem(product, itemsAmount) {
-        return {
-            product: product,
-            id: this.cart.getValue().length + 1,
-            qty: itemsAmount,
-            total: product.price * itemsAmount
-        };
-    }
-
-    addProductToCart(product, itemsAmount) {
-        let itemCart = this.calculateCartItem(product, itemsAmount);
-
-        if (!itemCart) {
-            itemCart = this.createCartItem(product, itemsAmount);
-            this.dataService.add(`${environment.apiUrl}api/cart/`, itemCart).subscribe(() => {
-                this.addCartItem(itemCart);
+    addProductToCart(cartItem) {
+        this.dataService
+            .update(`${environment.apiUrl}api/cart/`, cartItem.id, cartItem)
+            .subscribe((cart: CartItem[]) => {
+                this.setCart(cart);
                 this.calculateOrderTotal();
             });
-        } else {
-            this.dataService.update(`${environment.apiUrl}api/cart/`, itemCart.id, itemCart).subscribe(() => {
-                this.updateCartItem(itemCart);
-                this.calculateOrderTotal();
-            });
-        }
     }
 
     calculateOrderTotal() {
         const cart = this.cart.getValue();
         if (!cart.length) { return; }
-        const price = cart.reduce((accum, current) => accum + current.total, 0);
-        const quantity = cart.reduce((accum, current) => accum + current.qty, 0);
-        this.setOrderTotal({ price, quantity });
+        const total = cart.reduce((accum, current) => accum + current.product.total, 0);
+        const quantity = cart.reduce((accum, current) => accum + current.product.qty, 0);
+        this.setOrderTotal({ total, quantity });
     }
 }

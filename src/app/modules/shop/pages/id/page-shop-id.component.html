@@ -6,9 +6,9 @@
         </div>
         <div class="product-content">
             <div class="column">
-                <div *ngIf="productImages">
+                <div *ngIf="galleryImages">
                     <ngx-gallery [options]="galleryOptions"
-                                 [images]="productImages"></ngx-gallery>
+                                 [images]="galleryImages"></ngx-gallery>
                 </div>
             </div>
             <div class="column">
@@ -32,52 +32,55 @@
                 <div class="product-description">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusamus soluta dignissimos rerum nulla, ratione optio quo at harum!</p>
                 </div>
-                <div class="params">
-                    <table class="params-table">
-                        <tr *ngIf="product.sizes">
-                            <td>Size</td>
-                            <td class="param-size">
+                <form>
+                    <div class="params">
+                        <table class="params-table">
+                            <tr *ngIf="product.sizes">
+                                <td>Size</td>
+                                <td class="param-size">
                                 <span *ngFor="let size of product.sizes"
-                                        [class.active]="size === selectedSize"
-                                        (click)="onSelectSize(size)" >{{ size }}</span>
-                            </td>
-                        </tr>
-                        <tr *ngIf="product.colors">
-                            <td>Color</td>
-                            <td>
+                                      [class.active]="size === selectedSize"
+                                      (click)="onSelectSize(size)" >{{ size }}</span>
+                                </td>
+                            </tr>
+                            <tr *ngIf="product.colors">
+                                <td>Color</td>
+                                <td>
                                 <span *ngFor="let color of product.colors"
-                                        class="param-color"
-                                        [ngClass]="color"
-                                        [class.active]="color === selectedColor"
-                                        (click)="onSelectColor(color)">
+                                      class="param-color"
+                                      [ngClass]="color"
+                                      [class.active]="color === selectedColor"
+                                      (click)="onSelectColor(color)">
                                             <span></span>
                                     </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Quantity</td>
-                            <td>
-                                <input [(ngModel)]="quantity" type="number" value="5" min="0" max="100" class="products-quantity">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Shipping</td>
-                            <td class="param-delivery">
-                                <span>US & Canada</span>
-                                <span class="free">Free Sheepping</span>
-                                <span>$10 Worldwide</span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="product-control">
-                    <button  type="button"
-                            (click)="buyNow(product)"
-                            class="btn btn-buy">BUY NOW</button>
-                    <button type="button"
-                            (click)="addToCart(product)"
-                            class="btn btn-cart">ADD TO MY CART</button>
-                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td>
+                                    <input [(ngModel)]="quantity" name="qty" type="number" value="1" min="1" max="1000" class="products-quantity">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td class="param-delivery">
+                                    <span>US & Canada</span>
+                                    <span class="free">Free Sheepping</span>
+                                    <span>$10 Worldwide</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-control">
+                        <button type="submit"
+                                 (click)="buyNow(product)"
+                                 class="btn btn-buy">BUY NOW</button>
+                        <button type="submit"
+                                (click)="addToCart(product)"
+                                class="btn btn-cart">ADD TO MY CART</button>
+                    </div>
+                </form>
+
                 <div class="product-share">
                     <h4 class="additional-info">Share on:</h4>
                     <div>
