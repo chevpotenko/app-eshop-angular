@@ -10,7 +10,7 @@ export class ShopService {
     public cart = new BehaviorSubject([]);
     public orderTotal = new BehaviorSubject({
         total: 0,
-        quantity: 0
+        qty: 0
     });
 
     constructor(private dataService: DataService) {
@@ -48,7 +48,8 @@ export class ShopService {
             .getAll(`${environment.apiUrl}api/cart`)
             .subscribe((result: CartItem[]) => {
                 this.setCart(result);
-                this.calculateOrderTotal();
+                const orderTotal = this.calculateOrderTotal();
+                this.setOrderTotal(orderTotal);
             });
     }
 
@@ -62,15 +63,20 @@ export class ShopService {
             .update(`${environment.apiUrl}api/cart/`, cartItem.id, cartItem)
             .subscribe((cart: CartItem[]) => {
                 this.setCart(cart);
-                this.calculateOrderTotal();
+                const orderTotal = this.calculateOrderTotal();
+                this.setOrderTotal(orderTotal);
             });
     }
 
     calculateOrderTotal() {
         const cart = this.cart.getValue();
-        if (!cart.length) { return; }
-        const total = cart.reduce((accum, current) => accum + current.product.total, 0);
-        const quantity = cart.reduce((accum, current) => accum + current.product.qty, 0);
-        this.setOrderTotal({ total, quantity });
+        const orderTotal = { total: 0, qty: 0 };
+        if (!cart.length) { return orderTotal; }
+        return cart.reduce((accum, cartItem) => {
+            return {
+                total:  accum.total += cartItem.product.total,
+                qty: accum.qty += cartItem.product.qty
+            };
+        }, orderTotal);
     }
 }

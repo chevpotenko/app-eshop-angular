@@ -13,5 +13,5 @@ export class CartItem {
 
 export class OrderTotal {
     total: number;
-    quantity: number;
+    qty: number;
 }

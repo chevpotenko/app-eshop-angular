@@ -354,6 +354,7 @@ input.subscription-email {
   border: none;
   color: #fff;
   text-align: center;
+  text-decoration: none;
   line-height: 30px;
   transition: .2s ease background;
   cursor: pointer; }

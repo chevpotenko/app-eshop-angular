@@ -18,7 +18,7 @@ export class PageShopIdComponent implements OnInit {
     public cart: CartItem[];
     public cartItemId: number;
     public product: Product;
-    public quantity = 1;
+    public qty = 1;
     public galleryImages: NgxGalleryImage[];
     public galleryOptions: NgxGalleryOptions[] = [
         {
@@ -53,13 +53,13 @@ export class PageShopIdComponent implements OnInit {
             .getSingle(`${environment.apiUrl}api/products/`, productId)
             .subscribe((result: Product) => {
                 this.product = result;
-                this.galleryImages = this.createImgConfig(result);
+                this.galleryImages = this.createGalleryImages(result);
                 this.getCart();
                 this.cartItemId = this.getCartItemId();
             });
     }
 
-    createImgConfig(product) {
+    createGalleryImages(product) {
         return product.images.map(img => {
             return {
                 small: `${environment.apiUrl}assets/img/products/small/${img}`,
@@ -98,7 +98,6 @@ export class PageShopIdComponent implements OnInit {
         return cartItem ? cartItem.id : this.cart.length + 1;
     }
 
-
     setCartItem({ id, name, price }) {
         return {
             id: this.cartItemId,
@@ -108,8 +107,8 @@ export class PageShopIdComponent implements OnInit {
                 price,
                 size: this.selectedSize,
                 color: this.selectedColor,
-                qty: this.quantity,
-                total: this.quantity * price
+                qty: this.qty,
+                total: this.qty * price
             }
         };
     }

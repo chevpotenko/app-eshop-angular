@@ -13,14 +13,10 @@
                     <i class="fas fa-heart fa-2x"></i>
                 </span>
             </div>
-            <button type="button"
-                    (click)="addToCart(item, 1)"
-                    class="shop-item-btnbuy">Shop Now</button>
+            <a routerLink="/products/{{item.id}}" class="shop-item-btnbuy">Shop Now</a>
         </div>
         <h3 class="shop-item-name">
-            <a routerLink="/products/{{item.id}}">
-                {{item.name}}
-            </a>
+            <a routerLink="/products/{{item.id}}">{{item.name}}</a>
         </h3>
         <div class="shop-item-footer">
             <div class="shop-item-category">{{item.category}}</div>
