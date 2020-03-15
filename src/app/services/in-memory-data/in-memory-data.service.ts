@@ -48,21 +48,12 @@ export class InMemoryDataService implements InMemoryDbService {
             {
                 id: 1,
                 email: 'test@test.com',
-                password: 'test',
-                signin: false
+                password: 'test'
             },
             {
                 id: 2,
                 email: 'test2@test.com',
-                password: 'test',
-                signin: false
-            }
-        ];
-
-        const user = [
-            {
-                id: 'signin',
-                signin: false
+                password: 'test'
             }
         ];
 
@@ -204,6 +195,6 @@ export class InMemoryDataService implements InMemoryDbService {
             }
         ];
 
-        return { pages, banners, subscribers, user, users, catalogs, products, filters, cart };
+        return { pages, banners, subscribers, users, catalogs, products, filters, cart };
     }
 }
