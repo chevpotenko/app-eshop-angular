@@ -9,10 +9,9 @@
         <div class="useraccount-row">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" #password>
-            <input *ngIf="csrfToken" type="hidden" name="_csrf"  [attr.value]="csrfToken">
         </div>
         <div class="useraccount-row">
-            <button class="btn-submit" (click)="signinUser($event, email.value, password.value)">Sign in</button>
+            <button class="btn-submit" (click)="signin($event, email.value, password.value)">Sign in</button>
         </div>
     </form>
 </div>

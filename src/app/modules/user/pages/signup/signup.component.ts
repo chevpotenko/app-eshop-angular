@@ -12,21 +12,18 @@ import { environment } from '../../../../../environments/environment';
 })
 
 export class SignupComponent implements OnInit {
-    public csrfToken: string;
     public err = '';
 
     constructor(private userService: UserService,
                 private dataService: DataService,
                 private router: Router) {}
 
-    ngOnInit() {
-        this.csrfToken =  this.userService.getCookie('XSRF-TOKEN');
-    }
+    ngOnInit() {}
 
     addUser($event, email, password) {
         $event.preventDefault();
         this.dataService
-            .add(`${environment.apiUrl}api/users`, {email, password} as User)
+            .add(`${environment.apiUrl}api/users/signup`, {email, password} as User)
             .subscribe(
                 (user) => {
                     this.err = '';
