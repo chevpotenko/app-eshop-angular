@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../services/data/data.service';
 import { UserService } from '../../../services/user/user.service';
 import { ShopService } from '../../../services/shop/shop.service';
-import { Signin } from '../../../class/user';
+import { AuthService } from '../../../services/auth/auth.service';
 import { environment } from '../../../../environments/environment';
 
 @Component({
@@ -12,17 +12,21 @@ import { environment } from '../../../../environments/environment';
 })
 
 export class HeaderComponent implements OnInit {
-    public signin;
+    public isSignin = false;
     public orderTotal;
     public catalog;
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
+                private authService: AuthService,
                 private userService: UserService) {}
 
     ngOnInit() {
+        const isSignin = this.authService.isLoggedIn();
+        this.userService.setSignin(isSignin);
+
         this.userService.signin.subscribe( result => {
-            this.signin = result;
+            this.isSignin = result;
         });
 
         this.shopService.orderTotal.subscribe( result => {
@@ -34,11 +38,10 @@ export class HeaderComponent implements OnInit {
             .subscribe( result => {
                 this.catalog = result;
             });
+    }
 
-        this.dataService
-            .getSingle(`${environment.apiUrl}api/user/`, 'signin')
-            .subscribe( (result: Signin) => {
-                this.userService.setSignin(result.signin);
-            });
+    logOut() {
+        this.authService.logout().subscribe((result) => {});
+        this.userService.setSignin(false);
     }
 }
