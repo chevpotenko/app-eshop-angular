@@ -1,4 +1,4 @@
-<div *ngIf="banners" class="banners center">
+<div *ngIf="banners$ | async as banners" class="banners center">
     <div class="banners-column">
         <div class="banner banner--big">
             <a [attr.href]="banners[0].url">

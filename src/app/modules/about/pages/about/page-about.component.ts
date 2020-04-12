@@ -8,13 +8,11 @@ import { environment } from 'environments/environment';
     styleUrls: ['./page-about.component.css']
 })
 export class PageAboutComponent implements OnInit {
-    public data = null;
+    public data$ = null;
 
     constructor(private dataService: DataService) {}
 
     ngOnInit() {
-        this.dataService.getAll(`${environment.apiUrl}api/pages/about`).subscribe(result => {
-            this.data = result;
-        });
+        this.data$ = this.dataService.getAll(`${environment.apiUrl}api/pages/about`);
     }
 }

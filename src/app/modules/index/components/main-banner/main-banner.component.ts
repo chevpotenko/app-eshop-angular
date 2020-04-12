@@ -8,12 +8,10 @@ import { environment } from '../../../../../environments/environment';
     styleUrls: ['./main-banner.component.css']
 })
 export class MainBannerComponent implements OnInit {
-    public banners;
+    public banners$;
     constructor(private dataService: DataService) {}
 
     ngOnInit() {
-        this.dataService.getAll(`${environment.apiUrl}api/banners`).subscribe((result) => {
-            this.banners = result;
-        });
+        this.banners$ = this.dataService.getAll(`${environment.apiUrl}api/banners`);
     }
 }

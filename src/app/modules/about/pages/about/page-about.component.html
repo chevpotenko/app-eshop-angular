@@ -1,9 +1,9 @@
-<section *ngIf="data" class="section center"> 
-    <h2 class="section-title">{{data.caption}}</h2> 
+<section class="section center" *ngIf="data$ | async as data">
+    <h2 class="section-title">{{data.caption}}</h2>
     <div class="clearfix">
         <div class="photo">
             <img [src]="data.images[0].src" alt="image">
         </div>
-        <p>{{data.text}}</p> 
+        <p>{{data.text}}</p>
     </div>
 </section>
