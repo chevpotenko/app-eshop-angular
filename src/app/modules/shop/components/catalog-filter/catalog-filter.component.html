@@ -2,10 +2,9 @@
     <p class="section-name">Filter By:</p>
     <form class="form-filter">
         <div class="param"
-             *ngFor="let item of params; let item_index=index"
-             [ngClass]="{'active': shownSections[item_index]}">
-            <div class="param-caption"
-                (click)="toggleSection(item_index)">
+             *ngFor="let item of (params$ | async)"
+             (click)="toggleSection($event)">
+            <div class="param-caption">
                 <span>{{ item.name }}</span>
                 <span class="param-icon">
                     <i class="fas fa-chevron-down"></i>
