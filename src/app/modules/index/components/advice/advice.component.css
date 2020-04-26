@@ -1,0 +1,40 @@
+.advice-wrapper {
+    margin-bottom: 41px;
+    background-color: #141414; }
+
+.advice {
+    max-width: 1667px;
+    display: flex; }
+
+.advice-img {
+    width: 40%;
+    margin-right: 8%; }
+
+.advice-content {
+    width: 47%;
+    padding-top: 125px;
+    color: #fff;
+    text-align: left; }
+
+.advice-content .section-title {
+    font-size: 77px;
+    margin: 0 0 12px; }
+
+.advice-content .section-description {
+    line-height: 22px;
+    margin-bottom: 31px; }
+
+.advice-content .section-title,
+.advice-content a.link {
+    color: #ffab00; }
+
+.advice-content .section-title,
+.advice-content .link,
+.advice-content .section-description {
+    text-align: left; }
+
+.advice-content a.link {
+    text-decoration: none; }
+
+.advice-content a.link:hover {
+    text-decoration: underline; }

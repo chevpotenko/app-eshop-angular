@@ -1,0 +1,23 @@
+.footer-wrapper {
+    margin-top: 130px;
+    background-color: #f9f9f9; }
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+
+.footer-menu li {
+    display: inline-block;
+    margin-right: 38px; }
+
+.footer-menu li a {
+    color: #333;
+    text-decoration: none; }
+
+.footer-menu li a:hover {
+    text-decoration: underline; }
+
+.footer-copyright {
+    margin: 0;
+    color: #bdbdbd; }

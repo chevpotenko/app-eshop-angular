@@ -1,0 +1,10 @@
+.brands-list {
+    display: flex;
+    margin: 0 0 28px;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+
+.brands-list .brand {
+    display: inline-block;
+    width: 18%;
+    text-align: center; }
