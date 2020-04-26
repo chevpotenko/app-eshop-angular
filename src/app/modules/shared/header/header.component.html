@@ -2,16 +2,16 @@
     <div class="header-row header-row--first">
         <div class="header-content center">
             <div class="auth">
-                <ul class="auth-menu">
+                <ul  *ngIf="{ isSignin :  isSignin$ | async } as user" class="auth-menu">
                     <li>
                         <a routerLink="/user/profile">
                             <i class="fas fa-user-circle fa-2x"></i>
                         </a>
                     </li>
-                    <li *ngIf="!isSignin"><a routerLink="/user/signin">Login</a></li>
-                    <li *ngIf="!isSignin"> | </li>
-                    <li *ngIf="!isSignin"><a routerLink="/user/signup">SignUp</a></li>
-                    <li *ngIf="isSignin" (click)="logOut()" class="auth-menu-signout">Logout</li>
+                    <li *ngIf="!user.isSignin"><a routerLink="/user/signin">Login</a></li>
+                    <li *ngIf="!user.isSignin"> | </li>
+                    <li *ngIf="!user.isSignin"><a routerLink="/user/signup">SignUp</a></li>
+                    <li *ngIf="user.isSignin" (click)="logOut()" class="auth-menu-signout">Logout</li>
                 </ul>
             </div>
             <div class="logo">
@@ -25,10 +25,10 @@
                         <span class="userlikes-amount amount">11</span>
                     </a>
                 </li>
-                <li class="usercart">
+                <li  *ngIf="(orderTotal$ | async) as orderTotal" class="usercart">
                     <a routerLink="/shoppingcart">
-                        <span *ngIf="orderTotal" class="usercart-amount amount">{{ orderTotal.qty }}</span>
-                        <span *ngIf="orderTotal" class="usercart-totalprice">${{ orderTotal.total }}</span>
+                        <span class="usercart-amount amount">{{ orderTotal.qty }}</span>
+                        <span class="usercart-totalprice">${{ orderTotal.total }}</span>
                     </a>
                 </li>
             </ul>
@@ -45,7 +45,7 @@
             </form>
             <nav class="nav">
                 <ul class="mainmenu">
-                    <li *ngFor="let item of catalog">
+                    <li *ngFor="let item of (catalog$ | async)">
                         <a routerLink="/catalog/{{item.id}}"
                             routerLinkActive="active"
                             [routerLinkActiveOptions]="{exact: true}">{{item.name}}</a>

@@ -12,9 +12,9 @@ import { environment } from '../../../../environments/environment';
 })
 
 export class HeaderComponent implements OnInit {
-    public isSignin = false;
-    public orderTotal;
-    public catalog;
+    public isSignin$;
+    public orderTotal$;
+    public catalog$;
 
     constructor(private dataService: DataService,
                 private shopService: ShopService,
@@ -24,24 +24,13 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         const isSignin = this.authService.isLoggedIn();
         this.userService.setSignin(isSignin);
-
-        this.userService.signin.subscribe( result => {
-            this.isSignin = result;
-        });
-
-        this.shopService.orderTotal.subscribe( result => {
-            this.orderTotal = result;
-        });
-
-        this.dataService
-            .getAll(`${environment.apiUrl}api/catalogs`)
-            .subscribe( result => {
-                this.catalog = result;
-            });
+        this.isSignin$ = this.userService.getSignin;
+        this.orderTotal$ = this.shopService.orderTotal;
+        this.catalog$ = this.dataService.getAll(`${environment.apiUrl}api/catalogs`);
     }
 
     logOut() {
-        this.authService.logout().subscribe((result) => {});
+        this.authService.logout();
         this.userService.setSignin(false);
     }
 }

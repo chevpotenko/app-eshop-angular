@@ -34,7 +34,8 @@ export class AuthService {
             catchError(error => {
                 alert(error.error);
                 return of(false);
-            }));
+            }))
+            .subscribe((result) => {});
     }
 
     isLoggedIn() {
