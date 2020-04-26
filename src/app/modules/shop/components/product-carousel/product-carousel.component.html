@@ -1,4 +1,4 @@
-<div *ngIf="images" class="carousel">
+<div *ngIf="(images$ | async) as images" class="carousel">
     <figure class="carousel-current">
         <img [attr.src]="images.images[0]" alt="product"/>
         <div class="shop-item-like">

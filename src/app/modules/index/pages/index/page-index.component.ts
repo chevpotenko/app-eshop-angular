@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
 import { Product } from '../../../../class/product';
 import { environment } from '../../../../../environments/environment';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'app-page-index',
@@ -9,16 +10,11 @@ import { environment } from '../../../../../environments/environment';
     styleUrls: ['./page-index.component.css']
 })
 export class PageIndexComponent implements OnInit {
-    public products: Product[];
+    public products$: Observable<Product[]>;
 
     constructor(private dataService: DataService) {}
 
      ngOnInit() {
-        this.dataService
-            .getAll<Product[]>(`${environment.apiUrl}api/products`)
-            .subscribe((result) => {
-                this.products = result;
-            });
+        this.products$ = this.dataService.getAll<Product[]>(`${environment.apiUrl}api/products`);
     }
 }
-

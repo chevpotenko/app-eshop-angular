@@ -9,13 +9,11 @@ import { environment } from 'environments/environment';
 })
 export class ProductCarouselComponent implements OnInit {
   @Input() productId: string;
-  public images;
+  public images$;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getSingle(`${environment.apiUrl}api/productimages/`, this.productId).subscribe((result) => {
-      this.images = result;
-    });
+    this.images$ = this.dataService.getSingle(`${environment.apiUrl}api/productimages/`, this.productId);
   }
 }

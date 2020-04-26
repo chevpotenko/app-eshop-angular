@@ -5,7 +5,7 @@
 <section class="section shop center">
 	<h2 class="section-title">Men Best Selling Product</h2>
 	<p class="section-description">Lorem ipsum dolor, sit amet consectetur.</p>
-	<app-shop-list [list]="products"></app-shop-list>
+	<app-shop-list [list]="products$ | async"></app-shop-list>
 	<div class="shop-footer">
 		<a routerLink="/catalog/1" class="btn btn--more">VIEW MORE</a>
 	</div>
