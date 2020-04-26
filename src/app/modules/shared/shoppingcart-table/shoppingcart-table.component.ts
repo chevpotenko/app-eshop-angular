@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../../services/shop/shop.service';
-import {CartItem, OrderTotal} from '../../../class/cart';
+import { CartItem, OrderTotal } from '../../../class/cart';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
     selector: 'app-shoppingcart-table',
@@ -8,18 +9,14 @@ import {CartItem, OrderTotal} from '../../../class/cart';
     styleUrls: ['./shoppingcart-table.component.css']
 })
 export class ShoppingcartTableComponent implements OnInit {
-    public shoppingcart: CartItem[];
-    public orderTotal: OrderTotal;
+    public shoppingcart$: BehaviorSubject<CartItem[]>;
+    public orderTotal$: BehaviorSubject<OrderTotal>;
 
     constructor(private shopService: ShopService) {}
 
     ngOnInit() {
-        this.shopService.cart.subscribe(result => {
-            this.shoppingcart = result;
-        });
-        this.shopService.orderTotal.subscribe(result => {
-            this.orderTotal = result;
-        });
+        this.shoppingcart$ = this.shopService.cart;
+        this.orderTotal$ = this.shopService.orderTotal;
     }
 
     updateProductAmounts(cartItem, actionType) {

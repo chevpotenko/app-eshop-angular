@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { DataService } from '../../../../services/data/data.service'
+import { DataService } from '../../../../services/data/data.service';
 
 import { ProductCarouselComponent } from './product-carousel.component';
 

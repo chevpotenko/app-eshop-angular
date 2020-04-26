@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="(shoppingcart$ | async) as shoppingcart">
     <table *ngIf="shoppingcart.length > 0" class="shoppingcart-table">
         <tr>
             <th class="name">Name</th>
@@ -19,7 +19,7 @@
                       (click)="updateProductAmounts(cartItem, 'decrease')">-</span>
             </td>
         </tr>
-        <tr>
+        <tr *ngIf="(orderTotal$ | async) as orderTotal">
             <td>Total:</td>
             <td></td>
             <td></td>

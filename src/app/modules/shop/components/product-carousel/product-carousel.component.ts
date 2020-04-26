@@ -3,7 +3,7 @@ import { DataService } from '../../../../services/data/data.service';
 import { environment } from 'environments/environment';
 
 @Component({
-  selector: 'product-carousel',
+  selector: 'app-product-carousel',
   templateUrl: './product-carousel.component.html',
   styleUrls: ['./product-carousel.component.css']
 })
