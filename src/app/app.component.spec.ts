@@ -10,13 +10,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/shared/header/header.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
 import { DataService } from './services/data/data.service';
+import { AuthService } from './services/auth/auth.service';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [ HttpClientTestingModule, RouterTestingModule ],
             declarations: [ AppComponent, HeaderComponent, FooterComponent ],
-            providers:  [ DataService, ShopService, UserService ]
+            providers:  [ DataService, ShopService, UserService, AuthService ]
         }).compileComponents();
     }));
 

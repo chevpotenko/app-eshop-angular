@@ -8,7 +8,6 @@ import { PageCheckoutComponent } from './checkout.component';
 import { ShoppingcartTableComponent } from '../../../../modules/shared/shoppingcart-table/shoppingcart-table.component';
 
 describe('PageCheckoutComponent', () => {
-  
   let component: PageCheckoutComponent;
   let fixture: ComponentFixture<PageCheckoutComponent>;
 
@@ -30,5 +29,5 @@ describe('PageCheckoutComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
 });

@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { UserService } from '../../../../services/user/user.service';
 import { DataService } from '../../../../services/data/data.service';
+import { AuthService } from '../../../../services/auth/auth.service';
 
 import { SigninComponent } from './signin.component';
 
@@ -14,7 +15,7 @@ describe('SigninComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SigninComponent ],
-      providers: [ UserService, DataService ],
+      providers: [ UserService, DataService, AuthService],
       imports: [ HttpClientTestingModule, RouterTestingModule ]
     })
     .compileComponents();

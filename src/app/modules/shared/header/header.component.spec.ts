@@ -5,6 +5,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DataService } from '../../../services/data/data.service';
 import { ShopService } from '../../../services/shop/shop.service';
 import { UserService } from '../../../services/user/user.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
 import { HeaderComponent } from './header.component';
 
@@ -17,7 +18,7 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule, HttpClientTestingModule ],
       declarations: [ HeaderComponent ],
-      providers: [ DataService, ShopService, UserService ]
+      providers: [ DataService, ShopService, UserService, AuthService ]
     })
     .compileComponents();
   }));
