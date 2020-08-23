@@ -6,6 +6,7 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 import { environment } from '../../../../../environments/environment';
 import { Product } from '../../../../class/product';
 import { CartItem } from '../../../../class/cart';
+// import { take } from 'rxjs/operator/take';
 
 @Component({
     selector: 'app-page-shop-id',
@@ -47,16 +48,16 @@ export class PageShopIdComponent implements OnInit {
                 private activatedRoute: ActivatedRoute,
                 private router: Router) {}
 
-    async ngOnInit() {
+    ngOnInit() {
         const productId = this.activatedRoute.snapshot.paramMap.get('id');
-        await this.dataService
+        this.dataService
             .getSingle(`${environment.apiUrl}api/products/`, productId)
             .subscribe((result: Product) => {
                 this.product = result;
                 this.galleryImages = this.createGalleryImages(result);
-                this.getCart();
                 this.cartItemId = this.getCartItemId();
             });
+        this.getCart();
     }
 
     createGalleryImages(product) {
