@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data/data.service';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/observable';
 import { CartItem, OrderTotal } from '../../class/cart';
 import { environment } from '../../../environments/environment';

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data/data.service';
 import { ShopService } from '../../../../services/shop/shop.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
 import { environment } from '../../../../../environments/environment';
 import { Product } from '../../../../class/product';
 import { CartItem } from '../../../../class/cart';

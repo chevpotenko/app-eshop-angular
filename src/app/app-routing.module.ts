@@ -30,10 +30,10 @@ const routes: Routes = [
         canLoad: [ ProfileGuardService ]
     },
     { path: 'user/logout', component: PageIndexComponent },
-    { path: 'checkout', loadChildren: './modules/checkout/checkout.module#PageCheckoutModule' },
-    { path: 'contact', loadChildren: './modules/contact/contact.module#PageContactModule' },
-    { path: 'about', loadChildren: './modules/about/about.module#PageAboutModule' },
+    { path: 'checkout', loadChildren: () => import('./modules/checkout/checkout.module').then(m => m.PageCheckoutModule) },
+    { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.PageContactModule) },
+    { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.PageAboutModule) },
     { path: '', component: PageIndexComponent }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders<unknown> = RouterModule.forRoot(routes);

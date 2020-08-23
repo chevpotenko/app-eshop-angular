@@ -1,56 +1,69 @@
-figure{
-    margin: 0;   
+figure {
+    margin: 0;
 }
+
 .product-content,
-.product-info{
+.product-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 /*------------------------------------*/
-.product-info{
+.product-info {
     padding-bottom: 5px;
     margin-bottom: 5px;
     border-bottom: 1px solid #f2f2f2;
 }
-.product-info .row{
+
+.product-info .row {
     display: flex;
     align-items: center;
     margin-bottom: 4px;
 }
-.product .caption{
+
+.product .caption {
     margin: 20px 0 31px;
     text-align: center;
 }
-.section-caption{
+
+.section-caption {
     font-family: 'Merriweather', serif;
 }
-.section-caption.underline{
+
+.section-caption.underline {
     padding-bottom: 3px;
     border-bottom: 1px solid #f2f2f2;
 }
-.product-name{    
+
+.product-name {
     font-size: 26px;
     margin: 0;
 }
-.product-categories{
+
+.product-categories {
     margin: 0;
 }
-.product-description{
+
+.product-description {
     margin-bottom: 10px;
 }
-.product-description p{
+
+.product-description p {
     margin: 9px 0;
     font-size: 14px;
     line-height: 22px;
 }
-.column{
+
+.column {
     width: 48.7%;
 }
-.column--right{
+
+.column--right {
     text-align: right;
 }
-.product-price{
+
+.product-price {
     display: inline-block;
     margin-right: 8px;
     font-size: 28px;
@@ -58,13 +71,16 @@ figure{
     font-weight: bold;
     vertical-align: middle;
 }
-.available-quantity{
+
+.available-quantity {
     font-size: 14px;
 }
-.additional-info{
+
+.additional-info {
     color: #bdbdbd;
 }
-.discount-percent{
+
+.discount-percent {
     display: inline-block;
     margin-right: 5px;
     padding: 0 5px;
@@ -74,31 +90,39 @@ figure{
     color: white;
     border-radius: 3px;
 }
-.discount-sum{
+
+.discount-sum {
     font-size: 14px;
     text-decoration: line-through;
 }
+
 /*------------------------------------*/
-.params{
+.params {
     margin-bottom: 20px;
 }
-.params-table tr{
+
+.params-table tr {
     height: 33px;
 }
-.params-table tr:nth-child(2){
+
+.params-table tr:nth-child(2) {
     height: 61px;
 }
-.params-table tr:nth-child(3){
+
+.params-table tr:nth-child(3) {
     height: 32px;
 }
-.params-table tr:nth-child(4){
+
+.params-table tr:nth-child(4) {
     height: 67px;
 }
-.params-table td:nth-child(2){
+
+.params-table td:nth-child(2) {
     width: 40%;
     text-align: right;
 }
-.param-size span{
+
+.param-size span {
     display: inline-block;
     margin-left: 1px;
     border: 1px solid #adadad;
@@ -109,29 +133,33 @@ figure{
     cursor: pointer;
     transition: background-color .3s ease, color .3s ease;
 }
+
 .param-size span:hover,
-.param-size span.active{
-    background-color:  #adadad;
+.param-size span.active {
+    background-color: #adadad;
     color: #fff;
 }
-.param-color{
+
+.param-color {
     position: relative;
     display: inline-block;
     width: 24px;
-    height: 24px;   
+    height: 24px;
     margin-left: 3px;
-    cursor: pointer;      
+    cursor: pointer;
 }
-.param-color span{
+
+.param-color span {
     position: absolute;
     top: 0;
     left: 0;
     display: inline-block;
     width: 100%;
-    height: 100%;   
+    height: 100%;
     border-radius: 50%;
 }
-.param-color:before{
+
+.param-color:before {
     content: '';
     display: block;
     position: absolute;
@@ -145,21 +173,26 @@ figure{
     opacity: 0;
     transition: all .3s ease;
 }
+
 .param-color:hover:before,
-.param-color.active:before{
-    top: -7px;    
+.param-color.active:before {
+    top: -7px;
     opacity: 1;
 }
-.param-color.beige span{
-    background-color: #f3dfc8;    
+
+.param-color.beige span {
+    background-color: #f3dfc8;
 }
-.param-color.red span{
-    background-color:#ed5353;
+
+.param-color.red span {
+    background-color: #ed5353;
 }
-.param-color.orange span{
+
+.param-color.orange span {
     background-color: #ffab00;
 }
-.products-quantity{
+
+.products-quantity {
     box-sizing: border-box;
     display: inline-block;
     height: 36px;
@@ -169,11 +202,13 @@ figure{
     border: 1px solid #d6d6d6;
     border-radius: 2px;
 }
-.param-delivery span{
+
+.param-delivery span {
     display: inline-block;
     font-size: 14px;
 }
-.param-delivery .free{
+
+.param-delivery .free {
     padding: 0 4px;
     margin-left: 8px;
     background-color: #66b116;
@@ -182,19 +217,22 @@ figure{
     font-size: 9px;
     text-transform: uppercase;
 }
+
 /*------------------------------------*/
-.product-control{
+.product-control {
     margin-bottom: 18px;
 }
-.btn{
+
+.btn {
     display: inline-block;
     height: 45px;
     width: 188px;
     margin-right: 15px;
     border-radius: 2px;
-    cursor: pointer;    
+    cursor: pointer;
 }
-.btn-buy{
+
+.btn-buy {
     background: #ffac03;
     color: #fff;
     line-height: 47px;
@@ -202,14 +240,16 @@ figure{
     text-align: center;
     text-decoration: none;
 }
-.btn-cart{
+
+.btn-cart {
     position: absolute;
     padding: 0 38px 0 0;
     background: #fff;
     color: #000;
     border: 2px solid #adadad;
 }
-.btn-cart:after{
+
+.btn-cart:after {
     content: '';
     display: inline-block;
     position: absolute;
@@ -217,28 +257,37 @@ figure{
     width: 19px;
     z-index: 2;
     right: 19px;
-    top: 10px;  
-    background: url("../../../../../assets/img/icon_cart.png")  0 0 no-repeat;
+    top: 10px;
+    background: url("../../../../../assets/img/icon_cart.png") 0 0 no-repeat;
     background-size: contain;
 }
+
 /*------------------------------------*/
-.product-share{
+.product-share {
     margin-bottom: 35px;
 }
-.product-share h4{
+
+.product-share h4 {
     margin: 0 0 4px;
     font-weight: normal;
 }
-.product-share li{
+
+.product-share li {
     margin-right: 10px;
     font-size: 22px;
 }
+
 /*------------------------------------*/
-.product-detail h3{
+.product-detail h3 {
     margin: 0 0 11px;
 }
-.product-detail p{
+
+.product-detail p {
     margin: 0 0 24px;
     line-height: 24px;
 }
-/*------------------------------------*/
+
+.ngx-gallery {
+    display: inline-block;
+    margin-bottom: 20px;
+}

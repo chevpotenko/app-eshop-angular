@@ -6,4 +6,4 @@ export  const routes: Routes = [
     { path: '', component: PageIndexComponent }
 ];
 
-export  const indexRouting: ModuleWithProviders = RouterModule.forChild(routes);
+export  const indexRouting: ModuleWithProviders<unknown> = RouterModule.forChild(routes);
