@@ -7,12 +7,10 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
   NgxGalleryComponent,
-  NgxGalleryImageComponent,
   NgxGalleryThumbnailsComponent,
   NgxGalleryPreviewComponent,
-  NgxGalleryActionComponent,
   NgxGalleryBulletsComponent, NgxGalleryArrowsComponent
-} from 'ngx-gallery';
+} from '@kolkov/ngx-gallery';
 
 describe('PageShopIdComponent', () => {
   let component: PageShopIdComponent;
@@ -31,11 +29,9 @@ describe('PageShopIdComponent', () => {
       ],
       declarations: [
         NgxGalleryComponent,
-        NgxGalleryImageComponent,
         NgxGalleryThumbnailsComponent,
         NgxGalleryPreviewComponent,
         PageShopIdComponent,
-        NgxGalleryActionComponent,
         NgxGalleryBulletsComponent,
         NgxGalleryArrowsComponent
       ]
