@@ -1,5 +1,5 @@
-import { RouterModule, Routes } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { ProfileGuardService } from './services/profile-guard/profile-guard.service';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
@@ -33,7 +33,13 @@ const routes: Routes = [
     { path: 'checkout', loadChildren: () => import('./modules/checkout/checkout.module').then(m => m.PageCheckoutModule) },
     { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.PageContactModule) },
     { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.PageAboutModule) },
-    { path: '', component: PageIndexComponent }
+    { path: '', redirectTo: '/first-component', pathMatch: 'full' },
+    { path: '**', component: PageIndexComponent }
 ];
 
-export const routing: ModuleWithProviders<unknown> = RouterModule.forRoot(routes);
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+
+export class AppRoutingModule { }

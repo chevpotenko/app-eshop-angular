@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
 import { SharedModule } from './modules/shared/shared.module';
 import { PageIndexModule } from './modules/index/index.module';
 import { ShopModule } from './modules/shop/shop.module';
-import { routing } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { UserService } from './services/user/user.service';
 import { DataService } from './services/data/data.service';
@@ -42,7 +42,7 @@ import { ProfileComponent } from './modules/user/pages/profile/profile.component
             headerName: 'X-XSRF-TOKEN',
         }),
         environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-        routing,
+        AppRoutingModule,
         SharedModule,
         ShopModule,
         PageIndexModule

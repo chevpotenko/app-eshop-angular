@@ -99,7 +99,7 @@
     color: #333; }
 .useractions .amount {
     display: inline-block;
-    width: 15px;
+    min-width: 15px;
     height: 15px;
     padding: 0 5px;
     color: #fff;

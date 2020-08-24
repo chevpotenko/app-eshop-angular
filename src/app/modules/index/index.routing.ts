@@ -1,9 +1,15 @@
-import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
-import { PageIndexComponent } from './pages/index/page-index.component';
+import {Routes, RouterModule} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {PageIndexComponent} from './pages/index/page-index.component';
 
-export  const routes: Routes = [
-    { path: '', component: PageIndexComponent }
+export const routes: Routes = [
+    {path: '', component: PageIndexComponent}
 ];
 
-export  const indexRouting: ModuleWithProviders<unknown> = RouterModule.forChild(routes);
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
+
+export class IndexRouting {
+}
