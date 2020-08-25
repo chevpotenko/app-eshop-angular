@@ -33,7 +33,7 @@ const routes: Routes = [
     { path: 'checkout', loadChildren: () => import('./modules/checkout/checkout.module').then(m => m.PageCheckoutModule) },
     { path: 'contact', loadChildren: () => import('./modules/contact/contact.module').then(m => m.PageContactModule) },
     { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.PageAboutModule) },
-    { path: '', redirectTo: '/first-component', pathMatch: 'full' },
+    { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: '**', component: PageIndexComponent }
 ];
 
