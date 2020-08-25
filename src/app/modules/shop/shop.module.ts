@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 import { SharedModule  } from '../shared/shared.module';
-import { HttpParamsService } from '../.././services/http-params/http-params.service';
+import { HttpParamsService } from '../../services/http-params/http-params.service';
 
 import { PageCatalogComponent } from './pages/catalog/page-catalog.component';
 import { PageShopIdComponent } from './pages/id/page-shop-id.component';
