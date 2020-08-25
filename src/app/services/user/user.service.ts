@@ -1,11 +1,15 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
+
 export class UserService {
     public signin = new BehaviorSubject(false);
 
-    constructor() { }
+    constructor() {
+    }
 
     get getSignin(): Observable<boolean> {
         return this.signin.asObservable();

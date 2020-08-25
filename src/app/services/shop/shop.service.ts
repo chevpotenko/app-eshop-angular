@@ -1,11 +1,14 @@
-import { Injectable } from '@angular/core';
-import { DataService } from '../data/data.service';
-import { BehaviorSubject } from 'rxjs';
-import { Observable } from 'rxjs/observable';
-import { CartItem, OrderTotal } from '../../class/cart';
-import { environment } from '../../../environments/environment';
+import {Injectable} from '@angular/core';
+import {DataService} from '../data/data.service';
+import {BehaviorSubject} from 'rxjs';
+import {Observable} from 'rxjs/observable';
+import {CartItem, OrderTotal} from '../../class/cart';
+import {environment} from '../../../environments/environment';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
+
 export class ShopService {
     public cart = new BehaviorSubject([]);
     public orderTotal = new BehaviorSubject({
@@ -70,11 +73,13 @@ export class ShopService {
 
     calculateOrderTotal() {
         const cart = this.cart.getValue();
-        const orderTotal = { total: 0, qty: 0 };
-        if (!cart.length) { return orderTotal; }
+        const orderTotal = {total: 0, qty: 0};
+        if (!cart.length) {
+            return orderTotal;
+        }
         return cart.reduce((accum, cartItem) => {
             return {
-                total:  accum.total += cartItem.product.total,
+                total: accum.total += cartItem.product.total,
                 qty: accum.qty += cartItem.product.qty
             };
         }, orderTotal);
