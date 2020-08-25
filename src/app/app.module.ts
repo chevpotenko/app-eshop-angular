@@ -17,12 +17,10 @@ import { TokenInterceptorService } from './services/token-interceptor/token-inte
 import { InMemoryDataService } from './services/in-memory-data/in-memory-data.service';
 
 import { AppComponent } from './app.component';
-import { ShoppingCartComponent } from './modules/shoppingcart/pages/shoppingcart/shopping-cart.component';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        ShoppingCartComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
